@@ -15,10 +15,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 
 public class ParticipantDAOImpl implements ParticipantDAO {
     private ObjectMapper objectMapper = new ObjectMapper();
@@ -80,8 +78,11 @@ public class ParticipantDAOImpl implements ParticipantDAO {
             }
         }
         if(error!="Error:"){
+            ArrayList<String> arrayList = new <String>ArrayList();
+            arrayList.add(error);arrayList.add(error);
+
             try {
-                jsonInString = objectMapper.writeValueAsString(error);
+                jsonInString = objectMapper.writeValueAsString(arrayList);
             } catch (JsonProcessingException e) {
                 System.out.println("error with json");
                 e.printStackTrace();
@@ -156,8 +157,10 @@ public class ParticipantDAOImpl implements ParticipantDAO {
         }
         if(error!="Error:"){
             System.out.println("erro!=null");
+            ArrayList<String> arrayList = new <String>ArrayList();
+            arrayList.add(error);arrayList.add(error);
             try {
-                jsonInString = objectMapper.writeValueAsString(error);
+                jsonInString = objectMapper.writeValueAsString(arrayList);
             } catch (JsonProcessingException e) {
                 System.out.println("error with json");
                 e.printStackTrace();

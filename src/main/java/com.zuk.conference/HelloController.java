@@ -56,7 +56,7 @@ public class HelloController {
         participant.setLogin(login);participant.setPassword(password);
 
         ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
-        participantDAO.login(participant);
-    return (" ");
+
+    return (participantDAO.login(participant));
     }
 }
