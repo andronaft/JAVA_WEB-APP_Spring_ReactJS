@@ -62,7 +62,7 @@ public class ParticipantDAOImpl implements ParticipantDAO {
 
             } catch (SQLException e) {
                 e.printStackTrace();
-                error+="Please try later 1; ";
+                error+="Please try latter 1; ";
 
             } catch (Exception e) {
                 e.printStackTrace();

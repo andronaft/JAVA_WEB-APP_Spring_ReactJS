@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40ffc072-0e54-45fc-aabd-2aa68c8f10af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/daoimpl/ParticipantDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/daoimpl/ParticipantDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/HelloController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/daoimpl/ParticipantDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/daoimpl/ParticipantDAOImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +165,7 @@
       <updated>1576615774859</updated>
       <workItem from="1576615779770" duration="2089000" />
       <workItem from="1577061710763" duration="14206000" />
-      <workItem from="1578344088468" duration="22772000" />
+      <workItem from="1578344088468" duration="22780000" />
     </task>
     <servers />
   </component>
