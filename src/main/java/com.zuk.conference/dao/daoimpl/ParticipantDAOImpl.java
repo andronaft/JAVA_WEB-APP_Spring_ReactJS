@@ -111,6 +111,7 @@ public class ParticipantDAOImpl implements ParticipantDAO {
     @Override
     public String login(Participant participant) {
         boolean isUserExists = false;
+        Participant participant1 = new Participant();
         String error = "Error:";
         if (con != null) {
             try {
@@ -121,19 +122,27 @@ public class ParticipantDAOImpl implements ParticipantDAO {
 
                 ResultSet resultSet = pr1.executeQuery();
 
-                if(resultSet.next()){
+                if(resultSet.next()) {
                     String password = resultSet.getString("PASSWORD");
-                    if(DigestUtils.md5DigestAsHex((participant.getPassword()).getBytes()).equals(password)){
+                    if (DigestUtils.md5DigestAsHex((participant.getPassword()).getBytes()).equals(password)) {
                         int id = resultSet.getInt("ID");
+                        String login = resultSet.getString("LOGIN");
                         String role = resultSet.getString("ROLE");
                         String firstName = resultSet.getString("FIRSTNAME");
                         String lastName = resultSet.getString("LASTNAME");
-                        participant.setId(id);participant.setRole(role);participant.setPassword("*");participant.setFirstName(firstName);participant.setLastName(lastName);
-                    }
-                    else{
-                        error+=" Incorect Login or Password";
+                        participant1.setId(id);
+                        participant1.setLogin(login);
+                        participant1.setRole(role);
+                        participant1.setPassword("*");
+                        participant1.setFirstName(firstName);
+                        participant1.setLastName(lastName);
+                    } else {
+                        error += " Incorect Login or Password1";
                     }
 
+                }
+                if(participant1.getLogin()==null){
+                    error += " Incorect Login or Password2";
                 }
 
 
@@ -167,7 +176,7 @@ public class ParticipantDAOImpl implements ParticipantDAO {
             }
         }else {
             try {
-                jsonInString = objectMapper.writeValueAsString(participant);
+                jsonInString = objectMapper.writeValueAsString(participant1);
                 System.out.println(jsonInString);
             } catch (JsonProcessingException e) {
                 System.out.println("error with json");
@@ -178,7 +187,7 @@ public class ParticipantDAOImpl implements ParticipantDAO {
             System.out.println("jsonempty");
         }
         else {
-            System.out.println("some problem");
+            System.out.println("all right");
         }
         System.out.println(jsonInString);
 

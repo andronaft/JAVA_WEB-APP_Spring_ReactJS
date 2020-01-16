@@ -1,9 +1,12 @@
 package com.zuk.conference.dao;
 
+import com.zuk.conference.model.Conference;
+
 public interface ConferenceDAO {
     void insertConference();
     void deleteConferece();
-    ConferenceDAO getConference();
+    String getAllConference();
+    String createConf();
     void updateConferance();
 
 }

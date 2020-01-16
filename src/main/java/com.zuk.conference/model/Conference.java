@@ -7,15 +7,23 @@ import java.sql.Time;
 public class Conference {
     private int id;
     private String name;
-    private Date date;
-    private Time time;
-    private String participantId;
+    private int id_room;
+    private String name_room;
+    private int capacity_room;
+    private int amount_participant;
+    private Date datee;
+    private Time timee;
+    private String id_participant;
 
-    public Conference(int id, String name, Date date, Time time) {
-        this.id = id;
+    public Conference(String name, int id_room, Date datee, Time timee) {
         this.name = name;
-        this.date = date;
-        this.time = time;
+        this.id_room = id_room;
+        this.datee = datee;
+        this.timee = timee;
+    }
+
+    public Conference() {
+
     }
 
     public int getId() {
@@ -34,27 +42,59 @@ public class Conference {
         this.name = name;
     }
 
-    public Date getDate() {
-        return date;
+    public int getId_room() {
+        return id_room;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setId_room(int id_room) {
+        this.id_room = id_room;
     }
 
-    public Time getTime() {
-        return time;
+    public String getName_room() {
+        return name_room;
     }
 
-    public void setTime(Time time) {
-        this.time = time;
+    public void setName_room(String name_room) {
+        this.name_room = name_room;
     }
 
-    public String getParticipantId() {
-        return participantId;
+    public int getCapacity_room() {
+        return capacity_room;
     }
 
-    public void setParticipantId(String participantId) {
-        this.participantId = participantId;
+    public void setCapacity_room(int capacity_room) {
+        this.capacity_room = capacity_room;
+    }
+
+    public int getAmount_participant() {
+        return amount_participant;
+    }
+
+    public void setAmount_participant(int amount_participant) {
+        this.amount_participant = amount_participant;
+    }
+
+    public Date getDatee() {
+        return datee;
+    }
+
+    public void setDatee(Date datee) {
+        this.datee = datee;
+    }
+
+    public Time getTimee() {
+        return timee;
+    }
+
+    public void setTimee(Time timee) {
+        this.timee = timee;
+    }
+
+    public String getId_participant() {
+        return id_participant;
+    }
+
+    public void setId_participant(String id_participant) {
+        this.id_participant = id_participant;
     }
 }

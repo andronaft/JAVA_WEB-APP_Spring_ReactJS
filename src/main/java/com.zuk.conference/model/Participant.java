@@ -12,6 +12,7 @@ public class Participant {
     private String login;
     private String password;
     private String role;
+    private String id_conference_participant;
 
     public Participant(String firstName, String lastName, Date birthDay, String login, String password) {
         this.firstName = firstName;
@@ -88,5 +89,13 @@ public class Participant {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getId_conference_participant() {
+        return id_conference_participant;
+    }
+
+    public void setId_conference_participant(String id_conference_participant) {
+        this.id_conference_participant = id_conference_participant;
     }
 }

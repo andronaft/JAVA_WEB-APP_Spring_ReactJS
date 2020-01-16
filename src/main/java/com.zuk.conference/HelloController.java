@@ -4,10 +4,13 @@ package com.zuk.conference;
         import com.fasterxml.jackson.databind.ObjectMapper;
         import com.fasterxml.jackson.databind.util.JSONPObject;
         import com.zuk.conference.conection.ConnectionManager;
+        import com.zuk.conference.dao.daoimpl.ConferenceDAOImpl;
         import com.zuk.conference.dao.daoimpl.ParticipantDAOImpl;
         import com.zuk.conference.model.Participant;
         import com.zuk.conference.model.Room;
-        import java.sql.Date;
+
+        import java.sql.*;
+
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
         import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -19,10 +22,6 @@ package com.zuk.conference;
         import java.io.File;
         import java.io.FileOutputStream;
         import java.io.IOException;
-        import java.sql.Connection;
-        import java.sql.PreparedStatement;
-        import java.sql.ResultSet;
-        import java.sql.SQLException;
 
 @RestController
 public class HelloController {
@@ -34,6 +33,12 @@ public class HelloController {
     @RequestMapping("/hello")
     String hello() {
         return "Hello World!";
+    }
+
+    @RequestMapping("/getAllConference")
+    String getAllConference() {
+        ConferenceDAOImpl conferenceDAO = new ConferenceDAOImpl();
+        return (conferenceDAO.getAllConference());
     }
 
 
@@ -49,6 +54,16 @@ public class HelloController {
 
         return (participantDAO.insertParticipant(participant));
 
+    }
+    @RequestMapping("/createConf")
+    String createConf(@RequestParam String name ,@RequestParam int id_room ,@RequestParam Date datee ,@RequestParam Time timee,@RequestParam int admin_id, @RequestParam String admin_password){
+        Participant participant = new Participant();
+        participant.setId(admin_id);participant.setPassword(admin_password);
+
+        ConferenceDAOImpl conferenceDAO = new ConferenceDAOImpl();
+
+
+        return (conferenceDAO.login(participant));
     }
     @RequestMapping("/login")
     String login(@RequestParam String login ,@RequestParam String password ){
