@@ -194,4 +194,41 @@ public class ParticipantDAOImpl implements ParticipantDAO {
         return jsonInString;
     }
 
+    @Override
+    public Boolean isadmin(Participant participant) {
+        boolean response = false;
+        if (con != null) {
+            try {
+                PreparedStatement pr,pr1;
+
+                pr1 = con.prepareStatement("SELECT  * from bd.PARTICIPANT where ID=?");
+                pr1.setInt(1,participant.getId());
+
+                ResultSet resultSet = pr1.executeQuery();
+
+                if(resultSet.next()) {
+                    String password = resultSet.getString("PASSWORD");
+                    if (DigestUtils.md5DigestAsHex((participant.getPassword()).getBytes()).equals(password)) {
+                     response = true;
+                    }
+                }
+
+
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }finally {
+                try {
+                    con.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return response;
+    }
+
 }

@@ -5,6 +5,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zuk.conference.conection.ConnectionManager;
 import com.zuk.conference.dao.ConferenceDAO;
 import com.zuk.conference.model.Conference;
+import com.zuk.conference.model.Participant;
+import com.zuk.conference.model.Room;
 import org.springframework.util.DigestUtils;
 
 import java.sql.Connection;
@@ -57,7 +59,7 @@ public class ConferenceDAOImpl implements ConferenceDAO {
             try {
                 PreparedStatement pr,pr1;
 
-                pr1 = con.prepareStatement("SELECT  * from bd.CONFERENCE");
+                pr1 = con.prepareStatement("SELECT  * from bd.CONFERENCE WHERE DATEE > CURRENT_DATE() ORDER BY DATEE ASC, TIMEE ASC");
 
                 ResultSet resultSet = pr1.executeQuery();
 
@@ -121,6 +123,78 @@ public class ConferenceDAOImpl implements ConferenceDAO {
         }
         else {
             System.out.println("all right");
+        }
+        System.out.println(jsonInString);
+
+        return jsonInString;
+    }
+
+    @Override
+    public String createConf(Participant participant,Conference conference) {
+        jsonInString="";
+        String error = "Message:";
+        if (con != null) {
+            ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
+            if (participantDAO.isadmin(participant)) {
+                RoomDAOImpl roomDAO = new RoomDAOImpl();
+                Room room = roomDAO.getRoomFromId(conference.getId_room());
+
+                try {
+                    PreparedStatement pr, pr1;
+
+                    pr1 = con.prepareStatement("insert into bd.CONFERENCE (NAME,ID_ROOM,NAME_ROOM,CAPACITY_ROOM,AMOUNT_PARTICIPANT,DATEE,TIMEE) values (?,?,?,?,?,?,?)");
+                    pr1.setString(1,conference.getName());
+                    pr1.setInt(2,room.getId());
+                    pr1.setString(3,room.getName());
+                    pr1.setInt(4,(room.getFirstFloorCapacity()+room.getSecondFloorCapacity()));
+                    pr1.setInt(5,conference.getAmount_participant());
+                    pr1.setDate(6,conference.getDatee());
+                    pr1.setTime(7,conference.getTimee());
+                    pr1.executeUpdate();
+                    error+=("Conference was created" + conference.getName()+room.getId()+room.getName()+String.valueOf(room.getFirstFloorCapacity()+room.getSecondFloorCapacity())+conference.getAmount_participant()+ conference.getDatee()+conference.getTimee());
+
+                    //1asd4702010-10-1012:30:00
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    error += "check room id and try later ";
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    error += "check room id and try later  ";
+
+                } finally {
+                    try {
+                        con.close();
+                    } catch (SQLException e) {
+                        error += " try later ";
+                        e.printStackTrace();
+                    }
+                }
+            }
+            else {
+                error+=" incorrect password ";
+            }
+        }
+        if(error!="Message:"){
+            System.out.println("erro!=null");
+            ArrayList<String> arrayListe= new <String>ArrayList();
+            arrayListe.add(error);arrayListe.add(error);
+            try {
+                jsonInString = objectMapper.writeValueAsString(arrayListe);
+            } catch (JsonProcessingException e) {
+                System.out.println("error with json");
+                e.printStackTrace();
+            }
+        }else {
+            error+="some trouble ";
+            ArrayList<String> arrayListe= new <String>ArrayList();
+            arrayListe.add(error);arrayListe.add(error);
+            try {
+                jsonInString = objectMapper.writeValueAsString(arrayListe);
+            } catch (JsonProcessingException e) {
+                System.out.println("error with json");
+                e.printStackTrace();
+            }
         }
         System.out.println(jsonInString);
 

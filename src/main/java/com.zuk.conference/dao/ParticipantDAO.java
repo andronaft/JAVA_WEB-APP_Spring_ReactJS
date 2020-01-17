@@ -10,4 +10,5 @@ public interface ParticipantDAO {
     String insertParticipant(Participant participant) throws FileNotFoundException;
     ParticipantDAO getParticipant();
     String login(Participant participant);
+    Boolean isadmin(Participant participant);
 }

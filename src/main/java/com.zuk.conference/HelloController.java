@@ -6,6 +6,7 @@ package com.zuk.conference;
         import com.zuk.conference.conection.ConnectionManager;
         import com.zuk.conference.dao.daoimpl.ConferenceDAOImpl;
         import com.zuk.conference.dao.daoimpl.ParticipantDAOImpl;
+        import com.zuk.conference.model.Conference;
         import com.zuk.conference.model.Participant;
         import com.zuk.conference.model.Room;
 
@@ -55,15 +56,17 @@ public class HelloController {
         return (participantDAO.insertParticipant(participant));
 
     }
-    @RequestMapping("/createConf")
+    @RequestMapping("/createconf")
     String createConf(@RequestParam String name ,@RequestParam int id_room ,@RequestParam Date datee ,@RequestParam Time timee,@RequestParam int admin_id, @RequestParam String admin_password){
         Participant participant = new Participant();
         participant.setId(admin_id);participant.setPassword(admin_password);
+        Conference conference = new Conference();
+        conference.setName(name);conference.setAmount_participant(0);conference.setId_room(id_room);conference.setDatee(datee);conference.setTimee(timee);
 
         ConferenceDAOImpl conferenceDAO = new ConferenceDAOImpl();
 
 
-        return (conferenceDAO.login(participant));
+        return (conferenceDAO.createConf(participant,conference));
     }
     @RequestMapping("/login")
     String login(@RequestParam String login ,@RequestParam String password ){

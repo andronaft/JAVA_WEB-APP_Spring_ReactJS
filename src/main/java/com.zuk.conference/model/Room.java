@@ -13,6 +13,10 @@ public class Room {
         this.secondFloorCapacity = secondFloorCapacity;
     }
 
+    public Room() {
+
+    }
+
     public int getId() {
         return id;
     }
