@@ -1,7 +1,5 @@
 package com.zuk.conference.model;
 
-
-
 import java.sql.Date;
 
 public class Participant {

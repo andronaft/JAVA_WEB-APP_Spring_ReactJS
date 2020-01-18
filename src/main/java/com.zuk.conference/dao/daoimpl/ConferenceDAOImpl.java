@@ -7,8 +7,6 @@ import com.zuk.conference.dao.ConferenceDAO;
 import com.zuk.conference.model.Conference;
 import com.zuk.conference.model.Participant;
 import com.zuk.conference.model.Room;
-import org.springframework.util.DigestUtils;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -27,6 +25,9 @@ class ConferenseAndAmountJSON {
         return amount;
     }
 
+    public ConferenseAndAmountJSON() {
+    }
+
     public void setArrayList(ArrayList<Conference> arrayList) {
         this.arrayList = arrayList;
         this.amount = arrayList.size();
@@ -40,14 +41,157 @@ public class ConferenceDAOImpl implements ConferenceDAO {
     Connection con = cm.getConnection();
     String jsonInString = "";
 
+
     @Override
-    public void insertConference() {
-        
+    public String joinNewParticipant(Participant participant, Conference conference) {
+        String error = "";
+        System.out.println("start join in conf");
+        if (con != null) {
+
+                try {
+                    PreparedStatement pr, pr1;
+                    System.out.println("try to do exequt + conference id "+ conference.getId());
+                    pr1 = con.prepareStatement("SELECT * from bd.CONFERENCE where ID = ?");
+                    pr1.setInt(1,conference.getId());
+
+                    ResultSet resultSet = pr1.executeQuery();
+                    String participantConferencsIds = "";
+
+                    if(resultSet.next()) {
+                        conference.setAmount_participant(resultSet.getInt("AMOUNT_PARTICIPANT"));
+                        conference.setCapacity_room(resultSet.getInt("CAPACITY_ROOM"));
+                        participantConferencsIds = resultSet.getString("ID_PARTICIPANT");
+                    }
+                    System.out.println("participant Conferences Ids old" + participantConferencsIds);
+                    if((conference.getAmount_participant()) < (conference.getCapacity_room())) {
+
+                        if (participantConferencsIds == null) {
+                            participantConferencsIds = "";
+                        }
+
+                        String[] strArray = participantConferencsIds.split(",");
+                        int[] intArray = new int[strArray.length];
+
+                        boolean containParticipant = false;
+                        if(participantConferencsIds!="") {
+                            for (int i = 0; i < strArray.length; i++) {
+                                try {
+                                    intArray[i] = Integer.parseInt(strArray[i]);
+                                    if (intArray[i] == participant.getId()) {
+                                        containParticipant = true;
+                                    }
+                                } catch (NumberFormatException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+
+                        if(!containParticipant) {
+                            participantConferencsIds += (participant.getId() + ",");
+                            System.out.println("prticipant Conference IDS new "+ participantConferencsIds);
+
+                            pr = con.prepareStatement("Update  bd.CONFERENCE set ID_PARTICIPANT = ?, AMOUNT_PARTICIPANT = ? where ID=?");
+                            pr.setString(1, participantConferencsIds);
+                            System.out.println(" parcipiant Conf" + participantConferencsIds);
+                            pr.setInt(2, (conference.getAmount_participant()+1));
+                            System.out.println("amount " + (resultSet.getInt("AMOUNT_PARTICIPANT") + 1));
+                            pr.setInt(3, conference.getId());
+                            System.out.println("conferemse id " + conference.getId());
+
+                            pr.executeUpdate();
+                            error += "Join participant from Conference";
+                        }
+                        else {
+                            error += "You already consist in this conference";
+                        }
+                    }
+                    else {
+                        error+="There was no place";
+                    }
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    error += "try later ";
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    error += "try later  ";
+
+                } finally {
+                    try {
+                        con.close();
+                    } catch (SQLException e) {
+                        error += " try later ";
+                        e.printStackTrace();
+                    }
+                }
+
+        }
+        return error;
     }
 
-    @Override
-    public void deleteConferece() {
 
+    @Override
+    public String cancelConferece(Participant admin, Conference conference) {
+        jsonInString="";
+        String message = "Message:";
+        if (con != null) {
+            ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
+            if (participantDAO.isadmin(admin)) {
+
+                try {
+                    PreparedStatement pr1;
+
+                    pr1 = con.prepareStatement("DELETE from bd.CONFERENCE where ID=?");
+                    pr1.setInt(1,conference.getId());
+                    pr1.executeUpdate();
+                    message+=("Conference was delete");
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    message += "try later ";
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    message += "try later  ";
+
+                } finally {
+                    try {
+                        con.close();
+                    } catch (SQLException e) {
+                        message += " try later ";
+                        e.printStackTrace();
+                    }
+                }
+            }
+            else {
+                message+=" incorrect password ";
+            }
+        }
+        if(message!="Message:"){
+            System.out.println("erro!=null");
+            ArrayList<String> arrayListe= new <String>ArrayList();
+            arrayListe.add(message);arrayListe.add(message);
+            try {
+                jsonInString = objectMapper.writeValueAsString(arrayListe);
+            } catch (JsonProcessingException e) {
+                System.out.println("error with json");
+                e.printStackTrace();
+            }
+        }else {
+            message+="some trouble ";
+            ArrayList<String> arrayListe= new <String>ArrayList();
+            arrayListe.add(message);arrayListe.add(message);
+            try {
+                jsonInString = objectMapper.writeValueAsString(arrayListe);
+            } catch (JsonProcessingException e) {
+                System.out.println("error with json");
+                e.printStackTrace();
+            }
+        }
+        System.out.println(jsonInString);
+
+        return jsonInString;
     }
 
     @Override
@@ -130,17 +274,17 @@ public class ConferenceDAOImpl implements ConferenceDAO {
     }
 
     @Override
-    public String createConf(Participant participant,Conference conference) {
+    public String createConf(Participant admin,Conference conference) {
         jsonInString="";
-        String error = "Message:";
+        String message = "Message:";
         if (con != null) {
             ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
-            if (participantDAO.isadmin(participant)) {
+            if (participantDAO.isadmin(admin)) {
                 RoomDAOImpl roomDAO = new RoomDAOImpl();
                 Room room = roomDAO.getRoomFromId(conference.getId_room());
 
                 try {
-                    PreparedStatement pr, pr1;
+                    PreparedStatement pr1;
 
                     pr1 = con.prepareStatement("insert into bd.CONFERENCE (NAME,ID_ROOM,NAME_ROOM,CAPACITY_ROOM,AMOUNT_PARTICIPANT,DATEE,TIMEE) values (?,?,?,?,?,?,?)");
                     pr1.setString(1,conference.getName());
@@ -151,9 +295,123 @@ public class ConferenceDAOImpl implements ConferenceDAO {
                     pr1.setDate(6,conference.getDatee());
                     pr1.setTime(7,conference.getTimee());
                     pr1.executeUpdate();
-                    error+=("Conference was created" + conference.getName()+room.getId()+room.getName()+String.valueOf(room.getFirstFloorCapacity()+room.getSecondFloorCapacity())+conference.getAmount_participant()+ conference.getDatee()+conference.getTimee());
+                    message+=("Conference was created" + conference.getName()+room.getId()+room.getName()+String.valueOf(room.getFirstFloorCapacity()+room.getSecondFloorCapacity())+conference.getAmount_participant()+ conference.getDatee()+conference.getTimee());
 
-                    //1asd4702010-10-1012:30:00
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    message += "check room id and try later ";
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    message += "check room id and try later  ";
+
+                } finally {
+                    try {
+                        con.close();
+                    } catch (SQLException e) {
+                        message += " try later ";
+                        e.printStackTrace();
+                    }
+                }
+            }
+            else {
+                message+=" incorrect password ";
+            }
+        }
+        if(message!="Message:"){
+            System.out.println("erro!=null");
+            ArrayList<String> arrayListe= new <String>ArrayList();
+            arrayListe.add(message);arrayListe.add(message);
+            try {
+                jsonInString = objectMapper.writeValueAsString(arrayListe);
+            } catch (JsonProcessingException e) {
+                System.out.println("error with json");
+                e.printStackTrace();
+            }
+        }else {
+            message+="some trouble ";
+            ArrayList<String> arrayListe= new <String>ArrayList();
+            arrayListe.add(message);arrayListe.add(message);
+            try {
+                jsonInString = objectMapper.writeValueAsString(arrayListe);
+            } catch (JsonProcessingException e) {
+                System.out.println("error with json");
+                e.printStackTrace();
+            }
+        }
+        System.out.println(jsonInString);
+
+        return jsonInString;
+    }
+
+    @Override
+    public String removeParticipant(Participant admin, Participant participant, Conference conference) {
+        jsonInString="";
+        String error = "Message:";
+        System.out.println("statr remove in conf");
+        if (con != null) {
+            ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
+            if (participantDAO.isadmin(admin)) {
+
+
+                try {
+                    PreparedStatement pr, pr1;
+                    System.out.println("try to do exequt");
+                    pr1 = con.prepareStatement("SELECT * from bd.CONFERENCE where id = ?");
+                    pr1.setInt(1,conference.getId());
+
+                    ResultSet resultSet = pr1.executeQuery();
+
+                    String participantConferencsIds="";
+                    if(resultSet.next()) {
+
+                        participantConferencsIds = resultSet.getString("ID_PARTICIPANT");
+                        System.out.println("make participantCOnfids");
+                    }
+
+                    System.out.println(participantConferencsIds+"conferenceDao");
+                    String[] strArray = participantConferencsIds.split(",");
+                    int[] intArray = new int[strArray.length];
+
+                    boolean containParticipant = false;
+                    for(int i = 0; i < strArray.length; i++) {
+                        intArray[i] = Integer.parseInt(strArray[i]);
+                        if(intArray[i]==participant.getId()){
+                            containParticipant = true;
+                        }
+                        System.out.println(strArray[i]);
+                        System.out.println(Integer.parseInt(strArray[i]));
+                        System.out.println(Integer.valueOf(strArray[i]));
+                    }
+
+                    if(containParticipant){
+                        ParticipantDAOImpl participantDAO1 = new ParticipantDAOImpl();
+                        if(participantDAO1.removeFromConference(participant,conference.getId())){
+
+                            String responseIdConference="";
+                            for(int i=0;i<intArray.length;i++){
+                                if(intArray[i]!=participant.getId()){
+                                    responseIdConference+=(intArray[i] + ",");
+                                }
+                            }
+                            System.out.println("conf resp" + responseIdConference);
+
+                            pr = con.prepareStatement("Update  bd.CONFERENCE set ID_PARTICIPANT = ?, AMOUNT_PARTICIPANT = ? where ID=?");
+                            pr.setString(1,responseIdConference);
+                            pr.setInt(2,(intArray.length-1));
+                            pr.setInt(3,conference.getId());
+
+                            pr.executeUpdate();
+                            error+="Remove participant from Conference";
+
+                        }else{
+                            error+="can`t remove part from conf in part bd";
+                        }
+
+                    }
+                    else{
+                        error+=(participant.getId() + " participant doesn`t consist in this Conference");
+                    }
                 } catch (SQLException e) {
                     e.printStackTrace();
                     error += "check room id and try later ";
@@ -201,8 +459,5 @@ public class ConferenceDAOImpl implements ConferenceDAO {
         return jsonInString;
     }
 
-    @Override
-    public void updateConferance() {
 
-    }
 }

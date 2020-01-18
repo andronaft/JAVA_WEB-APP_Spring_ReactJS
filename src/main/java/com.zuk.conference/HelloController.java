@@ -1,28 +1,17 @@
 package com.zuk.conference;
-
         import com.fasterxml.jackson.core.JsonProcessingException;
         import com.fasterxml.jackson.databind.ObjectMapper;
-        import com.fasterxml.jackson.databind.util.JSONPObject;
         import com.zuk.conference.conection.ConnectionManager;
         import com.zuk.conference.dao.daoimpl.ConferenceDAOImpl;
         import com.zuk.conference.dao.daoimpl.ParticipantDAOImpl;
         import com.zuk.conference.model.Conference;
         import com.zuk.conference.model.Participant;
-        import com.zuk.conference.model.Room;
-
         import java.sql.*;
-
         import org.springframework.beans.factory.annotation.Autowired;
-        import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
-        import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
         import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
         import org.springframework.web.bind.annotation.RequestMapping;
         import org.springframework.web.bind.annotation.RequestParam;
         import org.springframework.web.bind.annotation.RestController;
-
-        import java.io.File;
-        import java.io.FileOutputStream;
-        import java.io.IOException;
 
 @RestController
 public class HelloController {
@@ -42,6 +31,16 @@ public class HelloController {
         return (conferenceDAO.getAllConference());
     }
 
+    @RequestMapping("/getAccount")
+    String getAccont(@RequestParam int id) {
+        Participant participant = new Participant();
+        participant.setId(id);
+        System.out.println(id);
+        ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
+
+        return participantDAO.getParticipant(participant);
+    }
+
 
     @RequestMapping("/register")
     String calc(@RequestParam String firstname,@RequestParam String lastname,@RequestParam Date birthday,@RequestParam String login,@RequestParam String password) throws JsonProcessingException {
@@ -56,18 +55,48 @@ public class HelloController {
         return (participantDAO.insertParticipant(participant));
 
     }
+    @RequestMapping("/removeParticipantFromConf")
+    String createConf(@RequestParam int id_participant , @RequestParam int conference_id , @RequestParam int admin_id , @RequestParam String admin_password){
+        Participant admin = new Participant();
+        admin.setId(admin_id);admin.setPassword(admin_password);
+        Participant participant = new Participant();
+        participant.setId(id_participant);
+        Conference conference = new Conference();
+        conference.setId(conference_id);
+        System.out.println(id_participant +"id_pars"+ conference_id +"id_conf"+ admin_id +"id_admin"+ admin_password +"pass");
+
+        ConferenceDAOImpl conferenceDAO = new ConferenceDAOImpl();
+
+
+        return (conferenceDAO.removeParticipant(admin,participant,conference));
+    }
     @RequestMapping("/createconf")
     String createConf(@RequestParam String name ,@RequestParam int id_room ,@RequestParam Date datee ,@RequestParam Time timee,@RequestParam int admin_id, @RequestParam String admin_password){
-        Participant participant = new Participant();
-        participant.setId(admin_id);participant.setPassword(admin_password);
+        Participant admin = new Participant();
+        admin.setId(admin_id);admin.setPassword(admin_password);
         Conference conference = new Conference();
         conference.setName(name);conference.setAmount_participant(0);conference.setId_room(id_room);conference.setDatee(datee);conference.setTimee(timee);
 
         ConferenceDAOImpl conferenceDAO = new ConferenceDAOImpl();
 
 
-        return (conferenceDAO.createConf(participant,conference));
+        return (conferenceDAO.createConf(admin,conference));
     }
+
+    @RequestMapping("/cancelConf")
+    String cancelConf(@RequestParam int conference_id , @RequestParam int admin_id , @RequestParam String admin_password){
+        Participant admin = new Participant();
+        admin.setId(admin_id);admin.setPassword(admin_password);
+        Conference conference = new Conference();
+        conference.setId(conference_id);
+
+        ConferenceDAOImpl conferenceDAO = new ConferenceDAOImpl();
+
+
+        return (conferenceDAO.cancelConferece(admin,conference));
+    }
+
+
     @RequestMapping("/login")
     String login(@RequestParam String login ,@RequestParam String password ){
         Participant participant = new Participant();
@@ -77,4 +106,17 @@ public class HelloController {
 
     return (participantDAO.login(participant));
     }
+
+    @RequestMapping("/joinConference")
+    String joinConference(@RequestParam int conference_id , @RequestParam int user_id ){
+        Participant participant = new Participant();
+        participant.setId(user_id);
+        Conference conference = new Conference();
+        conference.setId(conference_id);
+
+        ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
+
+        return (participantDAO.joinConferrence(participant,conference));
+    }
+
 }
