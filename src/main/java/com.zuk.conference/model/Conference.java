@@ -96,4 +96,5 @@ public class Conference {
     public void setId_participant(String id_participant) {
         this.id_participant = id_participant;
     }
+    //Create builder later
 }

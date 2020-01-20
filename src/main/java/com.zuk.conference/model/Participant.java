@@ -1,6 +1,7 @@
 package com.zuk.conference.model;
 
 import java.sql.Date;
+import java.util.Objects;
 
 public class Participant {
     private int id;
@@ -10,6 +11,20 @@ public class Participant {
     private String login;
     private String password;
     private String role;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Participant that = (Participant) o;
+        return id == that.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
     private String id_conference_participant;
 
     public Participant(String firstName, String lastName, Date birthDay, String login, String password) {
@@ -96,4 +111,5 @@ public class Participant {
     public void setId_conference_participant(String id_conference_participant) {
         this.id_conference_participant = id_conference_participant;
     }
+    //Create builder later
 }

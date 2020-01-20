@@ -48,4 +48,5 @@ public class Room {
     public void setSecondFloorCapacity(int secondFloorCapacity) {
         this.secondFloorCapacity = secondFloorCapacity;
     }
+    //Create builder later
 }

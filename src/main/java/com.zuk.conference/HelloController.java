@@ -11,7 +11,9 @@ package com.zuk.conference;
         import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
         import org.springframework.web.bind.annotation.RequestMapping;
         import org.springframework.web.bind.annotation.RequestParam;
+        import org.springframework.web.bind.annotation.ResponseBody;
         import org.springframework.web.bind.annotation.RestController;
+        import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 public class HelloController {
@@ -21,8 +23,32 @@ public class HelloController {
     Connection con = cm.getConnection();
 
     @RequestMapping("/hello")
-    String hello() {
-        return "Hello World!";
+    @ResponseBody
+    ModelAndView hello() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("index.html");
+        return modelAndView;
+    }
+    @RequestMapping("/about")
+    @ResponseBody
+    ModelAndView about() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("index.html");
+        return modelAndView;
+    }
+    @RequestMapping("/conference")
+    @ResponseBody
+    ModelAndView conference() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("index.html");
+        return modelAndView;
+    }
+    @RequestMapping("/authorization")
+    @ResponseBody
+    ModelAndView authorization() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("index.html");
+        return modelAndView;
     }
 
     @RequestMapping("/getAllConference")
@@ -35,7 +61,6 @@ public class HelloController {
     String getAccont(@RequestParam int id) {
         Participant participant = new Participant();
         participant.setId(id);
-        System.out.println(id);
         ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
 
         return participantDAO.getParticipant(participant);
@@ -67,7 +92,6 @@ public class HelloController {
 
         ConferenceDAOImpl conferenceDAO = new ConferenceDAOImpl();
 
-
         return (conferenceDAO.removeParticipant(admin,participant,conference));
     }
     @RequestMapping("/createconf")
@@ -78,7 +102,6 @@ public class HelloController {
         conference.setName(name);conference.setAmount_participant(0);conference.setId_room(id_room);conference.setDatee(datee);conference.setTimee(timee);
 
         ConferenceDAOImpl conferenceDAO = new ConferenceDAOImpl();
-
 
         return (conferenceDAO.createConf(admin,conference));
     }
@@ -92,7 +115,6 @@ public class HelloController {
 
         ConferenceDAOImpl conferenceDAO = new ConferenceDAOImpl();
 
-
         return (conferenceDAO.cancelConferece(admin,conference));
     }
 
@@ -104,7 +126,7 @@ public class HelloController {
 
         ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
 
-    return (participantDAO.login(participant));
+        return (participantDAO.login(participant));
     }
 
     @RequestMapping("/joinConference")
