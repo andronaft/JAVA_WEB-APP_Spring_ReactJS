@@ -136,6 +136,7 @@ public class HelloController {
         Conference conference = new Conference();
         conference.setId(conference_id);
 
+        boolean ad = (0 == (7 * (4 ^ (2))%(3)));
         ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
 
         return (participantDAO.joinConferrence(participant,conference));
