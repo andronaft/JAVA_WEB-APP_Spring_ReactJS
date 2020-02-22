@@ -122,11 +122,10 @@ class App extends React.Component {
                 <Route path="/registration" component={Registration}/>
                 <Route path="/creatConference" component={CreateConference}/>
                 <Route path="/about" render={() => 
-                  <div className="jumbotron zukabout"><img class="ml-1" src="https://loading.io/assets/img/c/icon/fidget-white.svg"></img>
+                  <div className="jumbotron zukabout">
                     <div className="heading">
                       <h1 className="typo" contenteditable="true" spellcheck="false">by Zuk</h1>
                     </div>
-                    <img className="ml-1" src="https://loading.io/assets/img/c/icon/fidget-white.svg"></img>
                   </div>} /> 
             </div>
         </div>
@@ -134,5 +133,5 @@ class App extends React.Component {
       );
   }
 }
-
+//<img className="ml-1" src="https://loading.io/assets/img/c/icon/fidget-white.svg"></img>
 export default App;

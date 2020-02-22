@@ -29,6 +29,7 @@ public class HelloController {
         modelAndView.setViewName("index.html");
         return modelAndView;
     }
+
     @RequestMapping("/about")
     @ResponseBody
     ModelAndView about() {
@@ -36,6 +37,7 @@ public class HelloController {
         modelAndView.setViewName("index.html");
         return modelAndView;
     }
+
     @RequestMapping("/conference")
     @ResponseBody
     ModelAndView conference() {
@@ -43,6 +45,7 @@ public class HelloController {
         modelAndView.setViewName("index.html");
         return modelAndView;
     }
+
     @RequestMapping("/authorization")
     @ResponseBody
     ModelAndView authorization() {
@@ -80,6 +83,7 @@ public class HelloController {
         return (participantDAO.insertParticipant(participant));
 
     }
+
     @RequestMapping("/removeParticipantFromConf")
     String createConf(@RequestParam int id_participant , @RequestParam int conference_id , @RequestParam int admin_id , @RequestParam String admin_password){
         Participant admin = new Participant();
@@ -94,6 +98,7 @@ public class HelloController {
 
         return (conferenceDAO.removeParticipant(admin,participant,conference));
     }
+
     @RequestMapping("/createconf")
     String createConf(@RequestParam String name ,@RequestParam int id_room ,@RequestParam Date datee ,@RequestParam Time timee,@RequestParam int admin_id, @RequestParam String admin_password){
         Participant admin = new Participant();
@@ -118,6 +123,17 @@ public class HelloController {
         return (conferenceDAO.cancelConferece(admin,conference));
     }
 
+    @RequestMapping("/changeConfTime")
+    String cancelConf(@RequestParam int conference_id , @RequestParam int admin_id , @RequestParam String admin_password, @RequestParam Date datee, @RequestParam Time timee){
+        Participant admin = new Participant();
+        admin.setId(admin_id);admin.setPassword(admin_password);
+        Conference conference = new Conference();
+        conference.setId(conference_id);conference.setDatee(datee);conference.setTimee(timee);
+
+        ConferenceDAOImpl conferenceDAO = new ConferenceDAOImpl();
+
+        return (conferenceDAO.changeTime(admin,conference));
+    }
 
     @RequestMapping("/login")
     String login(@RequestParam String login ,@RequestParam String password ){

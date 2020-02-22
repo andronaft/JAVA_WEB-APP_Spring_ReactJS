@@ -5,9 +5,7 @@ import Error from './error';
 
 class Account extends React.Component {
 
-    constructor(props){
-        super(props);
-    }
+    
     state = {
         id: undefined,
         data: undefined,

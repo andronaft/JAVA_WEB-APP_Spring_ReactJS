@@ -10,5 +10,6 @@ public interface ConferenceDAO {
     String getAllConference();
     String createConf(Participant participant,Conference conference);
     String removeParticipant(Participant admin,Participant participant,Conference conference);
+    String changeTime(Participant participant, Conference conference);
 
 }

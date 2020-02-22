@@ -8,6 +8,7 @@ create table PARTICIPANT
 	ROLE VARCHAR,
 	BIRTHDAY DATE not null,
 	ID_CONFERENCE_PARTICIPANT TEXT,
+	RATING int,
 	constraint PARTICIPANT_pk
 		primary key (ID)
 );

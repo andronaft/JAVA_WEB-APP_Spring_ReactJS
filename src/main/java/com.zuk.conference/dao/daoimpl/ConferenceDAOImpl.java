@@ -459,5 +459,71 @@ public class ConferenceDAOImpl implements ConferenceDAO {
         return jsonInString;
     }
 
+    @Override
+    public String changeTime(Participant participant, Conference conference) {
+        jsonInString="";
+        String message = "Message:";
+        if (con != null) {
+            ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
+            System.out.println("gg");
+            if (participantDAO.isadmin(participant)) {
+
+                try {
+                    PreparedStatement pr1;
+
+                    pr1 = con.prepareStatement("UPDATE BD.CONFERENCE SET DATEE = ? , TIMEE= ? WHERE ID = ?;");
+                    pr1.setDate(1,conference.getDatee());
+                    pr1.setTime(2,conference.getTimee());
+                    pr1.setInt(3,conference.getId());
+                    pr1.executeUpdate();
+                    message+=("Conference time was changed");
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    message += "try later ";
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    message += "try later  ";
+
+                } finally {
+                    try {
+                        con.close();
+                    } catch (SQLException e) {
+                        message += " try later ";
+                        e.printStackTrace();
+                    }
+                }
+            }
+            else {
+                message+=" incorrect password ";
+            }
+        }
+        if(message!="Message:"){
+            System.out.println("erro!=null");
+            ArrayList<String> arrayListe= new <String>ArrayList();
+            arrayListe.add(message);arrayListe.add(message);
+            try {
+                jsonInString = objectMapper.writeValueAsString(arrayListe);
+            } catch (JsonProcessingException e) {
+                System.out.println("error with json");
+                e.printStackTrace();
+            }
+        }else {
+            message+="some trouble ";
+            ArrayList<String> arrayListe= new <String>ArrayList();
+            arrayListe.add(message);arrayListe.add(message);
+            try {
+                jsonInString = objectMapper.writeValueAsString(arrayListe);
+            } catch (JsonProcessingException e) {
+                System.out.println("error with json");
+                e.printStackTrace();
+            }
+        }
+        System.out.println(jsonInString);
+
+        return jsonInString;
+    }
+
 
 }

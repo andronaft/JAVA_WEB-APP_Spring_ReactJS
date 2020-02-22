@@ -6,6 +6,8 @@ import FormCancelConf from '../form/formCancelConf';
 import Error from "./error";
 import LinkBtn from './LinkBtn';
 import FormJoinConf from "../form/formJoinConf";
+import FormChangeTimeComf from "../form/formChangeTimeConf";
+import FormChageTimeConf from "../form/formChangeTimeConf";
 
 
 class Conferences extends React.Component {
@@ -25,7 +27,7 @@ class Conferences extends React.Component {
         try{
             myInitObject.user_id = localStorage.getItem("user_idd");
             myInitObject.user_login = localStorage.getItem("user_loginn");
-            if(localStorage.getItem("user_rolee")=='admin'){
+            if(localStorage.getItem("user_rolee")==='admin'){
                 myInitObject.user_role = localStorage.getItem("user_rolee");
             }
         }
@@ -50,6 +52,25 @@ class Conferences extends React.Component {
         const admin_id = e.target.elements.id_admin.value;
         console.log(id_participant, password, conference_id, admin_id);
         await axios.post(`http://localhost:8080/removeParticipantFromConf?&id_participant=${id_participant}&conference_id=${conference_id}&admin_id=${admin_id}&admin_password=${password}`)
+        .then(response =>{data = response.data})
+        .catch(function(error) {
+            console.log('Request failed', error)
+          });
+          this.setState({
+              error: data[0]
+          });
+    }
+
+    changeTimeConf =  async (e)=> {
+        e.preventDefault();
+        var data = undefined;
+        const password = e.target.elements.password.value;
+        const conference_id = e.target.elements.conference_id.value;
+        const admin_id = e.target.elements.id_admin.value;
+        const datee = e.target.elements.datee.value;
+        const timee = e.target.elements.timee.value;
+        console.log( password, conference_id, admin_id);
+        await axios.post(`http://localhost:8080/changeConfTime?&conference_id=${conference_id}&admin_id=${admin_id}&admin_password=${password}&datee=${datee}&timee=${timee}:00`)
         .then(response =>{data = response.data})
         .catch(function(error) {
             console.log('Request failed', error)
@@ -107,12 +128,21 @@ class Conferences extends React.Component {
                     <div className="card-text">{ myInitObject.user_role && 
                         <div>
                             id parcticipant: {item.id_participant}
-                            <FormRemoveParticipant removeParticipant={this.removeParticipant}
-                            conference_id= {item.id}
-                            id_admin = {myInitObject.user_id}/>
-                            <FormCancelConf cancelConf ={this.cancelConf}
-                            conference_id= {item.id}
-                            id_admin = {myInitObject.user_id}/>
+                            { (myInitObject.user_role==="admin"||myInitObject.user_role==="manager") &&
+                            <div>
+                                <FormRemoveParticipant removeParticipant={this.removeParticipant}
+                                conference_id= {item.id}
+                                id_admin = {myInitObject.user_id}/>
+
+                                <FormChageTimeConf changeTimeConf={this.changeTimeConf}
+                                conference_id= {item.id}
+                                id_admin = {myInitObject.user_id}/>
+
+                                {myInitObject.user_role==="admin" &&
+                                <FormCancelConf cancelConf ={this.cancelConf}
+                                conference_id= {item.id}
+                                id_admin = {myInitObject.user_id}/>}
+                            </div>}
                         </div>}
 
                         {!myInitObject.user_role && myInitObject.user_id &&

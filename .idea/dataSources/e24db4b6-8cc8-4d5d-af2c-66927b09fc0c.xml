@@ -202,7 +202,7 @@
       <ObjectId>19</ObjectId>
     </table>
     <table id="169" parent="3" name="PARTICIPANT">
-      <ObjectId>23</ObjectId>
+      <ObjectId>15</ObjectId>
     </table>
     <table id="170" parent="3" name="ROOM">
       <ObjectId>27</ObjectId>
@@ -303,40 +303,44 @@
       <Position>8</Position>
       <DataType>TEXT|0s</DataType>
     </column>
-    <index id="190" parent="169" name="PRIMARY_KEY_6">
-      <ObjectId>24</ObjectId>
+    <column id="190" parent="169" name="RATING">
+      <Position>9</Position>
+      <DataType>INT|0s</DataType>
+    </column>
+    <index id="191" parent="169" name="PRIMARY_KEY_61">
+      <ObjectId>18</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <SourceTextLength>67</SourceTextLength>
+      <SourceTextLength>68</SourceTextLength>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
       <AutoCreated>1</AutoCreated>
     </index>
-    <key id="191" parent="169" name="PARTICIPANT_PK">
+    <key id="192" parent="169" name="PARTICIPANT_PK">
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="192" parent="170" name="ID">
+    <column id="193" parent="170" name="ID">
       <Position>1</Position>
       <DataType>INT|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="193" parent="170" name="NAME">
+    <column id="194" parent="170" name="NAME">
       <Position>2</Position>
       <DataType>CHAR(150)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="194" parent="170" name="FIRSTFLOORCAPACITY">
+    <column id="195" parent="170" name="FIRSTFLOORCAPACITY">
       <Position>3</Position>
       <DataType>INT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="195" parent="170" name="SECONDFLOORCAPACITY">
+    <column id="196" parent="170" name="SECONDFLOORCAPACITY">
       <Position>4</Position>
       <DataType>INT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="196" parent="170" name="PRIMARY_KEY_4">
+    <index id="197" parent="170" name="PRIMARY_KEY_4">
       <ObjectId>28</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>60</SourceTextLength>
@@ -344,7 +348,7 @@
       <Unique>1</Unique>
       <AutoCreated>1</AutoCreated>
     </index>
-    <key id="197" parent="170" name="ROOM_PK">
+    <key id="198" parent="170" name="ROOM_PK">
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
