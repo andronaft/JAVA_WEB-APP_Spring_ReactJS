@@ -34,12 +34,7 @@ class ConferenseAndAmountJSON {
     }
 }
 
-public class ConferenceDAOImpl implements ConferenceDAO {
-
-    private ObjectMapper objectMapper = new ObjectMapper();
-    ConnectionManager cm = new ConnectionManager();
-    Connection con = cm.getConnection();
-    String jsonInString = "";
+public class ConferenceDAOImpl extends ConferenceDAO {
 
 
     @Override
@@ -460,7 +455,7 @@ public class ConferenceDAOImpl implements ConferenceDAO {
     }
 
     @Override
-    public String changeTime(Participant participant, Conference conference) {
+    public String changeTime(Participant participant, Conference conference) {//TODO used functionality ConferenceDao
         jsonInString="";
         String message = "Message:";
         if (con != null) {

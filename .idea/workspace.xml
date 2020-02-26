@@ -2,78 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40ffc072-0e54-45fc-aabd-2aa68c8f10af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/precache-manifest.eac30fd0604f1c8f2e2e8ccd6073b08c.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/static/js/main.420518c2.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/static/js/main.420518c2.chunk.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e24db4b6-8cc8-4d5d-af2c-66927b09fc0c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e24db4b6-8cc8-4d5d-af2c-66927b09fc0c.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e24db4b6-8cc8-4d5d-af2c-66927b09fc0c/storage_v2/_src_/database/TEST.kjwnAA/schema/BD.QggAAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e24db4b6-8cc8-4d5d-af2c-66927b09fc0c/storage_v2/_src_/database/TEST.kjwnAA/schema/BD.QggAAA.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/ConferenceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/ConferenceDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/ParticipantDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/ParticipantDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/RoomDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/RoomDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/daoimpl/ConferenceDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/daoimpl/ConferenceDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Create_Insert_SQLscript_for_BD/Create_table_PARTICIPANT.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Create_Insert_SQLscript_for_BD/Create_table_PARTICIPANT.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/src_React_dontPack/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/src_React_dontPack/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/src_React_dontPack/src/components/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/src_React_dontPack/src/components/account.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/src_React_dontPack/src/components/conferences.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/src_React_dontPack/src/components/conferences.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/2.2acab38d.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/static/js/2.5bb0280c.chunk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/2.2acab38d.chunk.js.LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/static/js/2.5bb0280c.chunk.js.LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/2.2acab38d.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/static/js/2.5bb0280c.chunk.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/main.af96fe7b.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/main.af96fe7b.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Create_Insert_SQLscript_for_BD/Create_table_PARTICIPANT.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Create_Insert_SQLscript_for_BD/Create_table_PARTICIPANT.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/HelloController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/model/Conference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/model/Conference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/ConferenceDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/ConferenceDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/daoimpl/ConferenceDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/daoimpl/ConferenceDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/src/components/LinkBtn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/src/components/Router.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/src/components/account.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/src/components/authorization.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/src/components/conferences.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/src/components/creatConference.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/src/components/error.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/src/components/registration.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/src/form/formCancelConf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/src/form/formCreateConf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/src/form/formJoinConf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/src/form/formLog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/src/form/formReg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/src/form/fromRemoveParticipant.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/src/serviceWorker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/src/setupTests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src_React_dontPack/src/test/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/asset-manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/service-worker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/static/css/2.47e06e2e.chunk.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/static/css/2.47e06e2e.chunk.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/static/css/main.a9207c3a.chunk.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/static/css/main.a9207c3a.chunk.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/static/js/2.2acab38d.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/static/js/2.2acab38d.chunk.js.LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/static/js/2.2acab38d.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/static/js/main.af96fe7b.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/static/js/main.af96fe7b.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/static/js/runtime-main.889ad4b6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/static/js/runtime-main.889ad4b6.js.map" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,17 +178,7 @@
       <list>
         <serviceView>
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:test" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:test" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@552f12a6" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>
@@ -270,7 +198,9 @@
       <workItem from="1576615779770" duration="2089000" />
       <workItem from="1577061710763" duration="14206000" />
       <workItem from="1578344088468" duration="89189000" />
-      <workItem from="1582311611690" duration="7297000" />
+      <workItem from="1582311611690" duration="14471000" />
+      <workItem from="1582676079815" duration="17000" />
+      <workItem from="1582677332731" duration="2471000" />
     </task>
     <servers />
   </component>
@@ -282,10 +212,12 @@
       <screen x="0" y="23" width="2048" height="1052" />
     </state>
     <state x="758" y="274" key="#Project_Structure/0.23.2048.1052@0.23.2048.1052" timestamp="1576615933064" />
-    <state x="667" y="251" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577064717989">
-      <screen x="0" y="23" width="2048" height="1052" />
+    <state x="667" y="252" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582587537378">
+      <screen x="0" y="23" width="2048" height="1059" />
     </state>
     <state x="667" y="251" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2048.1052@0.23.2048.1052" timestamp="1577064717989" />
+    <state x="667" y="252" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2048.1057@0.23.2048.1057" timestamp="1582556049781" />
+    <state x="667" y="252" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2048.1059@0.23.2048.1059" timestamp="1582587537378" />
     <state x="416" y="333" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579021063478">
       <screen x="0" y="23" width="2048" height="1059" />
     </state>
@@ -297,45 +229,45 @@
     <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1054@0.23.2048.1054" timestamp="1578441344140" />
     <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1056@0.23.2048.1056" timestamp="1582335013051" />
     <state x="959" y="248" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1061@0.23.2048.1061" timestamp="1579208258494" />
-    <state width="1358" height="271" key="GridCell.Tab.0.bottom" timestamp="1582343378094">
-      <screen x="0" y="23" width="2048" height="1057" />
+    <state width="930" height="271" key="GridCell.Tab.0.bottom" timestamp="1582680370732">
+      <screen x="0" y="23" width="2048" height="1061" />
     </state>
     <state width="930" height="271" key="GridCell.Tab.0.bottom/0.23.2048.1052@0.23.2048.1052" timestamp="1578344771551" />
     <state width="1358" height="272" key="GridCell.Tab.0.bottom/0.23.2048.1054@0.23.2048.1054" timestamp="1579222401892" />
     <state width="1358" height="271" key="GridCell.Tab.0.bottom/0.23.2048.1056@0.23.2048.1056" timestamp="1582334263363" />
     <state width="1358" height="271" key="GridCell.Tab.0.bottom/0.23.2048.1057@0.23.2048.1057" timestamp="1582343378094" />
-    <state width="1358" height="271" key="GridCell.Tab.0.bottom/0.23.2048.1059@0.23.2048.1059" timestamp="1579484091460" />
-    <state width="1358" height="272" key="GridCell.Tab.0.bottom/0.23.2048.1061@0.23.2048.1061" timestamp="1579215679253" />
+    <state width="1358" height="271" key="GridCell.Tab.0.bottom/0.23.2048.1059@0.23.2048.1059" timestamp="1582593344775" />
+    <state width="930" height="271" key="GridCell.Tab.0.bottom/0.23.2048.1061@0.23.2048.1061" timestamp="1582680370732" />
     <state width="1358" height="272" key="GridCell.Tab.0.bottom/0.23.2048.1062@0.23.2048.1062" timestamp="1579058571153" />
-    <state width="1358" height="271" key="GridCell.Tab.0.center" timestamp="1582343378093">
-      <screen x="0" y="23" width="2048" height="1057" />
+    <state width="930" height="271" key="GridCell.Tab.0.center" timestamp="1582680370731">
+      <screen x="0" y="23" width="2048" height="1061" />
     </state>
     <state width="930" height="271" key="GridCell.Tab.0.center/0.23.2048.1052@0.23.2048.1052" timestamp="1578344771549" />
     <state width="1358" height="272" key="GridCell.Tab.0.center/0.23.2048.1054@0.23.2048.1054" timestamp="1579222401891" />
     <state width="1358" height="271" key="GridCell.Tab.0.center/0.23.2048.1056@0.23.2048.1056" timestamp="1582334263362" />
     <state width="1358" height="271" key="GridCell.Tab.0.center/0.23.2048.1057@0.23.2048.1057" timestamp="1582343378093" />
-    <state width="1358" height="271" key="GridCell.Tab.0.center/0.23.2048.1059@0.23.2048.1059" timestamp="1579484091459" />
-    <state width="1358" height="272" key="GridCell.Tab.0.center/0.23.2048.1061@0.23.2048.1061" timestamp="1579215679251" />
+    <state width="1358" height="271" key="GridCell.Tab.0.center/0.23.2048.1059@0.23.2048.1059" timestamp="1582593344775" />
+    <state width="930" height="271" key="GridCell.Tab.0.center/0.23.2048.1061@0.23.2048.1061" timestamp="1582680370731" />
     <state width="1358" height="272" key="GridCell.Tab.0.center/0.23.2048.1062@0.23.2048.1062" timestamp="1579058571151" />
-    <state width="1358" height="271" key="GridCell.Tab.0.left" timestamp="1582343378093">
-      <screen x="0" y="23" width="2048" height="1057" />
+    <state width="930" height="271" key="GridCell.Tab.0.left" timestamp="1582680370730">
+      <screen x="0" y="23" width="2048" height="1061" />
     </state>
     <state width="930" height="271" key="GridCell.Tab.0.left/0.23.2048.1052@0.23.2048.1052" timestamp="1578344771548" />
     <state width="1358" height="272" key="GridCell.Tab.0.left/0.23.2048.1054@0.23.2048.1054" timestamp="1579222401890" />
     <state width="1358" height="271" key="GridCell.Tab.0.left/0.23.2048.1056@0.23.2048.1056" timestamp="1582334263362" />
     <state width="1358" height="271" key="GridCell.Tab.0.left/0.23.2048.1057@0.23.2048.1057" timestamp="1582343378093" />
-    <state width="1358" height="271" key="GridCell.Tab.0.left/0.23.2048.1059@0.23.2048.1059" timestamp="1579484091458" />
-    <state width="1358" height="272" key="GridCell.Tab.0.left/0.23.2048.1061@0.23.2048.1061" timestamp="1579215679250" />
+    <state width="1358" height="271" key="GridCell.Tab.0.left/0.23.2048.1059@0.23.2048.1059" timestamp="1582593344775" />
+    <state width="930" height="271" key="GridCell.Tab.0.left/0.23.2048.1061@0.23.2048.1061" timestamp="1582680370730" />
     <state width="1358" height="272" key="GridCell.Tab.0.left/0.23.2048.1062@0.23.2048.1062" timestamp="1579058571151" />
-    <state width="1358" height="271" key="GridCell.Tab.0.right" timestamp="1582343378094">
-      <screen x="0" y="23" width="2048" height="1057" />
+    <state width="930" height="271" key="GridCell.Tab.0.right" timestamp="1582680370731">
+      <screen x="0" y="23" width="2048" height="1061" />
     </state>
     <state width="930" height="271" key="GridCell.Tab.0.right/0.23.2048.1052@0.23.2048.1052" timestamp="1578344771550" />
     <state width="1358" height="272" key="GridCell.Tab.0.right/0.23.2048.1054@0.23.2048.1054" timestamp="1579222401891" />
     <state width="1358" height="271" key="GridCell.Tab.0.right/0.23.2048.1056@0.23.2048.1056" timestamp="1582334263363" />
     <state width="1358" height="271" key="GridCell.Tab.0.right/0.23.2048.1057@0.23.2048.1057" timestamp="1582343378094" />
-    <state width="1358" height="271" key="GridCell.Tab.0.right/0.23.2048.1059@0.23.2048.1059" timestamp="1579484091459" />
-    <state width="1358" height="272" key="GridCell.Tab.0.right/0.23.2048.1061@0.23.2048.1061" timestamp="1579215679252" />
+    <state width="1358" height="271" key="GridCell.Tab.0.right/0.23.2048.1059@0.23.2048.1059" timestamp="1582593344775" />
+    <state width="930" height="271" key="GridCell.Tab.0.right/0.23.2048.1061@0.23.2048.1061" timestamp="1582680370731" />
     <state width="1358" height="272" key="GridCell.Tab.0.right/0.23.2048.1062@0.23.2048.1062" timestamp="1579058571152" />
     <state width="1358" height="334" key="GridCell.Tab.1.bottom" timestamp="1577063580898">
       <screen x="0" y="23" width="2048" height="1052" />
@@ -361,6 +293,10 @@
       <screen x="0" y="23" width="2048" height="1059" />
     </state>
     <state x="238" y="186" key="Maven.ArtifactSearchDialog/0.23.2048.1059@0.23.2048.1059" timestamp="1578973156868" />
+    <state x="486" y="458" key="NewModule_or_Project.wizard" timestamp="1582585715994">
+      <screen x="0" y="23" width="2048" height="1059" />
+    </state>
+    <state x="486" y="458" key="NewModule_or_Project.wizard/0.23.2048.1059@0.23.2048.1059" timestamp="1582585715994" />
     <state x="691" y="171" key="SettingsEditor" timestamp="1576616307470">
       <screen x="0" y="23" width="2048" height="1052" />
     </state>
@@ -405,10 +341,11 @@
       <screen x="0" y="23" width="2048" height="1061" />
     </state>
     <state x="-68" y="217" width="673" height="693" key="find.popup/0.23.2048.1061@0.23.2048.1061" timestamp="1579072027519" />
-    <state x="540" y="241" key="new project wizard" timestamp="1576617317252">
-      <screen x="0" y="23" width="2048" height="1052" />
+    <state x="540" y="242" key="new project wizard" timestamp="1582553676259">
+      <screen x="0" y="23" width="2048" height="1057" />
     </state>
     <state x="540" y="241" key="new project wizard/0.23.2048.1052@0.23.2048.1052" timestamp="1576617317252" />
+    <state x="540" y="242" key="new project wizard/0.23.2048.1057@0.23.2048.1057" timestamp="1582553676259" />
     <state x="365" y="244" width="670" height="676" key="search.everywhere.popup" timestamp="1579208333421">
       <screen x="0" y="23" width="2048" height="1061" />
     </state>
@@ -419,7 +356,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/daoimpl/ConferenceDAOImpl.java</url>
-          <line>135</line>
+          <line>130</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

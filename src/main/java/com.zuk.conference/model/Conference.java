@@ -3,7 +3,7 @@ package com.zuk.conference.model;
 import java.sql.Date;
 import java.sql.Time;
 
-public class Conference {
+public class Conference {//TODO create field for report
     private int id;
     private String name;
     private int id_room;
