@@ -158,4 +158,9 @@ public class HelloController {
         return (participantDAO.joinConferrence(participant,conference));
     }
 
+    @RequestMapping("/checkCon")
+    String chekCon(){
+        ConnectionManager connectionManager = new ConnectionManager();
+        return String.valueOf(connectionManager.getConnection());
+    }
 }

@@ -2,16 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40ffc072-0e54-45fc-aabd-2aa68c8f10af" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e24db4b6-8cc8-4d5d-af2c-66927b09fc0c/storage_v2/_src_/database/TEST.kjwnAA/schema/BD.QggAAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e24db4b6-8cc8-4d5d-af2c-66927b09fc0c/storage_v2/_src_/database/TEST.kjwnAA/schema/BD.QggAAA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e24db4b6-8cc8-4d5d-af2c-66927b09fc0c/storage_v2/_src_/database/TEST.kjwnAA/schema/BD.QggAAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e24db4b6-8cc8-4d5d-af2c-66927b09fc0c/storage_v2/_src_/database/TEST.kjwnAA/schema/BD.QggAAA.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/ConferenceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/ConferenceDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/ParticipantDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/ParticipantDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/RoomDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/RoomDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/daoimpl/ConferenceDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/daoimpl/ConferenceDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/model/Conference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/model/Conference.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/ConferenceDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/ConferenceDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/daoimpl/ConferenceDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/daoimpl/ConferenceDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/conection/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/conection/ConnectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Create_Insert_SQLscript_for_BD/Create_table_CONFERENCE.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Create_Insert_SQLscript_for_BD/Create_table_CONFERENCE.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/HelloController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/conection/ConnectionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/conection/ConnectionManager.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,29 +113,33 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DatabaseDriversLRU" value="h2" />
+    <property name="DatabaseDriversLRU" value="h2&#10;postgresql" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/static" />
+      <recent name="$PROJECT_DIR$/src/main/resources/src_React_dontPack" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/com.zuk.conference" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/static" />
       <recent name="$PROJECT_DIR$/src/main/resources/img_for_README" />
       <recent name="$PROJECT_DIR$/src/main/resources/Create_Insert_SQLscript_for_BD" />
       <recent name="$PROJECT_DIR$/src/main/resources/Start_Insert_BD" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/static" />
-      <recent name="$PROJECT_DIR$/src/main/resources/src_React_dontPack" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="$PROJECT_DIR$/src/main/com.zuk.conference" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.App">
@@ -178,7 +184,26 @@
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:d47rhj1fb2te3j@ec2-54-246-90-10.eu-west-1.compute.amazonaws.com" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:d47rhj1fb2te3j@ec2-54-246-90-10.eu-west-1.compute.amazonaws.com" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@68802bfb" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:test" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:test" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@3e6f9a2f" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -200,7 +225,10 @@
       <workItem from="1578344088468" duration="89189000" />
       <workItem from="1582311611690" duration="14471000" />
       <workItem from="1582676079815" duration="17000" />
-      <workItem from="1582677332731" duration="2471000" />
+      <workItem from="1582677332731" duration="2788000" />
+      <workItem from="1583015655183" duration="481000" />
+      <workItem from="1583016298712" duration="728000" />
+      <workItem from="1583532135884" duration="6369000" />
     </task>
     <servers />
   </component>
@@ -212,16 +240,16 @@
       <screen x="0" y="23" width="2048" height="1052" />
     </state>
     <state x="758" y="274" key="#Project_Structure/0.23.2048.1052@0.23.2048.1052" timestamp="1576615933064" />
-    <state x="667" y="252" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582587537378">
+    <state x="667" y="252" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583534500106">
       <screen x="0" y="23" width="2048" height="1059" />
     </state>
     <state x="667" y="251" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2048.1052@0.23.2048.1052" timestamp="1577064717989" />
     <state x="667" y="252" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2048.1057@0.23.2048.1057" timestamp="1582556049781" />
-    <state x="667" y="252" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2048.1059@0.23.2048.1059" timestamp="1582587537378" />
-    <state x="416" y="333" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579021063478">
+    <state x="667" y="252" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2048.1059@0.23.2048.1059" timestamp="1583534500106" />
+    <state x="416" y="333" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583535734797">
       <screen x="0" y="23" width="2048" height="1059" />
     </state>
-    <state x="416" y="333" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2048.1059@0.23.2048.1059" timestamp="1579021063478" />
+    <state x="416" y="333" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2048.1059@0.23.2048.1059" timestamp="1583535734797" />
     <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser" timestamp="1582335013051">
       <screen x="0" y="23" width="2048" height="1056" />
     </state>
@@ -229,62 +257,74 @@
     <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1054@0.23.2048.1054" timestamp="1578441344140" />
     <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1056@0.23.2048.1056" timestamp="1582335013051" />
     <state x="959" y="248" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1061@0.23.2048.1061" timestamp="1579208258494" />
-    <state width="930" height="271" key="GridCell.Tab.0.bottom" timestamp="1582680370732">
-      <screen x="0" y="23" width="2048" height="1061" />
+    <state x="700" y="186" key="DBNavigator.ProjectSettingsDialog" timestamp="1583541667275">
+      <screen x="0" y="23" width="2048" height="1059" />
+    </state>
+    <state x="700" y="186" key="DBNavigator.ProjectSettingsDialog/0.23.2048.1059@0.23.2048.1059" timestamp="1583541667275" />
+    <state width="1013" height="271" key="GridCell.Tab.0.bottom" timestamp="1583542067501">
+      <screen x="0" y="23" width="2048" height="1059" />
     </state>
     <state width="930" height="271" key="GridCell.Tab.0.bottom/0.23.2048.1052@0.23.2048.1052" timestamp="1578344771551" />
     <state width="1358" height="272" key="GridCell.Tab.0.bottom/0.23.2048.1054@0.23.2048.1054" timestamp="1579222401892" />
     <state width="1358" height="271" key="GridCell.Tab.0.bottom/0.23.2048.1056@0.23.2048.1056" timestamp="1582334263363" />
     <state width="1358" height="271" key="GridCell.Tab.0.bottom/0.23.2048.1057@0.23.2048.1057" timestamp="1582343378094" />
-    <state width="1358" height="271" key="GridCell.Tab.0.bottom/0.23.2048.1059@0.23.2048.1059" timestamp="1582593344775" />
-    <state width="930" height="271" key="GridCell.Tab.0.bottom/0.23.2048.1061@0.23.2048.1061" timestamp="1582680370732" />
+    <state width="1013" height="271" key="GridCell.Tab.0.bottom/0.23.2048.1059@0.23.2048.1059" timestamp="1583542067501" />
+    <state width="1477" height="333" key="GridCell.Tab.0.bottom/0.23.2048.1061@0.23.2048.1061" timestamp="1583535491118" />
     <state width="1358" height="272" key="GridCell.Tab.0.bottom/0.23.2048.1062@0.23.2048.1062" timestamp="1579058571153" />
-    <state width="930" height="271" key="GridCell.Tab.0.center" timestamp="1582680370731">
-      <screen x="0" y="23" width="2048" height="1061" />
+    <state width="1013" height="271" key="GridCell.Tab.0.center" timestamp="1583542067500">
+      <screen x="0" y="23" width="2048" height="1059" />
     </state>
     <state width="930" height="271" key="GridCell.Tab.0.center/0.23.2048.1052@0.23.2048.1052" timestamp="1578344771549" />
     <state width="1358" height="272" key="GridCell.Tab.0.center/0.23.2048.1054@0.23.2048.1054" timestamp="1579222401891" />
     <state width="1358" height="271" key="GridCell.Tab.0.center/0.23.2048.1056@0.23.2048.1056" timestamp="1582334263362" />
     <state width="1358" height="271" key="GridCell.Tab.0.center/0.23.2048.1057@0.23.2048.1057" timestamp="1582343378093" />
-    <state width="1358" height="271" key="GridCell.Tab.0.center/0.23.2048.1059@0.23.2048.1059" timestamp="1582593344775" />
-    <state width="930" height="271" key="GridCell.Tab.0.center/0.23.2048.1061@0.23.2048.1061" timestamp="1582680370731" />
+    <state width="1013" height="271" key="GridCell.Tab.0.center/0.23.2048.1059@0.23.2048.1059" timestamp="1583542067500" />
+    <state width="1477" height="333" key="GridCell.Tab.0.center/0.23.2048.1061@0.23.2048.1061" timestamp="1583535491117" />
     <state width="1358" height="272" key="GridCell.Tab.0.center/0.23.2048.1062@0.23.2048.1062" timestamp="1579058571151" />
-    <state width="930" height="271" key="GridCell.Tab.0.left" timestamp="1582680370730">
-      <screen x="0" y="23" width="2048" height="1061" />
+    <state width="1013" height="271" key="GridCell.Tab.0.left" timestamp="1583542067499">
+      <screen x="0" y="23" width="2048" height="1059" />
     </state>
     <state width="930" height="271" key="GridCell.Tab.0.left/0.23.2048.1052@0.23.2048.1052" timestamp="1578344771548" />
     <state width="1358" height="272" key="GridCell.Tab.0.left/0.23.2048.1054@0.23.2048.1054" timestamp="1579222401890" />
     <state width="1358" height="271" key="GridCell.Tab.0.left/0.23.2048.1056@0.23.2048.1056" timestamp="1582334263362" />
     <state width="1358" height="271" key="GridCell.Tab.0.left/0.23.2048.1057@0.23.2048.1057" timestamp="1582343378093" />
-    <state width="1358" height="271" key="GridCell.Tab.0.left/0.23.2048.1059@0.23.2048.1059" timestamp="1582593344775" />
-    <state width="930" height="271" key="GridCell.Tab.0.left/0.23.2048.1061@0.23.2048.1061" timestamp="1582680370730" />
+    <state width="1013" height="271" key="GridCell.Tab.0.left/0.23.2048.1059@0.23.2048.1059" timestamp="1583542067499" />
+    <state width="1477" height="333" key="GridCell.Tab.0.left/0.23.2048.1061@0.23.2048.1061" timestamp="1583535491116" />
     <state width="1358" height="272" key="GridCell.Tab.0.left/0.23.2048.1062@0.23.2048.1062" timestamp="1579058571151" />
-    <state width="930" height="271" key="GridCell.Tab.0.right" timestamp="1582680370731">
-      <screen x="0" y="23" width="2048" height="1061" />
+    <state width="1013" height="271" key="GridCell.Tab.0.right" timestamp="1583542067501">
+      <screen x="0" y="23" width="2048" height="1059" />
     </state>
     <state width="930" height="271" key="GridCell.Tab.0.right/0.23.2048.1052@0.23.2048.1052" timestamp="1578344771550" />
     <state width="1358" height="272" key="GridCell.Tab.0.right/0.23.2048.1054@0.23.2048.1054" timestamp="1579222401891" />
     <state width="1358" height="271" key="GridCell.Tab.0.right/0.23.2048.1056@0.23.2048.1056" timestamp="1582334263363" />
     <state width="1358" height="271" key="GridCell.Tab.0.right/0.23.2048.1057@0.23.2048.1057" timestamp="1582343378094" />
-    <state width="1358" height="271" key="GridCell.Tab.0.right/0.23.2048.1059@0.23.2048.1059" timestamp="1582593344775" />
-    <state width="930" height="271" key="GridCell.Tab.0.right/0.23.2048.1061@0.23.2048.1061" timestamp="1582680370731" />
+    <state width="1013" height="271" key="GridCell.Tab.0.right/0.23.2048.1059@0.23.2048.1059" timestamp="1583542067501" />
+    <state width="1477" height="333" key="GridCell.Tab.0.right/0.23.2048.1061@0.23.2048.1061" timestamp="1583535491117" />
     <state width="1358" height="272" key="GridCell.Tab.0.right/0.23.2048.1062@0.23.2048.1062" timestamp="1579058571152" />
-    <state width="1358" height="334" key="GridCell.Tab.1.bottom" timestamp="1577063580898">
-      <screen x="0" y="23" width="2048" height="1052" />
+    <state width="1477" height="333" key="GridCell.Tab.1.bottom" timestamp="1583535871194">
+      <screen x="0" y="23" width="2048" height="1059" />
     </state>
     <state width="1358" height="334" key="GridCell.Tab.1.bottom/0.23.2048.1052@0.23.2048.1052" timestamp="1577063580898" />
-    <state width="1358" height="334" key="GridCell.Tab.1.center" timestamp="1577063580898">
-      <screen x="0" y="23" width="2048" height="1052" />
+    <state width="1477" height="333" key="GridCell.Tab.1.bottom/0.23.2048.1059@0.23.2048.1059" timestamp="1583535871194" />
+    <state width="1477" height="333" key="GridCell.Tab.1.bottom/0.23.2048.1061@0.23.2048.1061" timestamp="1583535491119" />
+    <state width="1477" height="333" key="GridCell.Tab.1.center" timestamp="1583535871194">
+      <screen x="0" y="23" width="2048" height="1059" />
     </state>
     <state width="1358" height="334" key="GridCell.Tab.1.center/0.23.2048.1052@0.23.2048.1052" timestamp="1577063580898" />
-    <state width="1358" height="334" key="GridCell.Tab.1.left" timestamp="1577063580897">
-      <screen x="0" y="23" width="2048" height="1052" />
+    <state width="1477" height="333" key="GridCell.Tab.1.center/0.23.2048.1059@0.23.2048.1059" timestamp="1583535871194" />
+    <state width="1477" height="333" key="GridCell.Tab.1.center/0.23.2048.1061@0.23.2048.1061" timestamp="1583535491118" />
+    <state width="1477" height="333" key="GridCell.Tab.1.left" timestamp="1583535871193">
+      <screen x="0" y="23" width="2048" height="1059" />
     </state>
     <state width="1358" height="334" key="GridCell.Tab.1.left/0.23.2048.1052@0.23.2048.1052" timestamp="1577063580897" />
-    <state width="1358" height="334" key="GridCell.Tab.1.right" timestamp="1577063580898">
-      <screen x="0" y="23" width="2048" height="1052" />
+    <state width="1477" height="333" key="GridCell.Tab.1.left/0.23.2048.1059@0.23.2048.1059" timestamp="1583535871193" />
+    <state width="1477" height="333" key="GridCell.Tab.1.left/0.23.2048.1061@0.23.2048.1061" timestamp="1583535491118" />
+    <state width="1477" height="333" key="GridCell.Tab.1.right" timestamp="1583535871194">
+      <screen x="0" y="23" width="2048" height="1059" />
     </state>
     <state width="1358" height="334" key="GridCell.Tab.1.right/0.23.2048.1052@0.23.2048.1052" timestamp="1577063580898" />
+    <state width="1477" height="333" key="GridCell.Tab.1.right/0.23.2048.1059@0.23.2048.1059" timestamp="1583535871194" />
+    <state width="1477" height="333" key="GridCell.Tab.1.right/0.23.2048.1061@0.23.2048.1061" timestamp="1583535491118" />
     <state width="234" height="498" key="HiddenNamespacesPopup" timestamp="1577205304543">
       <screen x="0" y="23" width="2048" height="1052" />
     </state>
@@ -297,10 +337,12 @@
       <screen x="0" y="23" width="2048" height="1059" />
     </state>
     <state x="486" y="458" key="NewModule_or_Project.wizard/0.23.2048.1059@0.23.2048.1059" timestamp="1582585715994" />
-    <state x="691" y="171" key="SettingsEditor" timestamp="1576616307470">
-      <screen x="0" y="23" width="2048" height="1052" />
+    <state x="691" y="172" key="SettingsEditor" timestamp="1583535430493">
+      <screen x="0" y="23" width="2048" height="1061" />
     </state>
     <state x="691" y="171" key="SettingsEditor/0.23.2048.1052@0.23.2048.1052" timestamp="1576616307470" />
+    <state x="691" y="172" key="SettingsEditor/0.23.2048.1059@0.23.2048.1059" timestamp="1583535291937" />
+    <state x="691" y="172" key="SettingsEditor/0.23.2048.1061@0.23.2048.1061" timestamp="1583535430493" />
     <state x="1037" y="438" width="338" height="226" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1577208506969">
       <screen x="0" y="23" width="2048" height="1052" />
     </state>
@@ -329,10 +371,15 @@
       <screen x="0" y="23" width="2048" height="1052" />
     </state>
     <state x="1011" y="306" key="com.intellij.database.view.ui.DbObjectDialog/0.23.2048.1052@0.23.2048.1052" timestamp="1577061917581" />
-    <state x="802" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1578344325316">
-      <screen x="0" y="23" width="2048" height="1054" />
+    <state x="802" y="370" key="com.intellij.ide.util.TipDialog" timestamp="1583016489271">
+      <screen x="0" y="23" width="2048" height="1057" />
     </state>
     <state x="802" y="369" key="com.intellij.ide.util.TipDialog/0.23.2048.1054@0.23.2048.1054" timestamp="1578344325316" />
+    <state x="802" y="370" key="com.intellij.ide.util.TipDialog/0.23.2048.1057@0.23.2048.1057" timestamp="1583016489271" />
+    <state x="907" y="492" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1583535429222">
+      <screen x="0" y="23" width="2048" height="1061" />
+    </state>
+    <state x="907" y="492" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.23.2048.1061@0.23.2048.1061" timestamp="1583535429222" />
     <state x="303" y="23" width="847" height="980" key="dock-window-1" timestamp="1579233481728">
       <screen x="0" y="23" width="2048" height="1056" />
     </state>

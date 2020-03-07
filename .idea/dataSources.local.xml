@@ -19,5 +19,20 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
+    <data-source name="d47rhj1fb2te3j@ec2-54-246-90-10.eu-west-1.compute.amazonaws.com" uuid="0183e551-c53b-4275-83fd-5e80fe6cabff">
+      <database-info product="PostgreSQL" version="12.2 (Ubuntu 12.2-2.pgdg16.04+1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.5" dbms="POSTGRES" exact-version="12.2" exact-driver-version="42.2">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>quginjlexsklho</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
   </component>
 </project>
