@@ -1,4 +1,4 @@
-package com.zuk.conference;
+package com.zuk.conference.filter;
 
 import org.springframework.stereotype.Component;
 

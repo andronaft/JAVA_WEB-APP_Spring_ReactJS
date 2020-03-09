@@ -42,7 +42,6 @@ public class ConferenceDAOImpl extends ConferenceDAO {
         String error = "";
         System.out.println("start join in conf");
         if (con != null) {
-
                 try {
                     PreparedStatement pr, pr1;
                     System.out.println("try to do exequt + conference id "+ conference.getId());
