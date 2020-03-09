@@ -53,8 +53,12 @@ public class ConferenceDAOImpl extends ConferenceDAO {
                     String participantConferencsIds = "";
 
                     if(resultSet.next()) {
-                        conference.setAmount_participant(resultSet.getInt("AMOUNT_PARTICIPANT"));
-                        conference.setCapacity_room(resultSet.getInt("CAPACITY_ROOM"));
+                        conference = Conference.newBuilder()
+                                .setAmount_participant(resultSet.getInt("AMOUNT_PARTICIPANT"))
+                                .setCapacity_room(resultSet.getInt("CAPACITY_ROOM"))
+                                .build();
+//                        conference.setAmount_participant(resultSet.getInt("AMOUNT_PARTICIPANT"));
+//                        conference.setCapacity_room(resultSet.getInt("CAPACITY_ROOM"));
                         participantConferencsIds = resultSet.getString("ID_PARTICIPANT");
                     }
                     System.out.println("participant Conferences Ids old" + participantConferencsIds);
@@ -204,16 +208,17 @@ public class ConferenceDAOImpl extends ConferenceDAO {
 
 
                 while (resultSet.next()){
-                    Conference conference = new Conference();
-                   conference.setId(resultSet.getInt("ID"));
-                   conference.setName(resultSet.getString("NAME"));
-                   conference.setId_room(resultSet.getInt("ID_ROOM"));
-                   conference.setName_room(resultSet.getString("NAME_ROOM"));
-                   conference.setId_participant(resultSet.getString("id_PARTICIPANT"));
-                   conference.setCapacity_room(resultSet.getInt("CAPACITY_ROOM"));
-                   conference.setAmount_participant(resultSet.getInt("AMOUNT_PARTICIPANT"));
-                   conference.setDatee(resultSet.getDate("DATEE"));
-                   conference.setTimee(resultSet.getTime("TIMEE"));
+                    Conference conference = Conference.newBuilder()
+                            .setId(resultSet.getInt("ID"))
+                            .setName(resultSet.getString("NAME"))
+                            .setId_room(resultSet.getInt("ID_ROOM"))
+                            .setName_room(resultSet.getString("NAME_ROOM"))
+                            .setId_participant(resultSet.getString("id_PARTICIPANT"))
+                            .setCapacity_room(resultSet.getInt("CAPACITY_ROOM"))
+                            .setAmount_participant(resultSet.getInt("AMOUNT_PARTICIPANT"))
+                            .setDatee(resultSet.getDate("DATEE"))
+                            .setTimee(resultSet.getTime("TIMEE"))
+                            .build();
                    arrayList.add(conference);
                 }
 

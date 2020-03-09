@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public abstract class  ConferenceDAO {
+
     protected Connection con;
     protected ConnectionManager cm;
     protected ObjectMapper objectMapper = new ObjectMapper();

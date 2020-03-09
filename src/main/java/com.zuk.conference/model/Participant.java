@@ -12,18 +12,7 @@ public class Participant {
     private String password;
     private String role;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Participant that = (Participant) o;
-        return id == that.id;
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
 
     private String id_conference_participant;
 
@@ -112,4 +101,16 @@ public class Participant {
         this.id_conference_participant = id_conference_participant;
     }
     //Create builder later
+     @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Participant that = (Participant) o;
+            return id == that.id;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(id);
+        }
 }

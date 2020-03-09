@@ -1,4 +1,4 @@
-package com.zuk.conference;
+package com.zuk.conference.controller;
         import com.fasterxml.jackson.core.JsonProcessingException;
         import com.fasterxml.jackson.databind.ObjectMapper;
         import com.zuk.conference.conection.ConnectionManager;
@@ -16,7 +16,7 @@ package com.zuk.conference;
         import org.springframework.web.servlet.ModelAndView;
 
 @RestController
-public class HelloController {
+public class MainController {
     @Autowired
     NamedParameterJdbcTemplate jdbcTemplate;
     ConnectionManager cm = new ConnectionManager();
@@ -90,8 +90,7 @@ public class HelloController {
         admin.setId(admin_id);admin.setPassword(admin_password);
         Participant participant = new Participant();
         participant.setId(id_participant);
-        Conference conference = new Conference();
-        conference.setId(conference_id);
+        Conference conference = Conference.newBuilder().setId(conference_id).build();
         System.out.println(id_participant +"id_pars"+ conference_id +"id_conf"+ admin_id +"id_admin"+ admin_password +"pass");
 
         ConferenceDAOImpl conferenceDAO = new ConferenceDAOImpl();
@@ -103,8 +102,7 @@ public class HelloController {
     String createConf(@RequestParam String name ,@RequestParam int id_room ,@RequestParam Date datee ,@RequestParam Time timee,@RequestParam int admin_id, @RequestParam String admin_password){
         Participant admin = new Participant();
         admin.setId(admin_id);admin.setPassword(admin_password);
-        Conference conference = new Conference();
-        conference.setName(name);conference.setAmount_participant(0);conference.setId_room(id_room);conference.setDatee(datee);conference.setTimee(timee);
+        Conference conference = Conference.newBuilder().setName(name).setAmount_participant(0).setId_room(id_room).setDatee(datee).setTimee(timee).build();
 
         ConferenceDAOImpl conferenceDAO = new ConferenceDAOImpl();
 
@@ -115,8 +113,7 @@ public class HelloController {
     String cancelConf(@RequestParam int conference_id , @RequestParam int admin_id , @RequestParam String admin_password){
         Participant admin = new Participant();
         admin.setId(admin_id);admin.setPassword(admin_password);
-        Conference conference = new Conference();
-        conference.setId(conference_id);
+        Conference conference = Conference.newBuilder().setId(conference_id).build();
 
         ConferenceDAOImpl conferenceDAO = new ConferenceDAOImpl();
 
@@ -127,8 +124,8 @@ public class HelloController {
     String cancelConf(@RequestParam int conference_id , @RequestParam int admin_id , @RequestParam String admin_password, @RequestParam Date datee, @RequestParam Time timee){
         Participant admin = new Participant();
         admin.setId(admin_id);admin.setPassword(admin_password);
-        Conference conference = new Conference();
-        conference.setId(conference_id);conference.setDatee(datee);conference.setTimee(timee);
+        Conference conference = Conference.newBuilder().setId(conference_id).setDatee(datee).setTimee(timee).build();
+
 
         ConferenceDAOImpl conferenceDAO = new ConferenceDAOImpl();
 
@@ -149,8 +146,7 @@ public class HelloController {
     String joinConference(@RequestParam int conference_id , @RequestParam int user_id ){
         Participant participant = new Participant();
         participant.setId(user_id);
-        Conference conference = new Conference();
-        conference.setId(conference_id);
+        Conference conference = Conference.newBuilder().setId(conference_id).build();
 
         boolean ad = (0 == (7 * (4 ^ (2))%(3)));
         ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
