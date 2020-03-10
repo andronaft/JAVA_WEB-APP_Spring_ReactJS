@@ -36,6 +36,41 @@ class ConferenseAndAmountJSON {
 
 public class ConferenceDAOImpl extends ConferenceDAO {
 
+    @Override
+    public Conference findById(int conferenceId) {
+        System.out.println("Conference findById  Start");
+        Conference conference = null;
+        if (con != null) {
+            try {
+
+                PreparedStatement pr = getPrepareStatement("SELECT * from bd.CONFERENCE where ID = ?");
+                pr.setInt(1, conferenceId);
+                ResultSet resultSet = pr.executeQuery();
+
+                if (resultSet.next()) {
+                    conference = Conference.newBuilder()
+                            .setAmount_participant(resultSet.getInt("AMOUNT_PARTICIPANT"))
+                            .setCapacity_room(resultSet.getInt("CAPACITY_ROOM"))
+                            .setId(resultSet.getInt("ID"))
+                            .setName(resultSet.getString("NAME"))
+                            .setId_room(resultSet.getInt("ID_ROOM"))
+                            .setName_room(resultSet.getString("NAME_ROOM"))
+                            .setId_participant(resultSet.getString("ID_PARTICIPANT"))
+                            .setDatee(resultSet.getDate("DATEE"))
+                            .setTimee(resultSet.getTime("TIMEE"))
+                            .build();
+                }
+            } catch (SQLException e) {
+                System.out.println("SQL ex ");
+                e.printStackTrace();
+            }
+        }
+        else {
+            System.out.println("No connection");
+        }
+
+        return conference;
+    }
 
     @Override
     public String joinNewParticipant(Participant participant, Conference conference) {

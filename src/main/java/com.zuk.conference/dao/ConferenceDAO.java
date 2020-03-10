@@ -21,6 +21,7 @@ public abstract class  ConferenceDAO {
         con = cm.getConnection();
     }
 
+    public abstract Conference findById(int conferenceId);
     public abstract String joinNewParticipant(Participant participant, Conference conference);
     public abstract String cancelConferece(Participant admin,Conference conference);
     public abstract String getAllConference();

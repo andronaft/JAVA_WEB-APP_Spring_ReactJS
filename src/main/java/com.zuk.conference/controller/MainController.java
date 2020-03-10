@@ -7,6 +7,8 @@ package com.zuk.conference.controller;
         import com.zuk.conference.model.Conference;
         import com.zuk.conference.model.Participant;
         import java.sql.*;
+
+        import com.zuk.conference.service.impl.ConferenceServiceImpl;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
         import org.springframework.web.bind.annotation.RequestMapping;
@@ -158,5 +160,13 @@ public class MainController {
     String chekCon(){
         ConnectionManager connectionManager = new ConnectionManager();
         return String.valueOf(connectionManager.getConnection());
+    }
+
+    @RequestMapping("/findConferenceById")
+    String findConferenceById(@RequestParam int conferenceId){
+        ConferenceServiceImpl conferenceService = new ConferenceServiceImpl();
+        Participant participant = new Participant();
+
+        return conferenceService.joinNewParticipant(participant,conferenceId);
     }
 }

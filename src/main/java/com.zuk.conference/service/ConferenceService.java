@@ -4,5 +4,5 @@ import com.zuk.conference.model.Conference;
 import com.zuk.conference.model.Participant;
 
 public interface ConferenceService {
-    String joinNewParticipant(Participant participant, Conference conference);
+    String joinNewParticipant(Participant participant, int conferenceId);
 }

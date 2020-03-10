@@ -2,18 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40ffc072-0e54-45fc-aabd-2aa68c8f10af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/service/ConferenceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/service/impl/ConferenceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/auxiliary/JsonStringMaker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/AppConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/CORSFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/filter/CORSFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/ConferenceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/ConferenceDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/daoimpl/ConferenceDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/daoimpl/ConferenceDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/AppConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/CORSFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/MainController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Conference$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Conference$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Conference.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Conference.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Participant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Participant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/service/ConferenceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/service/ConferenceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/service/impl/ConferenceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/service/impl/ConferenceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/controller/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/ConferenceDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/ConferenceDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/daoimpl/ConferenceDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/daoimpl/ConferenceDAOImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +51,41 @@
         <item name="TEST: database" type="2aa06773:H2ImplModel$Database" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="BD: schema" type="7f85d983:H2ImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="test" type="feb32156:DbDataSourceImpl" />
+        <item name="TEST: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="BD: schema" type="7f85d983:H2ImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="test" type="feb32156:DbDataSourceImpl" />
+        <item name="TEST: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="BD: schema" type="7f85d983:H2ImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="CONFERENCE: table" type="818c1b4a:H2ImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="test" type="feb32156:DbDataSourceImpl" />
+        <item name="TEST: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="BD: schema" type="7f85d983:H2ImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="PARTICIPANT: table" type="818c1b4a:H2ImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="test" type="feb32156:DbDataSourceImpl" />
+        <item name="TEST: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="BD: schema" type="7f85d983:H2ImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="ROOM: table" type="818c1b4a:H2ImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -172,6 +205,20 @@
                 <item name="root:d47rhj1fb2te3j@ec2-54-246-90-10.eu-west-1.compute.amazonaws.com" type="7427dc5b:ServiceModel$ServiceGroupNode" />
                 <item name="com.intellij.database.console.session.MessageBusSession@68802bfb" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:test" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:test" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@3b9d6679" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:test" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@4a7e67e" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
             </expand>
             <select />
           </treeState>
@@ -197,7 +244,7 @@
       <workItem from="1582677332731" duration="2788000" />
       <workItem from="1583015655183" duration="481000" />
       <workItem from="1583016298712" duration="728000" />
-      <workItem from="1583532135884" duration="24796000" />
+      <workItem from="1583532135884" duration="30064000" />
     </task>
     <servers />
   </component>
@@ -219,63 +266,63 @@
       <screen x="0" y="23" width="2048" height="1059" />
     </state>
     <state x="416" y="333" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2048.1059@0.23.2048.1059" timestamp="1583535734797" />
-    <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser" timestamp="1583792554892">
+    <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser" timestamp="1583806634957">
       <screen x="0" y="23" width="2048" height="1057" />
     </state>
     <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1052@0.23.2048.1052" timestamp="1577482881412" />
     <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1054@0.23.2048.1054" timestamp="1578441344140" />
     <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1056@0.23.2048.1056" timestamp="1582335013051" />
-    <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1057@0.23.2048.1057" timestamp="1583792554892" />
+    <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1057@0.23.2048.1057" timestamp="1583806634957" />
     <state x="959" y="248" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1061@0.23.2048.1061" timestamp="1579208258494" />
-    <state x="478" y="512" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1583792065642">
+    <state x="478" y="512" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1583806344271">
       <screen x="0" y="23" width="2048" height="1057" />
     </state>
-    <state x="478" y="512" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.23.2048.1057@0.23.2048.1057" timestamp="1583792065642" />
-    <state x="653" y="471" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1583791893683">
+    <state x="478" y="512" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.23.2048.1057@0.23.2048.1057" timestamp="1583806344271" />
+    <state x="653" y="471" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1583806346315">
       <screen x="0" y="23" width="2048" height="1057" />
     </state>
-    <state x="653" y="471" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.23.2048.1057@0.23.2048.1057" timestamp="1583791893683" />
+    <state x="653" y="471" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.23.2048.1057@0.23.2048.1057" timestamp="1583806346315" />
     <state x="700" y="186" key="DBNavigator.ProjectSettingsDialog" timestamp="1583541667275">
       <screen x="0" y="23" width="2048" height="1059" />
     </state>
     <state x="700" y="186" key="DBNavigator.ProjectSettingsDialog/0.23.2048.1059@0.23.2048.1059" timestamp="1583541667275" />
-    <state width="1477" height="208" key="GridCell.Tab.0.bottom" timestamp="1583791938934">
+    <state width="1477" height="206" key="GridCell.Tab.0.bottom" timestamp="1583807252575">
       <screen x="0" y="23" width="2048" height="1057" />
     </state>
     <state width="930" height="271" key="GridCell.Tab.0.bottom/0.23.2048.1052@0.23.2048.1052" timestamp="1578344771551" />
     <state width="1358" height="272" key="GridCell.Tab.0.bottom/0.23.2048.1054@0.23.2048.1054" timestamp="1579222401892" />
     <state width="1358" height="271" key="GridCell.Tab.0.bottom/0.23.2048.1056@0.23.2048.1056" timestamp="1582334263363" />
-    <state width="1477" height="208" key="GridCell.Tab.0.bottom/0.23.2048.1057@0.23.2048.1057" timestamp="1583791938934" />
+    <state width="1477" height="206" key="GridCell.Tab.0.bottom/0.23.2048.1057@0.23.2048.1057" timestamp="1583807252575" />
     <state width="1013" height="271" key="GridCell.Tab.0.bottom/0.23.2048.1059@0.23.2048.1059" timestamp="1583542067501" />
     <state width="1477" height="210" key="GridCell.Tab.0.bottom/0.23.2048.1061@0.23.2048.1061" timestamp="1583544398625" />
     <state width="1358" height="272" key="GridCell.Tab.0.bottom/0.23.2048.1062@0.23.2048.1062" timestamp="1579058571153" />
-    <state width="1477" height="208" key="GridCell.Tab.0.center" timestamp="1583791938933">
+    <state width="1477" height="206" key="GridCell.Tab.0.center" timestamp="1583807252574">
       <screen x="0" y="23" width="2048" height="1057" />
     </state>
     <state width="930" height="271" key="GridCell.Tab.0.center/0.23.2048.1052@0.23.2048.1052" timestamp="1578344771549" />
     <state width="1358" height="272" key="GridCell.Tab.0.center/0.23.2048.1054@0.23.2048.1054" timestamp="1579222401891" />
     <state width="1358" height="271" key="GridCell.Tab.0.center/0.23.2048.1056@0.23.2048.1056" timestamp="1582334263362" />
-    <state width="1477" height="208" key="GridCell.Tab.0.center/0.23.2048.1057@0.23.2048.1057" timestamp="1583791938933" />
+    <state width="1477" height="206" key="GridCell.Tab.0.center/0.23.2048.1057@0.23.2048.1057" timestamp="1583807252574" />
     <state width="1013" height="271" key="GridCell.Tab.0.center/0.23.2048.1059@0.23.2048.1059" timestamp="1583542067500" />
     <state width="1477" height="210" key="GridCell.Tab.0.center/0.23.2048.1061@0.23.2048.1061" timestamp="1583544398624" />
     <state width="1358" height="272" key="GridCell.Tab.0.center/0.23.2048.1062@0.23.2048.1062" timestamp="1579058571151" />
-    <state width="1477" height="208" key="GridCell.Tab.0.left" timestamp="1583791938932">
+    <state width="1477" height="206" key="GridCell.Tab.0.left" timestamp="1583807252574">
       <screen x="0" y="23" width="2048" height="1057" />
     </state>
     <state width="930" height="271" key="GridCell.Tab.0.left/0.23.2048.1052@0.23.2048.1052" timestamp="1578344771548" />
     <state width="1358" height="272" key="GridCell.Tab.0.left/0.23.2048.1054@0.23.2048.1054" timestamp="1579222401890" />
     <state width="1358" height="271" key="GridCell.Tab.0.left/0.23.2048.1056@0.23.2048.1056" timestamp="1582334263362" />
-    <state width="1477" height="208" key="GridCell.Tab.0.left/0.23.2048.1057@0.23.2048.1057" timestamp="1583791938932" />
+    <state width="1477" height="206" key="GridCell.Tab.0.left/0.23.2048.1057@0.23.2048.1057" timestamp="1583807252574" />
     <state width="1013" height="271" key="GridCell.Tab.0.left/0.23.2048.1059@0.23.2048.1059" timestamp="1583542067499" />
     <state width="1477" height="210" key="GridCell.Tab.0.left/0.23.2048.1061@0.23.2048.1061" timestamp="1583544398624" />
     <state width="1358" height="272" key="GridCell.Tab.0.left/0.23.2048.1062@0.23.2048.1062" timestamp="1579058571151" />
-    <state width="1477" height="208" key="GridCell.Tab.0.right" timestamp="1583791938933">
+    <state width="1477" height="206" key="GridCell.Tab.0.right" timestamp="1583807252575">
       <screen x="0" y="23" width="2048" height="1057" />
     </state>
     <state width="930" height="271" key="GridCell.Tab.0.right/0.23.2048.1052@0.23.2048.1052" timestamp="1578344771550" />
     <state width="1358" height="272" key="GridCell.Tab.0.right/0.23.2048.1054@0.23.2048.1054" timestamp="1579222401891" />
     <state width="1358" height="271" key="GridCell.Tab.0.right/0.23.2048.1056@0.23.2048.1056" timestamp="1582334263363" />
-    <state width="1477" height="208" key="GridCell.Tab.0.right/0.23.2048.1057@0.23.2048.1057" timestamp="1583791938933" />
+    <state width="1477" height="206" key="GridCell.Tab.0.right/0.23.2048.1057@0.23.2048.1057" timestamp="1583807252575" />
     <state width="1013" height="271" key="GridCell.Tab.0.right/0.23.2048.1059@0.23.2048.1059" timestamp="1583542067501" />
     <state width="1477" height="210" key="GridCell.Tab.0.right/0.23.2048.1061@0.23.2048.1061" timestamp="1583544398625" />
     <state width="1358" height="272" key="GridCell.Tab.0.right/0.23.2048.1062@0.23.2048.1062" timestamp="1579058571152" />
@@ -385,7 +432,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/daoimpl/ConferenceDAOImpl.java</url>
-          <line>133</line>
+          <line>168</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
