@@ -2,20 +2,14 @@ package com.zuk.conference.dao.daoimpl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.zuk.conference.conection.ConnectionManager;
 import com.zuk.conference.dao.ParticipantDAO;
 import com.zuk.conference.model.Conference;
 import com.zuk.conference.model.Participant;
-import com.zuk.conference.model.Room;
-import org.h2.value.ValueBytes;
+
 import org.springframework.util.DigestUtils;
 
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -122,7 +116,7 @@ public class ParticipantDAOImpl implements ParticipantDAO {
                     participant.setLogin(resultSet.getString("LOGIN"));
                     participant.setFirstName(resultSet.getString("FIRSTNAME"));
                     participant.setLastName(resultSet.getString("LASTNAME"));
-                    participant.setBirthDay(resultSet.getDate("BIRTHDAY"));
+                    participant.setBirthDay((Date.valueOf((resultSet.getDate("BIRTHDAY")).toLocalDate())));
                     participant.setId_conference_participant(resultSet.getString("ID_CONFERENCE_PARTICIPANT"));
                     participant.setRole(resultSet.getString("ROLE"));
                 }

@@ -5,12 +5,10 @@ import com.zuk.conference.dao.daoimpl.ConferenceDAOImpl;
 import com.zuk.conference.model.Conference;
 import com.zuk.conference.model.Participant;
 import com.zuk.conference.service.ConferenceService;
-import org.assertj.core.util.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+
 
 public class ConferenceServiceImpl  implements ConferenceService {
 

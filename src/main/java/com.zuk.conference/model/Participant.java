@@ -1,5 +1,6 @@
 package com.zuk.conference.model;
 
+
 import java.sql.Date;
 import java.util.Objects;
 
