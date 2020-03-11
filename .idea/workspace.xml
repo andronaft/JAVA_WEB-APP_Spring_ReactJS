@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40ffc072-0e54-45fc-aabd-2aa68c8f10af" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/conection/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/conection/ConnectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="40ffc072-0e54-45fc-aabd-2aa68c8f10af" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -229,7 +226,7 @@
       <workItem from="1583016298712" duration="728000" />
       <workItem from="1583532135884" duration="30446000" />
       <workItem from="1583871259415" duration="7283000" />
-      <workItem from="1583947055335" duration="4322000" />
+      <workItem from="1583947055335" duration="4725000" />
     </task>
     <servers />
   </component>
