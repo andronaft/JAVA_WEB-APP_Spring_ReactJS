@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40ffc072-0e54-45fc-aabd-2aa68c8f10af" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/filter/CORSFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/filter/CORSFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/auxiliary/JsonStringMaker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/conection/ConnectionManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/controller/MainController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/ConferenceDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/ParticipantDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/RoomDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/daoimpl/ConferenceDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/daoimpl/ConferenseAndAmountJSON.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/daoimpl/ParticipantDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/daoimpl/RoomDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/filter/CORSFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Conference$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Conference$Builder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Conference.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Participant.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Room.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/service/ConferenceService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/service/impl/ConferenceServiceImpl.class" beforeDir="false" />
-    </list>
+    <list default="true" id="40ffc072-0e54-45fc-aabd-2aa68c8f10af" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -249,7 +226,7 @@
       <workItem from="1583016298712" duration="728000" />
       <workItem from="1583532135884" duration="30446000" />
       <workItem from="1583871259415" duration="7283000" />
-      <workItem from="1583947055335" duration="2668000" />
+      <workItem from="1583947055335" duration="2966000" />
     </task>
     <servers />
   </component>
