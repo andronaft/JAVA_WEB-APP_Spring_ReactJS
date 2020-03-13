@@ -42,8 +42,8 @@ public class    ConnectionManager {
 
         try {
             //connection = DriverManager.getConnection(dataSourceProperties.getUrl(),dataSourceProperties.getUsername(),dataSourceProperties.getPassword());
-            //connection = DriverManager.getConnection(property.getProperty("spring.datasource.url"),property.getProperty("spring.datasource.username"),property.getProperty("spring.datasource.password"));
-            connection = DriverManager.getConnection("jdbc:postgresql://ec2-54-246-90-10.eu-west-1.compute.amazonaws.com:5432/d47rhj1fb2te3j?sslmode=require","quginjlexsklho","32adc7e0827e7fbe15f382b838850be5e5672f5e6849a803f9388489ec00a005");
+            connection = DriverManager.getConnection(property.getProperty("spring.datasource.url"),property.getProperty("spring.datasource.username"),property.getProperty("spring.datasource.password"));
+            //connection = DriverManager.getConnection("jdbc:postgresql://ec2-54-246-90-10.eu-west-1.compute.amazonaws.com:5432/d47rhj1fb2te3j?sslmode=require","quginjlexsklho","32adc7e0827e7fbe15f382b838850be5e5672f5e6849a803f9388489ec00a005");
         } catch (SQLException e) {
             e.printStackTrace();
         }
