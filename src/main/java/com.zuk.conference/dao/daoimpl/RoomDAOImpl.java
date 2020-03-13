@@ -11,12 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class RoomDAOImpl implements RoomDAO {
-    private ObjectMapper objectMapper = new ObjectMapper();
-
-    ConnectionManager cm = new ConnectionManager();
-    Connection con = cm.getConnection();
-    String jsonInString="";
+public class RoomDAOImpl extends RoomDAO {
 
     @Override
     public void insertRoom() {

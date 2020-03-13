@@ -15,12 +15,8 @@ import org.springframework.util.DigestUtils;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class ParticipantDAOImpl implements ParticipantDAO {
+public class ParticipantDAOImpl extends ParticipantDAO {
 
-    ConnectionManager cm = new ConnectionManager();
-    Connection con = cm.getConnection();
-    String jsonInString="";
-    ObjectMapper objectMapper = new ObjectMapper();
 
 
     @Override
