@@ -2,31 +2,60 @@ package com.zuk.conference.service.impl;
 
 import com.zuk.conference.auxiliary.JsonStringMaker;
 import com.zuk.conference.dao.daoimpl.ConferenceDAOImpl;
+import com.zuk.conference.dao.daoimpl.ParticipantDAOImpl;
 import com.zuk.conference.model.Conference;
 import com.zuk.conference.model.Participant;
 import com.zuk.conference.service.ConferenceService;
-import org.springframework.beans.factory.annotation.Autowired;
+
 
 import java.util.ArrayList;
 
 
 public class ConferenceServiceImpl  implements ConferenceService {
 
-    @Autowired
-    JsonStringMaker jsonStringMaker;
+
+    JsonStringMaker jsonStringMaker = new JsonStringMaker();
 
     ConferenceDAOImpl conferenceDAO = new ConferenceDAOImpl();
+    ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
 
     @Override
-    public String joinNewParticipant(Participant participant, int conferenceId) {//TODO Do somthing
-        Conference conferencefind = conferenceDAO.findById(conferenceId);
-        System.out.println(conferencefind.toString());
-        System.out.println(conferencefind.getName());
-        ArrayList arrayList = new ArrayList();
+    public String joinNewParticipant(int participantId, int conferenceId) {
 
-        arrayList.add(conferencefind);
-        arrayList.add(conferencefind);
-        jsonStringMaker.listToJson(arrayList);
-        return null;
+        Conference conference = conferenceDAO.findById(conferenceId);
+
+        if(conference.getAmount_participant()<conference.getCapacity_room()){
+            String participantIds = conference.getId_participant();
+            if (participantIds == null) {
+                participantIds = "";
+            }
+
+            String[] strArray = participantIds.split(",");
+            int[] intArray = new int[strArray.length];
+
+            boolean containParticipant = false;
+            if(participantIds!="") {
+                for (int i = 0; i < strArray.length; i++) {
+                    try {
+                        intArray[i] = Integer.parseInt(strArray[i]);
+                        if (intArray[i] == participantId) {
+                            containParticipant = true;
+                        }
+                    } catch (NumberFormatException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            if(!containParticipant){
+                participantIds += (participantIds + ",");
+                conferenceDAO.updateIdParticipant(participantIds,(conference.getAmount_participant()+1),conferenceId);
+
+            }
+        }
+
+
+        return jsonStringMaker.objectToJson(conference);
+        //return conferenceDAO.isFilled(conferenceId).toString();
     }
 }

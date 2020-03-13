@@ -37,14 +37,14 @@ class ConferenseAndAmountJSON {
 public class ConferenceDAOImpl extends ConferenceDAO {
 
     @Override
-    public Conference findById(int conferenceId) {
+    public Conference findById(int id) {
         System.out.println("Conference findById  Start");
         Conference conference = null;
         if (con != null) {
             try {
 
                 PreparedStatement pr = getPrepareStatement("SELECT * from CONFERENCE where ID = ?");
-                pr.setInt(1, conferenceId);
+                pr.setInt(1, id);
                 ResultSet resultSet = pr.executeQuery();
 
                 if (resultSet.next()) {
@@ -71,6 +71,63 @@ public class ConferenceDAOImpl extends ConferenceDAO {
 
         return conference;
     }
+
+    @Override
+    public void updateIdParticipant(String idParticipant, int amountParticipant, int id) {
+        System.out.println("Conference updateIdParicipant  Start");
+        Conference conference = null;
+        if (con != null) {
+            try {
+
+                PreparedStatement pr = getPrepareStatement("Update  CONFERENCE set ID_PARTICIPANT = ?, AMOUNT_PARTICIPANT = ? where ID=?");
+                pr.setString(1, idParticipant);
+                pr.setInt(2,amountParticipant);
+                pr.setInt(3,id);
+                pr.executeUpdate();
+            }
+            catch (SQLException e) {
+                System.out.println("SQL ex ");
+                e.printStackTrace();
+            }
+        }
+        else {
+            System.out.println("No connection");
+        }
+
+
+    }
+
+   /* @Override
+    public Boolean isFilled(int conferenceId) {
+        System.out.println("Conference isFilled  Start");
+        Conference conference = null;
+        boolean isFilled = true;
+        if (con != null) {
+            try {
+
+                PreparedStatement pr = getPrepareStatement("SELECT * from CONFERENCE where ID = ?");
+                pr.setInt(1, conferenceId);
+                ResultSet resultSet = pr.executeQuery();
+
+                if (resultSet.next()) {
+                    conference = Conference.newBuilder()
+                            .setAmount_participant(resultSet.getInt("AMOUNT_PARTICIPANT"))
+                            .setCapacity_room(resultSet.getInt("CAPACITY_ROOM"))
+                            .build();
+                }
+                if(conference.getAmount_participant()<conference.getCapacity_room()){
+                    isFilled = false;
+                }
+            } catch (SQLException e) {
+                System.out.println("SQL ex ");
+                e.printStackTrace();
+            }
+        }
+        else {
+            System.out.println("No connection");
+        }
+        return isFilled;
+    }*/
 
     @Override
     public String joinNewParticipant(Participant participant, Conference conference) {
@@ -236,7 +293,7 @@ public class ConferenceDAOImpl extends ConferenceDAO {
             try {
                 PreparedStatement pr,pr1;
 
-                pr1 = con.prepareStatement("SELECT  * from CONFERENCE WHERE DATEE > CURRENT_DATE() ORDER BY DATEE ASC, TIMEE ASC");
+                pr1 = con.prepareStatement("SELECT  * from CONFERENCE WHERE DATEE > CURRENT_DATE ORDER BY DATEE ASC, TIMEE ASC");
 
                 ResultSet resultSet = pr1.executeQuery();
 

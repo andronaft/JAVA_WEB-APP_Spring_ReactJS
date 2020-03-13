@@ -2,6 +2,7 @@ package com.zuk.conference.auxiliary;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.zuk.conference.model.Conference;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -40,7 +41,7 @@ public class JsonStringMaker {
         return jsonInString;
     }
 
-    public String listToJson(ArrayList list) {
+    public String arrayListToJson(ArrayList list) {
         jsonInString = "";
         Boolean isCreateJson = false;
         try {

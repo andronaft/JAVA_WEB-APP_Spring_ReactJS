@@ -15,16 +15,7 @@ public class Conference {
     private Time timee;
     private String id_participant;
 
-    public Conference(String name, int id_room, Date datee, Time timee) {
-        this.name = name;
-        this.id_room = id_room;
-        this.datee = datee;
-        this.timee = timee;
-    }
-
-    public Conference() {
-
-    }
+    public Conference() {}
 
     public int getId() {
         return id;

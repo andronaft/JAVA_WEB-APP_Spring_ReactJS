@@ -21,13 +21,16 @@ public abstract class  ConferenceDAO {
         con = cm.getConnection();
     }
 
-    public abstract Conference findById(int conferenceId);
+    public abstract Conference findById(int id);
+    /*public abstract Boolean isFilled(int conferenceId);*/
+    public abstract void updateIdParticipant(String idParticipant, int amountParticipant, int id);
     public abstract String joinNewParticipant(Participant participant, Conference conference);
     public abstract String cancelConferece(Participant admin,Conference conference);
     public abstract String getAllConference();
     public abstract String createConf(Participant participant,Conference conference);
     public abstract String removeParticipant(Participant admin,Participant participant,Conference conference);
     public abstract String changeTime(Participant participant, Conference conference);
+
 
     public PreparedStatement getPrepareStatement(String sql) {
         PreparedStatement ps = null;

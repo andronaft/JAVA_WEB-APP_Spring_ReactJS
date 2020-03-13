@@ -1,7 +1,9 @@
 package com.zuk.conference.dao.daoimpl;
 
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.zuk.conference.conection.ConnectionManager;
 import com.zuk.conference.dao.ParticipantDAO;
 import com.zuk.conference.model.Conference;
@@ -21,6 +23,12 @@ public class ParticipantDAOImpl implements ParticipantDAO {
     Connection con = cm.getConnection();
     String jsonInString="";
 
+
+    @Override
+    public Participant findById(int id) {
+
+        return null;
+    }
 
     @Override
     public String insertParticipant(Participant participant){
@@ -116,7 +124,9 @@ public class ParticipantDAOImpl implements ParticipantDAO {
                     participant.setLogin(resultSet.getString("LOGIN"));
                     participant.setFirstName(resultSet.getString("FIRSTNAME"));
                     participant.setLastName(resultSet.getString("LASTNAME"));
-                    participant.setBirthDay((Date.valueOf((resultSet.getDate("BIRTHDAY")).toLocalDate())));
+                    participant.setBirthDay(resultSet.getDate("BIRTHDAY"));
+                    System.out.println(resultSet.getDate("BIRTHDAY"));
+                    System.out.println(participant.getBirthDay());
                     participant.setId_conference_participant(resultSet.getString("ID_CONFERENCE_PARTICIPANT"));
                     participant.setRole(resultSet.getString("ROLE"));
                 }

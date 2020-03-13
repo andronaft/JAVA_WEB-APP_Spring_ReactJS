@@ -163,10 +163,9 @@ public class MainController {
     }
 
     @RequestMapping("/findConferenceById")
-    String findConferenceById(@RequestParam int conferenceId){
+    String findConferenceById(@RequestParam int conferenceId,@RequestParam int participantId){
         ConferenceServiceImpl conferenceService = new ConferenceServiceImpl();
-        Participant participant = new Participant();
 
-        return conferenceService.joinNewParticipant(participant,conferenceId);
+        return  conferenceService.joinNewParticipant(participantId,conferenceId);
     }
 }
