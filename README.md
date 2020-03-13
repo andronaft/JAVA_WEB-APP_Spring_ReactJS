@@ -15,7 +15,7 @@ There are three user clusters for this .
 2. ***Authorized users***
 3. ***Admin***
 
-### They have access to different functionalities.
+###  They have access to different functionalities.
 
 > ***Default users***
 > > * Сan only watch conference information  ![Func defUser](https://github.com/andronaft/JAVA_Spring_React_WEB_APP/blob/master/src/main/resources/img_for_README/defaulrUser_function.png)
