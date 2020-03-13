@@ -31,7 +31,7 @@ public class ParticipantDAOImpl implements ParticipantDAO {
             try {
                 PreparedStatement pr,pr1;
 
-                pr1 = con.prepareStatement("SELECT 1 from bd.PARTICIPANT where Login=?");
+                pr1 = con.prepareStatement("SELECT 1 from PARTICIPANT where Login=?");
                 pr1.setString(1,participant.getLogin());
 
                 ResultSet resultSet = pr1.executeQuery();
@@ -46,7 +46,7 @@ public class ParticipantDAOImpl implements ParticipantDAO {
                     System.out.println(resultSet.getInt(1));
                 }
                 if(isUserExists!=true){
-                    pr = con.prepareStatement("insert into bd.PARTICIPANT (firstname,lastname,birthday,login,password) values (?,?,?,?,?)");
+                    pr = con.prepareStatement("insert into PARTICIPANT (firstname,lastname,birthday,login,password) values (?,?,?,?,?)");
                     pr.setString(1,participant.getFirstName());
                     pr.setString(2,participant.getLastName());
                     pr.setDate(3,participant.getBirthDay());
@@ -107,7 +107,7 @@ public class ParticipantDAOImpl implements ParticipantDAO {
             try {
                 PreparedStatement pr,pr1;
                 System.out.println("participant id" + participant.getId());
-                pr1 = con.prepareStatement("SELECT  * from bd.PARTICIPANT where ID=?");
+                pr1 = con.prepareStatement("SELECT  * from PARTICIPANT where ID=?");
                 pr1.setInt(1,participant.getId());
 
                 ResultSet resultSet = pr1.executeQuery();
@@ -183,7 +183,7 @@ public class ParticipantDAOImpl implements ParticipantDAO {
             try {
                 PreparedStatement pr,pr1;
 
-                pr1 = con.prepareStatement("SELECT  * from bd.PARTICIPANT where Login=?");
+                pr1 = con.prepareStatement("SELECT  * from PARTICIPANT where Login=?");
                 pr1.setString(1,participant.getLogin());
 
                 ResultSet resultSet = pr1.executeQuery();
@@ -268,7 +268,7 @@ public class ParticipantDAOImpl implements ParticipantDAO {
             try {
                 PreparedStatement pr,pr1;
 
-                pr1 = con.prepareStatement("SELECT * from bd.PARTICIPANT where ID=?");
+                pr1 = con.prepareStatement("SELECT * from PARTICIPANT where ID=?");
                 pr1.setInt(1,participant.getId());
 
                 ResultSet resultSet = pr1.executeQuery();
@@ -298,7 +298,7 @@ public class ParticipantDAOImpl implements ParticipantDAO {
                 }
                 if(!containParticipant) {
                     ids_conference += (conference.getId() + ",");
-                    pr = con.prepareStatement("update bd.PARTICIPANT SET ID_CONFERENCE_PARTICIPANT = ? WHERE id=?");
+                    pr = con.prepareStatement("update PARTICIPANT SET ID_CONFERENCE_PARTICIPANT = ? WHERE id=?");
                     pr.setString(1, ids_conference);
                     pr.setInt(2, participant.getId());
                     pr.executeUpdate();
@@ -357,7 +357,7 @@ public class ParticipantDAOImpl implements ParticipantDAO {
             try {
                 PreparedStatement pr,pr1;
 
-                pr1 = con.prepareStatement("SELECT  * from bd.PARTICIPANT where ID=?");
+                pr1 = con.prepareStatement("SELECT  * from PARTICIPANT where ID=?");
                 pr1.setInt(1,participant.getId());
                 System.out.println("admin id "+participant.getId() +" pass " + participant.getPassword());
                 ResultSet resultSet = pr1.executeQuery();
@@ -397,7 +397,7 @@ public class ParticipantDAOImpl implements ParticipantDAO {
                 PreparedStatement pr,pr1;
 
 
-                pr1 = conn.prepareStatement("SELECT  * from bd.PARTICIPANT where ID=?");
+                pr1 = conn.prepareStatement("SELECT  * from PARTICIPANT where ID=?");
                 pr1.setInt(1,participant.getId());
                 System.out.println("participant id= "+participant.getId());
 
@@ -434,7 +434,7 @@ public class ParticipantDAOImpl implements ParticipantDAO {
                 }
 
                 System.out.println(responseIdConference);
-                pr = conn.prepareStatement("Update  bd.PARTICIPANT set ID_CONFERENCE_PARTICIPANT = ? where ID=?");
+                pr = conn.prepareStatement("Update  PARTICIPANT set ID_CONFERENCE_PARTICIPANT = ? where ID=?");
                 pr.setString(1,responseIdConference);
                 pr.setInt(2,participant.getId());
 

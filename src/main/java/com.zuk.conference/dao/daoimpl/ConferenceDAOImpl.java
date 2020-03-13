@@ -43,7 +43,7 @@ public class ConferenceDAOImpl extends ConferenceDAO {
         if (con != null) {
             try {
 
-                PreparedStatement pr = getPrepareStatement("SELECT * from bd.CONFERENCE where ID = ?");
+                PreparedStatement pr = getPrepareStatement("SELECT * from CONFERENCE where ID = ?");
                 pr.setInt(1, conferenceId);
                 ResultSet resultSet = pr.executeQuery();
 
@@ -80,7 +80,7 @@ public class ConferenceDAOImpl extends ConferenceDAO {
                 try {
                     PreparedStatement pr, pr1;
                     System.out.println("try to do exequt + conference id "+ conference.getId());
-                    pr1 = con.prepareStatement("SELECT * from bd.CONFERENCE where ID = ?");
+                    pr1 = con.prepareStatement("SELECT * from CONFERENCE where ID = ?");
                     pr1.setInt(1,conference.getId());
 
                     ResultSet resultSet = pr1.executeQuery();
@@ -123,7 +123,7 @@ public class ConferenceDAOImpl extends ConferenceDAO {
                             participantConferencsIds += (participant.getId() + ",");
                             System.out.println("prticipant Conference IDS new "+ participantConferencsIds);
 
-                            pr = con.prepareStatement("Update  bd.CONFERENCE set ID_PARTICIPANT = ?, AMOUNT_PARTICIPANT = ? where ID=?");
+                            pr = con.prepareStatement("Update  CONFERENCE set ID_PARTICIPANT = ?, AMOUNT_PARTICIPANT = ? where ID=?");
                             pr.setString(1, participantConferencsIds);
                             System.out.println(" parcipiant Conf" + participantConferencsIds);
                             pr.setInt(2, (conference.getAmount_participant()+1));
@@ -175,7 +175,7 @@ public class ConferenceDAOImpl extends ConferenceDAO {
                 try {
                     PreparedStatement pr1;
 
-                    pr1 = con.prepareStatement("DELETE from bd.CONFERENCE where ID=?");
+                    pr1 = con.prepareStatement("DELETE from CONFERENCE where ID=?");
                     pr1.setInt(1,conference.getId());
                     pr1.executeUpdate();
                     message+=("Conference was delete");
@@ -236,7 +236,7 @@ public class ConferenceDAOImpl extends ConferenceDAO {
             try {
                 PreparedStatement pr,pr1;
 
-                pr1 = con.prepareStatement("SELECT  * from bd.CONFERENCE WHERE DATEE > CURRENT_DATE() ORDER BY DATEE ASC, TIMEE ASC");
+                pr1 = con.prepareStatement("SELECT  * from CONFERENCE WHERE DATEE > CURRENT_DATE() ORDER BY DATEE ASC, TIMEE ASC");
 
                 ResultSet resultSet = pr1.executeQuery();
 
@@ -320,7 +320,7 @@ public class ConferenceDAOImpl extends ConferenceDAO {
                 try {
                     PreparedStatement pr1;
 
-                    pr1 = con.prepareStatement("insert into bd.CONFERENCE (NAME,ID_ROOM,NAME_ROOM,CAPACITY_ROOM,AMOUNT_PARTICIPANT,DATEE,TIMEE) values (?,?,?,?,?,?,?)");
+                    pr1 = con.prepareStatement("insert into CONFERENCE (NAME,ID_ROOM,NAME_ROOM,CAPACITY_ROOM,AMOUNT_PARTICIPANT,DATEE,TIMEE) values (?,?,?,?,?,?,?)");
                     pr1.setString(1,conference.getName());
                     pr1.setInt(2,room.getId());
                     pr1.setString(3,room.getName());
@@ -391,7 +391,7 @@ public class ConferenceDAOImpl extends ConferenceDAO {
                 try {
                     PreparedStatement pr, pr1;
                     System.out.println("try to do exequt");
-                    pr1 = con.prepareStatement("SELECT * from bd.CONFERENCE where id = ?");
+                    pr1 = con.prepareStatement("SELECT * from CONFERENCE where id = ?");
                     pr1.setInt(1,conference.getId());
 
                     ResultSet resultSet = pr1.executeQuery();
@@ -430,7 +430,7 @@ public class ConferenceDAOImpl extends ConferenceDAO {
                             }
                             System.out.println("conf resp" + responseIdConference);
 
-                            pr = con.prepareStatement("Update  bd.CONFERENCE set ID_PARTICIPANT = ?, AMOUNT_PARTICIPANT = ? where ID=?");
+                            pr = con.prepareStatement("Update  CONFERENCE set ID_PARTICIPANT = ?, AMOUNT_PARTICIPANT = ? where ID=?");
                             pr.setString(1,responseIdConference);
                             pr.setInt(2,(intArray.length-1));
                             pr.setInt(3,conference.getId());
@@ -505,7 +505,7 @@ public class ConferenceDAOImpl extends ConferenceDAO {
                 try {
                     PreparedStatement pr1;
 
-                    pr1 = con.prepareStatement("UPDATE BD.CONFERENCE SET DATEE = ? , TIMEE= ? WHERE ID = ?;");
+                    pr1 = con.prepareStatement("UPDATE CONFERENCE SET DATEE = ? , TIMEE= ? WHERE ID = ?;");
                     pr1.setDate(1,conference.getDatee());
                     pr1.setTime(2,conference.getTimee());
                     pr1.setInt(3,conference.getId());

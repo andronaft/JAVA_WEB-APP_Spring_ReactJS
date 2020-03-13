@@ -31,7 +31,7 @@ public class RoomDAOImpl implements RoomDAO {
             try {
                 PreparedStatement pr,pr1;
 
-                pr1 = con.prepareStatement("SELECT  * from bd.ROOM where ID=?");
+                pr1 = con.prepareStatement("SELECT  * from ROOM where ID=?");
                 pr1.setInt(1,room.getId());
 
                 ResultSet resultSet = pr1.executeQuery();
