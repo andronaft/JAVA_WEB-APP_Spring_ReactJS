@@ -146,14 +146,8 @@ public class MainController {
 
     @RequestMapping("/joinConference")
     String joinConference(@RequestParam int conference_id , @RequestParam int user_id ){
-        Participant participant = new Participant();
-        participant.setId(user_id);
-        Conference conference = Conference.newBuilder().setId(conference_id).build();
-
-        boolean ad = (0 == (7 * (4 ^ (2))%(3)));
-        ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
-
-        return (participantDAO.joinConferrence(participant,conference));
+        ConferenceServiceImpl conferenceService = new ConferenceServiceImpl();
+        return  conferenceService.addNewParticipant(user_id,conference_id);
     }
 
     @RequestMapping("/checkCon")
@@ -164,8 +158,7 @@ public class MainController {
 
     @RequestMapping("/findConferenceById")
     String findConferenceById(@RequestParam int conferenceId,@RequestParam int participantId){
-        ConferenceServiceImpl conferenceService = new ConferenceServiceImpl();
 
-        return  conferenceService.joinNewParticipant(participantId,conferenceId);
+    return "----";
     }
 }

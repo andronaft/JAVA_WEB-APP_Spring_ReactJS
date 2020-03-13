@@ -16,19 +16,84 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class ParticipantDAOImpl implements ParticipantDAO {
-    private ObjectMapper objectMapper = new ObjectMapper();
-
 
     ConnectionManager cm = new ConnectionManager();
     Connection con = cm.getConnection();
     String jsonInString="";
+    ObjectMapper objectMapper = new ObjectMapper();
 
 
     @Override
     public Participant findById(int id) {
+        Participant participant = null;
+        if (con != null) {
+            try {
+                PreparedStatement pr;
 
-        return null;
+                pr = con.prepareStatement("SELECT  * from PARTICIPANT where ID=?");
+                pr.setInt(1, id);
+
+                ResultSet resultSet = pr.executeQuery();
+
+                if (resultSet.next()) {
+                    participant = Participant.newBuilder()
+                            .setId(resultSet.getInt("ID"))
+                            .setFirstName(resultSet.getString("FIRSTNAME"))
+                            .setLastName(resultSet.getString("LASTNAME"))
+                            .setLogin(resultSet.getString("LOGIN"))
+                            .setBirthDay(resultSet.getDate("BIRTHDAY"))
+                            .setId_conference_participant(resultSet.getString("ID_CONFERENCE_PARTICIPANT"))
+                            .setRole(resultSet.getString("ROLE"))
+                            .build();
+                }
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+                System.out.println("ex");
+                ;
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("ex");
+
+            }
+        }
+        else {
+            System.out.println("no connection");
+        }
+
+        return participant;
     }
+
+    @Override
+    public void updateIdConference(String idConference, int id) {
+        Participant participant = null;
+        if (con != null) {
+            try {
+                PreparedStatement pr;
+
+                pr = con.prepareStatement("update PARTICIPANT SET ID_CONFERENCE_PARTICIPANT = ? WHERE id=?");
+                pr.setString(1, idConference);
+                pr.setInt(2,id);
+                pr.executeUpdate();
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+                System.out.println("ex");
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("ex");
+
+            }
+        }
+        else {
+            System.out.println("no connection");
+        }
+
+    }
+
+
 
     @Override
     public String insertParticipant(Participant participant){
@@ -43,7 +108,6 @@ public class ParticipantDAOImpl implements ParticipantDAO {
                 pr1.setString(1,participant.getLogin());
 
                 ResultSet resultSet = pr1.executeQuery();
-                resultSet.last();
                 if(resultSet.getRow()>0){
                     isUserExists = true;
                     System.out.println("resultset = 0");
@@ -51,7 +115,8 @@ public class ParticipantDAOImpl implements ParticipantDAO {
                 }
 
                 while (resultSet.next()) {
-                    System.out.println(resultSet.getInt(1));
+                   isUserExists = true;
+                   error+="This login is not available ;";
                 }
                 if(isUserExists!=true){
                     pr = con.prepareStatement("insert into PARTICIPANT (firstname,lastname,birthday,login,password) values (?,?,?,?,?)");
@@ -266,95 +331,6 @@ public class ParticipantDAOImpl implements ParticipantDAO {
             System.out.println("all right");
         }
         System.out.println(jsonInString);
-
-        return jsonInString;
-    }
-
-    @Override
-    public String joinConferrence(Participant participant, Conference conference) {
-        jsonInString="";
-        String error = "Messager:";
-        if (con != null) {
-            try {
-                PreparedStatement pr,pr1;
-
-                pr1 = con.prepareStatement("SELECT * from PARTICIPANT where ID=?");
-                pr1.setInt(1,participant.getId());
-
-                ResultSet resultSet = pr1.executeQuery();
-                String ids_conference="";
-                if(resultSet.next()){
-                    ids_conference = resultSet.getString("ID_CONFERENCE_PARTICIPANT");
-                }
-                if(ids_conference==null){
-                    ids_conference="";
-                }
-
-                String[] strArray = ids_conference.split(",");
-                int[] intArray = new int[strArray.length];
-
-                boolean containParticipant = false;
-                if(ids_conference!="") {
-                    for (int i = 0; i < strArray.length; i++) {
-                        try {
-                            intArray[i] = Integer.parseInt(strArray[i]);
-                            if (intArray[i] == conference.getId()) {
-                                containParticipant = true;
-                            }
-                        } catch (NumberFormatException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-                if(!containParticipant) {
-                    ids_conference += (conference.getId() + ",");
-                    pr = con.prepareStatement("update PARTICIPANT SET ID_CONFERENCE_PARTICIPANT = ? WHERE id=?");
-                    pr.setString(1, ids_conference);
-                    pr.setInt(2, participant.getId());
-                    pr.executeUpdate();
-                    ConferenceDAOImpl conferenceDAO = new ConferenceDAOImpl();
-                    error += (conferenceDAO.joinNewParticipant(participant, conference));
-                }else{
-                    error="You are already consist in this conference";
-                }
-
-            } catch (SQLException e) {
-                e.printStackTrace();
-                error+="Please try latter 1; ";
-
-            } catch (Exception e) {
-                e.printStackTrace();
-                error+="Please try later 2;  ";
-
-            }finally {
-                try {
-                    con.close();
-                } catch (SQLException e) {
-                    error+="please try later 3; ";
-                    e.printStackTrace();
-                }
-            }
-        }
-        if(error!="Message:"){
-            ArrayList<String> arrayList = new <String>ArrayList();
-            arrayList.add(error);arrayList.add(error);
-
-            try {
-                jsonInString = objectMapper.writeValueAsString(arrayList);
-            } catch (JsonProcessingException e) {
-                System.out.println("error with json");
-                e.printStackTrace();
-            }
-        }
-        else{
-            try {
-                jsonInString = objectMapper.writeValueAsString(participant);
-                System.out.println(jsonInString);
-            } catch (JsonProcessingException e) {
-                System.out.println("error with json");
-                e.printStackTrace();
-            }
-        }
 
         return jsonInString;
     }

@@ -24,7 +24,7 @@ public abstract class  ConferenceDAO {
     public abstract Conference findById(int id);
     /*public abstract Boolean isFilled(int conferenceId);*/
     public abstract void updateIdParticipant(String idParticipant, int amountParticipant, int id);
-    public abstract String joinNewParticipant(Participant participant, Conference conference);
+
     public abstract String cancelConferece(Participant admin,Conference conference);
     public abstract String getAllConference();
     public abstract String createConf(Participant participant,Conference conference);
