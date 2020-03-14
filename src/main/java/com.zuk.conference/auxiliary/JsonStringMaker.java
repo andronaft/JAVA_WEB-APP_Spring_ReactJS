@@ -2,7 +2,6 @@ package com.zuk.conference.auxiliary;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.zuk.conference.model.Conference;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -41,14 +40,15 @@ public class JsonStringMaker {
         return jsonInString;
     }
 
-    public String arrayListToJson(ArrayList list) {
+    public String arrayListToConferenceJson(ArrayList list) {
+        ArrayWithAmount json = new ArrayWithAmount();
+        json.setArrayList(list);
         jsonInString = "";
         Boolean isCreateJson = false;
         try {
-            jsonInString = objectMapper.writeValueAsString(list);
+            jsonInString = objectMapper.writeValueAsString(json);
             isCreateJson = true;
         } catch (JsonProcessingException e) {
-            System.out.println("error with json");
             e.printStackTrace();
         }
         finally {

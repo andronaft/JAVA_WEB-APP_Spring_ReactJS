@@ -13,27 +13,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-class ConferenseAndAmountJSON {
-    private ArrayList<Conference> arrayList;
-    private int amount;
-
-    public ArrayList<Conference> getArrayList() {
-        return arrayList;
-    }
-
-    public int getAmount() {
-        return amount;
-    }
-
-    public ConferenseAndAmountJSON() {
-    }
-
-    public void setArrayList(ArrayList<Conference> arrayList) {
-        this.arrayList = arrayList;
-        this.amount = arrayList.size();
-    }
-}
-
 public class ConferenceDAOImpl extends ConferenceDAO {
 
     @Override
@@ -75,10 +54,8 @@ public class ConferenceDAOImpl extends ConferenceDAO {
     @Override
     public void updateIdParticipant(String idParticipant, int amountParticipant, int id) {
         System.out.println("Conference updateIdParicipant  Start");
-        Conference conference = null;
         if (con != null) {
             try {
-
                 PreparedStatement pr = getPrepareStatement("Update  CONFERENCE set ID_PARTICIPANT = ?, AMOUNT_PARTICIPANT = ? where ID=?");
                 pr.setString(1, idParticipant);
                 pr.setInt(2,amountParticipant);
@@ -93,89 +70,38 @@ public class ConferenceDAOImpl extends ConferenceDAO {
         else {
             System.out.println("No connection");
         }
-
-
     }
 
-
-
-
     @Override
-    public String cancelConferece(Participant admin, Conference conference) {
-        jsonInString="";
-        String message = "Message:";
+    public boolean delete(int conferenceId) {
+        System.out.println("Conference deleteConference  Start");
+        boolean isDelete = false;
         if (con != null) {
             ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
-            if (participantDAO.isadmin(admin)) {
-
                 try {
-                    PreparedStatement pr1;
-
-                    pr1 = con.prepareStatement("DELETE from CONFERENCE where ID=?");
-                    pr1.setInt(1,conference.getId());
-                    pr1.executeUpdate();
-                    message+=("Conference was delete");
-
+                    PreparedStatement pr = getPrepareStatement("DELETE from CONFERENCE where ID=?");
+                    pr.setInt(1,conferenceId);
+                    pr.executeUpdate();
+                    isDelete = true;
                 } catch (SQLException e) {
                     e.printStackTrace();
-                    message += "try later ";
-
                 } catch (Exception e) {
                     e.printStackTrace();
-                    message += "try later  ";
-
-                } finally {
-                    try {
-                        con.close();
-                    } catch (SQLException e) {
-                        message += " try later ";
-                        e.printStackTrace();
-                    }
                 }
-            }
-            else {
-                message+=" incorrect password ";
-            }
         }
-        if(message!="Message:"){
-            System.out.println("erro!=null");
-            ArrayList<String> arrayListe= new <String>ArrayList();
-            arrayListe.add(message);arrayListe.add(message);
-            try {
-                jsonInString = objectMapper.writeValueAsString(arrayListe);
-            } catch (JsonProcessingException e) {
-                System.out.println("error with json");
-                e.printStackTrace();
-            }
-        }else {
-            message+="some trouble ";
-            ArrayList<String> arrayListe= new <String>ArrayList();
-            arrayListe.add(message);arrayListe.add(message);
-            try {
-                jsonInString = objectMapper.writeValueAsString(arrayListe);
-            } catch (JsonProcessingException e) {
-                System.out.println("error with json");
-                e.printStackTrace();
-            }
-        }
-        System.out.println(jsonInString);
-
-        return jsonInString;
+        return isDelete;
     }
 
+
+
     @Override
-    public String getAllConference() {
-        jsonInString="";
-        ArrayList<Conference> arrayList = new ArrayList<Conference>();
+    public ArrayList findAll() {
+        ArrayList arrayList = new ArrayList();
         String error = "Error:";
         if (con != null) {
             try {
-                PreparedStatement pr,pr1;
-
-                pr1 = con.prepareStatement("SELECT  * from CONFERENCE WHERE DATEE > CURRENT_DATE ORDER BY DATEE ASC, TIMEE ASC");
-
-                ResultSet resultSet = pr1.executeQuery();
-
+                PreparedStatement pr = getPrepareStatement("SELECT  * from CONFERENCE WHERE DATEE > CURRENT_DATE ORDER BY DATEE ASC, TIMEE ASC");
+                ResultSet resultSet = pr.executeQuery();
 
                 while (resultSet.next()){
                     Conference conference = Conference.newBuilder()
@@ -189,11 +115,9 @@ public class ConferenceDAOImpl extends ConferenceDAO {
                             .setDatee(resultSet.getDate("DATEE"))
                             .setTimee(resultSet.getTime("TIMEE"))
                             .build();
+                    System.out.println(conference.toString());
                    arrayList.add(conference);
                 }
-
-
-
             } catch (SQLException e) {
                 e.printStackTrace();
                 error+="Please try later 1; ";
@@ -202,45 +126,16 @@ public class ConferenceDAOImpl extends ConferenceDAO {
                 e.printStackTrace();
                 error+="Please try later 2;  ";
 
-            }finally {
-                try {
-                    con.close();
-                } catch (SQLException e) {
-                    error+="please try later 3; ";
-                    e.printStackTrace();
-                }
             }
         }
         if(error!="Error:"){
             System.out.println("erro!=null");
-            ArrayList<String> arrayListe= new <String>ArrayList();
-            arrayListe.add(error);arrayListe.add(error);
-            try {
-                jsonInString = objectMapper.writeValueAsString(arrayListe);
-            } catch (JsonProcessingException e) {
-                System.out.println("error with json");
-                e.printStackTrace();
-            }
+            ArrayList arrayError= new ArrayList();
+            arrayError.add(error);arrayError.add(error);
+            return arrayError;
         }else {
-            try {
-                ConferenseAndAmountJSON json = new ConferenseAndAmountJSON();
-                json.setArrayList(arrayList);
-                jsonInString = objectMapper.writeValueAsString(json);
-                System.out.println(jsonInString);
-            } catch (JsonProcessingException e) {
-                System.out.println("error with json");
-                e.printStackTrace();
-            }
+            return arrayList;
         }
-        if(jsonInString.equals("")){
-            System.out.println("jsonempty");
-        }
-        else {
-            System.out.println("all right");
-        }
-        System.out.println(jsonInString);
-
-        return jsonInString;
     }
 
     @Override
@@ -249,7 +144,7 @@ public class ConferenceDAOImpl extends ConferenceDAO {
         String message = "Message:";
         if (con != null) {
             ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
-            if (participantDAO.isadmin(admin)) {
+            if (participantDAO.isAdmin(admin)) {
                 RoomDAOImpl roomDAO = new RoomDAOImpl();
                 Room room = roomDAO.getRoomFromId(conference.getId_room());
 
@@ -321,7 +216,7 @@ public class ConferenceDAOImpl extends ConferenceDAO {
         System.out.println("statr remove in conf");
         if (con != null) {
             ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
-            if (participantDAO.isadmin(admin)) {
+            if (participantDAO.isAdmin(admin)) {
 
 
                 try {
@@ -436,7 +331,7 @@ public class ConferenceDAOImpl extends ConferenceDAO {
         if (con != null) {
             ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
             System.out.println("gg");
-            if (participantDAO.isadmin(participant)) {
+            if (participantDAO.isAdmin(participant)) {
 
                 try {
                     PreparedStatement pr1;

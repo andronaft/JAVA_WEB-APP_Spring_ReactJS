@@ -333,8 +333,8 @@ public class ParticipantDAOImpl extends ParticipantDAO {
 
 
     @Override
-    public Boolean isadmin(Participant participant) {
-        boolean response = false;
+    public Boolean isAdmin(Participant participant) {
+        boolean isAdmin = false;
         if (con != null) {
             try {
                 PreparedStatement pr,pr1;
@@ -346,27 +346,19 @@ public class ParticipantDAOImpl extends ParticipantDAO {
 
                 if(resultSet.next()) {
                     String password = resultSet.getString("PASSWORD");
-                    if (DigestUtils.md5DigestAsHex((participant.getPassword()).getBytes()).equals(password)) {
-                     response = true;
+                    String role = resultSet.getString("ROLE");
+                    if (DigestUtils.md5DigestAsHex((participant.getPassword()).getBytes()).equals(password)&&(role.equals("admin"))) {
+                     isAdmin = true;
                     }
                 }
-
-
 
             } catch (SQLException e) {
                 e.printStackTrace();
             } catch (Exception e) {
                 e.printStackTrace();
-            }finally {
-                try {
-                    con.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
             }
         }
-
-        return response;
+        return isAdmin;
     }
 
     @Override

@@ -8,6 +8,7 @@ import com.zuk.conference.model.Participant;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public abstract class  ConferenceDAO {
 
@@ -22,11 +23,11 @@ public abstract class  ConferenceDAO {
     }
 
     public abstract Conference findById(int id);
-    /*public abstract Boolean isFilled(int conferenceId);*/
     public abstract void updateIdParticipant(String idParticipant, int amountParticipant, int id);
+    public abstract boolean delete(int conferenceId);
+    public abstract ArrayList findAll();
 
-    public abstract String cancelConferece(Participant admin,Conference conference);
-    public abstract String getAllConference();
+
     public abstract String createConf(Participant participant,Conference conference);
     public abstract String removeParticipant(Participant admin,Participant participant,Conference conference);
     public abstract String changeTime(Participant participant, Conference conference);

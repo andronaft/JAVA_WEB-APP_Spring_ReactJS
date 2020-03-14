@@ -23,6 +23,7 @@ public class MainController {
     NamedParameterJdbcTemplate jdbcTemplate;
     ConnectionManager cm = new ConnectionManager();
     Connection con = cm.getConnection();
+    ConferenceServiceImpl conferenceService = new ConferenceServiceImpl();
 
     @RequestMapping("/hello")
     @ResponseBody
@@ -58,8 +59,7 @@ public class MainController {
 
     @RequestMapping("/getAllConference")
     String getAllConference() {
-        ConferenceDAOImpl conferenceDAO = new ConferenceDAOImpl();
-        return (conferenceDAO.getAllConference());
+        return conferenceService.getAll();
     }
 
     @RequestMapping("/getAccount")
@@ -113,13 +113,12 @@ public class MainController {
 
     @RequestMapping("/cancelConf")
     String cancelConf(@RequestParam int conference_id , @RequestParam int admin_id , @RequestParam String admin_password){
-        Participant admin = new Participant();
-        admin.setId(admin_id);admin.setPassword(admin_password);
-        Conference conference = Conference.newBuilder().setId(conference_id).build();
+        Participant admin = Participant.newBuilder()
+                .setId(admin_id)
+                .setPassword(admin_password)
+                .build();
 
-        ConferenceDAOImpl conferenceDAO = new ConferenceDAOImpl();
-
-        return (conferenceDAO.cancelConferece(admin,conference));
+        return conferenceService.cancel(admin,conference_id);
     }
 
     @RequestMapping("/changeConfTime")
@@ -146,12 +145,11 @@ public class MainController {
 
     @RequestMapping("/joinConference")
     String joinConference(@RequestParam int conference_id , @RequestParam int user_id ){
-        ConferenceServiceImpl conferenceService = new ConferenceServiceImpl();
         return  conferenceService.addNewParticipant(user_id,conference_id);
     }
 
     @RequestMapping("/checkCon")
-    String chekCon(){
+    String checkCon(){
         ConnectionManager connectionManager = new ConnectionManager();
         return String.valueOf(connectionManager.getConnection());
     }

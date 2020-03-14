@@ -6,7 +6,7 @@ import com.zuk.conference.model.Room;
 
 import java.sql.Connection;
 
-public abstract class RoomDAO {//TODO make abstract class
+public abstract class RoomDAO {
     protected Connection con;
     protected ConnectionManager cm;
     protected ObjectMapper objectMapper = new ObjectMapper();

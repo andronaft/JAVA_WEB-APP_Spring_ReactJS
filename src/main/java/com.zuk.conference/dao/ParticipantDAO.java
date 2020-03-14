@@ -7,7 +7,7 @@ import com.zuk.conference.model.Participant;
 import java.io.FileNotFoundException;
 import java.sql.Connection;
 
-public abstract class  ParticipantDAO {//TODO make abstract class
+public abstract class  ParticipantDAO {
 
     protected Connection con;
     protected ConnectionManager cm;
@@ -26,6 +26,6 @@ public abstract class  ParticipantDAO {//TODO make abstract class
     public abstract String insertParticipant(Participant participant) throws FileNotFoundException;
     public abstract String getParticipant(Participant participant);
     public abstract String login(Participant participant);
-    public abstract Boolean isadmin(Participant admin);
+    public abstract Boolean isAdmin(Participant admin);
     public abstract Boolean removeFromConference(Participant participant,int idConference);
 }

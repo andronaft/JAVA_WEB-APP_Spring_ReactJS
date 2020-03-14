@@ -1,4 +1,4 @@
 package com.zuk.conference.service;
 
-public interface ParticipantService {
+public abstract class ParticipantService {
 }

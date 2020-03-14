@@ -1,8 +1,6 @@
 package com.zuk.conference.service.impl;
 
-import com.zuk.conference.auxiliary.JsonStringMaker;
-import com.zuk.conference.dao.daoimpl.ConferenceDAOImpl;
-import com.zuk.conference.dao.daoimpl.ParticipantDAOImpl;
+
 import com.zuk.conference.model.Conference;
 import com.zuk.conference.model.Participant;
 import com.zuk.conference.service.ConferenceService;
@@ -11,18 +9,12 @@ import com.zuk.conference.service.ConferenceService;
 import java.util.ArrayList;
 
 
-public class ConferenceServiceImpl  implements ConferenceService {
+public class ConferenceServiceImpl  extends ConferenceService {
 
-
-    JsonStringMaker jsonStringMaker = new JsonStringMaker();
-
-    ConferenceDAOImpl conferenceDAO = new ConferenceDAOImpl();
-    ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
-    String error;
 
     @Override
     public String addNewParticipant(int participantId, int conferenceId) {
-        error = "Message:";
+        String error = "Message:";
         Conference conference = conferenceDAO.findById(conferenceId);
 
         if(conference.getAmount_participant()<conference.getCapacity_room()){
@@ -65,4 +57,30 @@ public class ConferenceServiceImpl  implements ConferenceService {
         }
         return jsonStringMaker.objectToJson(conference);
     }
+
+    @Override
+    public String cancel(Participant admin,int conferenceId) {
+        ArrayList arrayList = new ArrayList();
+        message = "Message:";
+        if(participantDAO.isAdmin(admin)){
+            if(conferenceDAO.delete(conferenceId)){
+                message+="Conference was cancel";arrayList.add(message);arrayList.add(message);
+                return(jsonStringMaker.objectToJson(arrayList));
+            }
+            else{
+                message+="Try later";arrayList.add(message);arrayList.add(message);
+                return jsonStringMaker.objectToJson(arrayList);
+            }
+        }else {
+            message+="Incorrect admin login or password";arrayList.add(message);arrayList.add(message);
+            return jsonStringMaker.objectToJson(arrayList);
+        }
+    }
+
+    @Override
+    public String getAll() {
+        return jsonStringMaker.arrayListToConferenceJson(conferenceDAO.findAll());
+    }
+
+
 }

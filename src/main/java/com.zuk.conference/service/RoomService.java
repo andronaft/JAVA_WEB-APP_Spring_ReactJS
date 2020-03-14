@@ -1,4 +1,4 @@
 package com.zuk.conference.service;
 
-public interface RoomService {
+public abstract class RoomService {
 }
