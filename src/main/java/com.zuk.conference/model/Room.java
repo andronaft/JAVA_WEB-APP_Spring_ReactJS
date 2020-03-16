@@ -42,14 +42,6 @@ public class Room {
         this.name = name;
     }
 
-    public void setFirstFloorCapacity(int firstFloorCapacity) {
-        this.firstFloorCapacity = firstFloorCapacity;
-    }
-
-    public void setSecondFloorCapacity(int secondFloorCapacity) {
-        this.secondFloorCapacity = secondFloorCapacity;
-    }
-
     public static Room.Builder newBuilder() {
         return new Room().new Builder();
     }

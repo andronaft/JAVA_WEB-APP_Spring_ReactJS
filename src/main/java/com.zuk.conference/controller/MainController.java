@@ -1,14 +1,13 @@
 package com.zuk.conference.controller;
         import com.fasterxml.jackson.core.JsonProcessingException;
-        import com.fasterxml.jackson.databind.ObjectMapper;
         import com.zuk.conference.conection.ConnectionManager;
-        import com.zuk.conference.dao.impl.ConferenceDAOImpl;
         import com.zuk.conference.dao.impl.ParticipantDAOImpl;
         import com.zuk.conference.model.Conference;
         import com.zuk.conference.model.Participant;
         import java.sql.*;
 
         import com.zuk.conference.service.impl.ConferenceServiceImpl;
+        import com.zuk.conference.service.impl.ParticipantServiceImpl;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
         import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,9 +20,9 @@ package com.zuk.conference.controller;
 public class MainController {
     @Autowired
     NamedParameterJdbcTemplate jdbcTemplate;
-    ConnectionManager cm = new ConnectionManager();
-    Connection con = cm.getConnection();
+
     ConferenceServiceImpl conferenceService = new ConferenceServiceImpl();
+    ParticipantServiceImpl participantService = new ParticipantServiceImpl();
 
     @RequestMapping("/hello")
     @ResponseBody
@@ -64,26 +63,20 @@ public class MainController {
 
     @RequestMapping("/getAccount")
     String getAccont(@RequestParam int id) {
-        Participant participant = new Participant();
-        participant.setId(id);
-        ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
-
-        return participantDAO.getParticipant(participant);
+        return participantService.getParticipant(id);
     }
 
 
     @RequestMapping("/register")
-    String calc(@RequestParam String firstname,@RequestParam String lastname,@RequestParam Date birthday,@RequestParam String login,@RequestParam String password) throws JsonProcessingException {
-        ObjectMapper objectMapper= new ObjectMapper();
-
-        System.out.println(firstname+ lastname+birthday+login+password);
-
-        Participant participant = new Participant(firstname,lastname,birthday,login,password);
-
-        ParticipantDAOImpl participantDAO= new ParticipantDAOImpl();
-
-        return (participantDAO.insertParticipant(participant));
-
+    String calc(@RequestParam String firstname,@RequestParam String lastname,@RequestParam Date birthday,@RequestParam String login,@RequestParam String password) {
+        Participant participant = Participant.newBuilder()
+                .setFirstName(firstname)
+                .setLastName(lastname)
+                .setBirthDay(birthday)
+                .setLogin(login)
+                .setPassword(password)
+                .build();
+        return participantService.register(participant);
     }
 
     @RequestMapping("/removeParticipantFromConf")
@@ -143,10 +136,7 @@ public class MainController {
                 .setPassword(password)
                 .build();
 
-
-        ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
-
-        return (participantDAO.login(participant));
+        return participantService.login(participant);
     }
 
     @RequestMapping("/joinConference")

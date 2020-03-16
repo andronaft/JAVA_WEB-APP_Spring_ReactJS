@@ -14,8 +14,6 @@ public abstract class  ConferenceDAO {
 
     protected Connection con;
     protected ConnectionManager cm;
-    protected ObjectMapper objectMapper = new ObjectMapper();
-    protected String jsonInString = "";
 
     public ConferenceDAO() {
         cm = new ConnectionManager();
@@ -30,7 +28,6 @@ public abstract class  ConferenceDAO {
     protected abstract boolean updateDateAndTime(Conference conference);
     protected abstract boolean delete(int conferenceId);
 
-
     protected PreparedStatement getPrepareStatement(String sql) {
         PreparedStatement ps = null;
         try {
@@ -40,5 +37,4 @@ public abstract class  ConferenceDAO {
         }
         return ps;
     }
-
 }

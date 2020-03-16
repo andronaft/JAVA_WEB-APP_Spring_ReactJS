@@ -1,11 +1,7 @@
 package com.zuk.conference.dao.impl;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.zuk.conference.dao.ConferenceDAO;
 import com.zuk.conference.model.Conference;
-import com.zuk.conference.model.Participant;
-import com.zuk.conference.model.Room;
-
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,7 +16,6 @@ public class ConferenceDAOImpl extends ConferenceDAO {
         Conference conference = null;
         if (con != null) {
             try {
-
                 PreparedStatement pr = getPrepareStatement("SELECT * from CONFERENCE where ID = ?");
                 pr.setInt(1, id);
                 ResultSet resultSet = pr.executeQuery();
@@ -39,12 +34,8 @@ public class ConferenceDAOImpl extends ConferenceDAO {
                             .build();
                 }
             } catch (SQLException e) {
-                System.out.println("SQL ex ");
                 e.printStackTrace();
             }
-        }
-        else {
-            System.out.println("No connection");
         }
         return conference;
     }
@@ -107,12 +98,8 @@ public class ConferenceDAOImpl extends ConferenceDAO {
                 return true;
             }
             catch (SQLException e) {
-                System.out.println("SQL ex ");
                 e.printStackTrace();
             }
-        }
-        else {
-            System.out.println("No connection");
         }
         return false;
     }
@@ -130,12 +117,9 @@ public class ConferenceDAOImpl extends ConferenceDAO {
                 return true;
             }
             catch (SQLException e) {
-                System.out.println("SQL ex ");
+
                 e.printStackTrace();
             }
-        }
-        else {
-            System.out.println("No connection");
         }
         return false;
     }
@@ -199,13 +183,11 @@ public class ConferenceDAOImpl extends ConferenceDAO {
                     pr.setTime(7,conference.getTimee());
                     pr.executeUpdate();
                     return true;
-
                 } catch (SQLException e) {
                     e.printStackTrace();
 
                 } catch (Exception e) {
                     e.printStackTrace();
-
                 }
         }
         return false;

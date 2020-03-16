@@ -35,48 +35,23 @@ public class RoomDAOImpl extends RoomDAO {
     }
 
     @Override
-    public void insertRoom() {
-
-    }
-
-    @Override
-    public Room getRoomFromId(int id) {
-        Room room = new Room();
-        room.setId(id);
+    protected boolean save(Room room) {
         if (con != null) {
             try {
-                PreparedStatement pr,pr1;
-
-                pr1 = con.prepareStatement("SELECT  * from ROOM where ID=?");
-                pr1.setInt(1,room.getId());
-
-                ResultSet resultSet = pr1.executeQuery();
-
-                if(resultSet.next()) {
-                    room.setName(resultSet.getString("NAME"));
-                    room.setFirstFloorCapacity(resultSet.getInt("FIRSTFLOORCAPACITY"));
-                    room.setSecondFloorCapacity(resultSet.getInt("SECONDFLOORCAPACITY"));
-                }
-                
+                PreparedStatement pr = getPrepareStatement("insert into ROOM (NAME,FIRSTFLOORCAPACITY,SECONDFLOORCAPACITY) values (?,?,?)");
+                pr.setString(1,room.getName());
+                pr.setInt(2,room.getFirstFloorCapacity());
+                pr.setInt(3,room.getSecondFloorCapacity());
+                pr.executeUpdate();
+                return true;
             } catch (SQLException e) {
                 e.printStackTrace();
+
             } catch (Exception e) {
                 e.printStackTrace();
-            }finally {
-                try {
-                    con.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
             }
         }
-
-
-        return room;
+        return false;
     }
 
-    @Override
-    public Room getRoom() {
-        return null;
-    }
 }

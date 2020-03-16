@@ -59,18 +59,6 @@ public class Participant {
         this.id = id;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public void setBirthDay(Date birthDay) {
-        this.birthDay = birthDay;
-    }
-
     public void setLogin(String login) {
         this.login = login;
     }
@@ -83,9 +71,6 @@ public class Participant {
         this.role = role;
     }
 
-    public void setId_conference_participant(String id_conference_participant) {
-        this.id_conference_participant = id_conference_participant;
-    }
 
     public static Participant.Builder newBuilder() {
         return new Participant().new Builder();

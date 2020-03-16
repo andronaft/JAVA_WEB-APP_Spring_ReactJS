@@ -11,19 +11,15 @@ import java.sql.SQLException;
 public abstract class RoomDAO {
     protected Connection con;
     protected ConnectionManager cm;
-    protected ObjectMapper objectMapper = new ObjectMapper();
-    protected String jsonInString = "";
+
 
     public RoomDAO() {
         cm = new ConnectionManager();
         con = cm.getConnection();
     }
 
-
     protected abstract Room findById(int id);
-    protected abstract void insertRoom();
-    protected abstract Room getRoomFromId(int id);
-    protected abstract Room getRoom();
+    protected abstract boolean save(Room room);
 
     protected PreparedStatement getPrepareStatement(String sql) {
         PreparedStatement ps = null;

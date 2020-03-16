@@ -22,16 +22,13 @@ public abstract class  ParticipantDAO {
         con = cm.getConnection();
     }
 
-
     protected abstract Participant findById(int id);
+    protected abstract Participant findByLogin(String login);
     protected abstract ArrayList findAll();
     protected abstract boolean update(Participant participant);
     protected abstract boolean updateIdConference(String idConference, int id);
-    public abstract boolean isAdmin(Participant admin);
-
-    public abstract String insertParticipant(Participant participant) throws FileNotFoundException;
-    public abstract String getParticipant(Participant participant);
-    public abstract String login(Participant participant);
+    protected abstract boolean save(Participant participant);
+    protected abstract boolean isAdmin(Participant admin);
 
     protected PreparedStatement getPrepareStatement(String sql) {
         PreparedStatement ps = null;
@@ -42,5 +39,4 @@ public abstract class  ParticipantDAO {
         }
         return ps;
     }
-
 }
