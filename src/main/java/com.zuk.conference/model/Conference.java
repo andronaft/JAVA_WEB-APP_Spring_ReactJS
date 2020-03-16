@@ -53,6 +53,17 @@ public class Conference {
         return id_participant;
     }
 
+    public void setName_room(String name_room) {
+        this.name_room = name_room;
+    }
+
+    public void setCapacity_room(int capacity_room) {
+        this.capacity_room = capacity_room;
+    }
+
+    public void setId_participant(String id_participant) {
+        this.id_participant = id_participant;
+    }
 
     public static Builder newBuilder() {
         return new Conference().new Builder();

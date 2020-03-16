@@ -39,6 +39,33 @@ public class JsonStringMaker {
         }
         return jsonInString;
     }
+    public String arrayListToJson(ArrayList arrayList){
+        jsonInString="";
+        System.out.println(arrayList.toString() + "array");
+        Boolean isCreateJson = false;
+        try {
+            jsonInString = objectMapper.writeValueAsString(arrayList);
+            isCreateJson = true;
+        } catch (JsonProcessingException e) {
+            System.out.println("error with json");
+            e.printStackTrace();
+        }
+        finally {
+            if(!isCreateJson) {
+                ArrayList<String> error = new ArrayList<String>();
+                error.add("Woooh");
+                error.add("try later");
+                try {
+                    jsonInString = objectMapper.writeValueAsString(error);
+                    return jsonInString;
+                } catch (JsonProcessingException e) {
+                    System.out.println("error with error json");
+                    e.printStackTrace();
+                }
+            }
+        }
+        return jsonInString;
+    }
 
     public String arrayListToConferenceJson(ArrayList list) {
         ArrayWithAmount json = new ArrayWithAmount();

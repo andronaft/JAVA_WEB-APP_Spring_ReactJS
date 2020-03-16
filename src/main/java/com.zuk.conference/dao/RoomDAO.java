@@ -5,6 +5,8 @@ import com.zuk.conference.conection.ConnectionManager;
 import com.zuk.conference.model.Room;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public abstract class RoomDAO {
     protected Connection con;
@@ -18,7 +20,19 @@ public abstract class RoomDAO {
     }
 
 
-    public abstract void insertRoom();
-    public abstract Room getRoomFromId(int id);
-    public abstract Room getRoom();
+    protected abstract Room findById(int id);
+    protected abstract void insertRoom();
+    protected abstract Room getRoomFromId(int id);
+    protected abstract Room getRoom();
+
+    protected PreparedStatement getPrepareStatement(String sql) {
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return ps;
+    }
 }

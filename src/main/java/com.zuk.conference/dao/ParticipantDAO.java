@@ -21,7 +21,7 @@ public abstract class  ParticipantDAO {
 
 
     public abstract Participant findById(int id);
-    public abstract void updateIdConference(String idConference, int id);
+    public abstract boolean updateIdConference(String idConference, int id);
 
     public abstract String insertParticipant(Participant participant) throws FileNotFoundException;
     public abstract String getParticipant(Participant participant);

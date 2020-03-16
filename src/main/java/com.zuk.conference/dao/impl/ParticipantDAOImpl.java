@@ -1,12 +1,9 @@
-package com.zuk.conference.dao.daoimpl;
+package com.zuk.conference.dao.impl;
 
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.zuk.conference.conection.ConnectionManager;
 import com.zuk.conference.dao.ParticipantDAO;
-import com.zuk.conference.model.Conference;
 import com.zuk.conference.model.Participant;
 
 import org.springframework.util.DigestUtils;
@@ -62,17 +59,16 @@ public class ParticipantDAOImpl extends ParticipantDAO {
     }
 
     @Override
-    public void updateIdConference(String idConference, int id) {
+    public boolean updateIdConference(String idConference, int id) {
         Participant participant = null;
         if (con != null) {
             try {
                 PreparedStatement pr;
-
                 pr = con.prepareStatement("update PARTICIPANT SET ID_CONFERENCE_PARTICIPANT = ? WHERE id=?");
                 pr.setString(1, idConference);
                 pr.setInt(2,id);
                 pr.executeUpdate();
-
+                return true;
             } catch (SQLException e) {
                 e.printStackTrace();
                 System.out.println("ex");
@@ -86,7 +82,7 @@ public class ParticipantDAOImpl extends ParticipantDAO {
         else {
             System.out.println("no connection");
         }
-
+        return false;
     }
 
 

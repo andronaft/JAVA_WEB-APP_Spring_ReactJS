@@ -3,6 +3,7 @@ package com.zuk.conference.service.impl;
 
 import com.zuk.conference.model.Conference;
 import com.zuk.conference.model.Participant;
+import com.zuk.conference.model.Room;
 import com.zuk.conference.service.ConferenceService;
 
 
@@ -26,10 +27,8 @@ public class ConferenceServiceImpl  extends ConferenceService {
 
             String[] strArray = participantIds.split(",");
             int[] intArray = new int[strArray.length];
-            System.out.println("size arr" + intArray.length);
             boolean containParticipant = false;
-            System.out.println(strArray.length);
-            System.out.println(strArray[0]);
+
             if(!strArray[0].isEmpty()) {
                 for (int i = 0; i < strArray.length; i++) {
                     try {
@@ -46,9 +45,17 @@ public class ConferenceServiceImpl  extends ConferenceService {
 
             if(!containParticipant){
                 participantIds += (participantId + ",");
-                conferenceDAO.updateIdParticipant(participantIds,(conference.getAmount_participant()+1),conferenceId);
+                if(!conferenceDAO.updateIdParticipant(participantIds,(conference.getAmount_participant()+1),conferenceId)){
+                    error+="Try later.";
+                    ArrayList arrayList = new ArrayList();arrayList.add(error);arrayList.add(error);
+                    return jsonStringMaker.objectToJson(arrayList);
+                }
                 Participant participant = participantDAO.findById(participantId);
-                participantDAO.updateIdConference((participant.getId_conference_participant() + (conferenceId)+","),participantId);
+                if(!participantDAO.updateIdConference((participant.getId_conference_participant() + (conferenceId)+","),participantId)){
+                    error+="Try later.";
+                    ArrayList arrayList = new ArrayList();arrayList.add(error);arrayList.add(error);
+                    return jsonStringMaker.objectToJson(arrayList);
+                }
             }
         }
         if(error!="Message:"){
@@ -56,6 +63,66 @@ public class ConferenceServiceImpl  extends ConferenceService {
             return jsonStringMaker.objectToJson(arrayList);
         }
         return jsonStringMaker.objectToJson(conference);
+    }
+
+    @Override
+    public String removeParticipant(Participant admin, int conferenceId, int participantId) {
+        ArrayList arrayList = new ArrayList();
+        message = "Message:";
+        if(participantDAO.isAdmin(admin)){
+            Conference conference = conferenceDAO.findById(conferenceId);
+            String participantIds = conference.getId_participant();
+
+            if (participantIds == null) {
+                participantIds = "";
+            }
+            String[] strArray = participantIds.split(",");
+            int[] intArray = new int[strArray.length];
+            boolean containParticipant = false;
+
+            if(!strArray[0].isEmpty()) {
+                for (int i = 0; i < strArray.length; i++) {
+                    try {
+                        intArray[i] = Integer.parseInt(strArray[i]);
+                        if (intArray[i] == participantId) {
+                            containParticipant = true;
+                        }
+                    } catch (NumberFormatException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            if(containParticipant){
+                String responseIdParticipant="";
+                for(int i=0;i<intArray.length;i++){
+                    if(intArray[i]!=participantId){
+                        responseIdParticipant+=(intArray[i] + ",");
+                    }
+                }
+                conference.setId_participant(responseIdParticipant);
+                conference.setCapacity_room((conference.getCapacity_room()-1));
+                if(conferenceDAO.update(conference)){
+                    if(participantService.removeFromConference(participantId,conferenceId)){
+                        message+="Participant removed";
+                        arrayList.add(message);arrayList.add(message);
+                        return jsonStringMaker.objectToJson(arrayList);
+                    }
+
+                }
+            }
+            else {
+                message+="Participant is not registered at the conference";arrayList.add(message);arrayList.add(message);
+                return jsonStringMaker.objectToJson(arrayList);
+            }
+
+
+        }else {
+            message+="Incorrect admin/meneger password";arrayList.add(message);arrayList.add(message);
+            return jsonStringMaker.objectToJson(arrayList);
+        }
+        message+="Try later.";
+        arrayList.add(message);arrayList.add(message);
+        return jsonStringMaker.arrayListToJson(arrayList);
     }
 
     @Override
@@ -72,7 +139,7 @@ public class ConferenceServiceImpl  extends ConferenceService {
                 return jsonStringMaker.objectToJson(arrayList);
             }
         }else {
-            message+="Incorrect admin login or password";arrayList.add(message);arrayList.add(message);
+            message+="Incorrect admin/manager password";arrayList.add(message);arrayList.add(message);
             return jsonStringMaker.objectToJson(arrayList);
         }
     }
@@ -80,6 +147,37 @@ public class ConferenceServiceImpl  extends ConferenceService {
     @Override
     public String getAll() {
         return jsonStringMaker.arrayListToConferenceJson(conferenceDAO.findAll());
+    }
+
+    @Override
+    public String create(Participant admin,Conference conference) {
+        ArrayList arrayList = new ArrayList();
+        message = "Message:";
+        if(participantDAO.isAdmin(admin)){
+            Room room = roomDAO.findById(conference.getId_room());
+            if(room!=null) {
+                conference.setName_room(room.getName());
+                conference.setCapacity_room((room.getFirstFloorCapacity()+room.getSecondFloorCapacity()));
+                if (conferenceDAO.save(conference)) {
+                    message += "Conference was create";
+                    arrayList.add(message);
+                    arrayList.add(message);
+                    return (jsonStringMaker.objectToJson(arrayList));
+                } else {
+                    message += "Try later";
+                    arrayList.add(message);
+                    arrayList.add(message);
+                    return jsonStringMaker.objectToJson(arrayList);
+                }
+            }
+            else {
+                message+="Incorrect id room";arrayList.add(message);arrayList.add(message);
+                return jsonStringMaker.objectToJson(arrayList);
+            }
+        }else {
+            message+="Incorrect admin/meneger password";arrayList.add(message);arrayList.add(message);
+            return jsonStringMaker.objectToJson(arrayList);
+        }
     }
 
 

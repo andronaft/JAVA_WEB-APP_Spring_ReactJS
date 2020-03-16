@@ -1,5 +1,6 @@
 package com.zuk.conference.model;
 
+
 public class Room {
     private int id;
     private String name;

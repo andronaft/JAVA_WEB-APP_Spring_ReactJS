@@ -1,17 +1,38 @@
-package com.zuk.conference.dao.daoimpl;
+package com.zuk.conference.dao.impl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.zuk.conference.conection.ConnectionManager;
 import com.zuk.conference.dao.RoomDAO;
 import com.zuk.conference.model.Room;
-import org.springframework.util.DigestUtils;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class RoomDAOImpl extends RoomDAO {
+
+    @Override
+    public Room findById(int id) {
+        Room room = null;
+        if (con != null) {
+            try {
+                PreparedStatement pr = getPrepareStatement("SELECT  * from ROOM where ID=?");
+                pr.setInt(1,id);
+                ResultSet resultSet = pr.executeQuery();
+                if(resultSet.next()) {
+                    room = Room.newBuilder()
+                            .setId(id)
+                            .setName(resultSet.getString("NAME"))
+                            .setFirstFloorCapacity(resultSet.getInt("FIRSTFLOORCAPACITY"))
+                            .setSecondFloorCapacity(resultSet.getInt("SECONDFLOORCAPACITY"))
+                            .build();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return room;
+    }
 
     @Override
     public void insertRoom() {

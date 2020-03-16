@@ -2,29 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40ffc072-0e54-45fc-aabd-2aa68c8f10af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/auxiliary/ArrayWithAmount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/auxiliary/JsonStringMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/auxiliary/JsonStringMaker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/controller/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/ConferenceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/ConferenceDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/ParticipantDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/ParticipantDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/RoomDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/RoomDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/daoimpl/ConferenceDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/daoimpl/ConferenceDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/daoimpl/ParticipantDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/daoimpl/ParticipantDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/daoimpl/ConferenceDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/impl/ConferenceDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/daoimpl/ParticipantDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/impl/ParticipantDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/daoimpl/RoomDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/impl/RoomDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/model/Conference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/model/Conference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/model/Room.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/service/ConferenceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/service/ConferenceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/service/ParticipantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/service/ParticipantService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/service/impl/ConferenceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/service/impl/ConferenceServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/auxiliary/JsonStringMaker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/auxiliary/JsonStringMaker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/service/impl/ParticipantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/service/impl/ParticipantServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/controller/MainController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/ConferenceDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/ConferenceDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/ParticipantDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/ParticipantDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/daoimpl/ConferenceDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/daoimpl/ConferenceDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/daoimpl/ConferenseAndAmountJSON.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/daoimpl/ParticipantDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/daoimpl/ParticipantDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/RoomDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/RoomDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/daoimpl/ConferenceDAOImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/daoimpl/ParticipantDAOImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/daoimpl/RoomDAOImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Conference$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Conference$Builder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Conference.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Conference.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Room$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Room$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Room.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/service/ConferenceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/service/ConferenceService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/service/ParticipantService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/service/ParticipantService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/service/RoomService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/service/RoomService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/service/impl/ConferenceServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/service/impl/ConferenceServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/service/impl/ParticipantServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/service/impl/ParticipantServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/service/impl/RoomSeriveImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/service/impl/RoomSeriveImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +284,22 @@
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:d47rhj1fb2te3j@ec2-54-246-90-10.eu-west-1.compute.amazonaws.com" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:d47rhj1fb2te3j@ec2-54-246-90-10.eu-west-1.compute.amazonaws.com" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@1f91a0da" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:d47rhj1fb2te3j@ec2-54-246-90-10.eu-west-1.compute.amazonaws.com" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@791d8232" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -303,6 +327,7 @@
       <workItem from="1583532135884" duration="30446000" />
       <workItem from="1583871259415" duration="7283000" />
       <workItem from="1583947055335" duration="37492000" />
+      <workItem from="1584280669108" duration="8191000" />
     </task>
     <servers />
   </component>
@@ -328,11 +353,11 @@
       <screen x="0" y="23" width="2048" height="1059" />
     </state>
     <state x="416" y="333" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2048.1059@0.23.2048.1059" timestamp="1583535734797" />
-    <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser" timestamp="1584202289964">
-      <screen x="0" y="23" width="2048" height="1056" />
+    <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser" timestamp="1584319259537">
+      <screen x="0" y="23" width="2048" height="1054" />
     </state>
     <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1052@0.23.2048.1052" timestamp="1577482881412" />
-    <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1054@0.23.2048.1054" timestamp="1578441344140" />
+    <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1054@0.23.2048.1054" timestamp="1584319259537" />
     <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1056@0.23.2048.1056" timestamp="1584202289964" />
     <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1057@0.23.2048.1057" timestamp="1583806634957" />
     <state x="959" y="248" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1061@0.23.2048.1061" timestamp="1579208258494" />
@@ -348,79 +373,79 @@
       <screen x="0" y="23" width="2048" height="1059" />
     </state>
     <state x="700" y="186" key="DBNavigator.ProjectSettingsDialog/0.23.2048.1059@0.23.2048.1059" timestamp="1583541667275" />
-    <state width="1477" height="188" key="GridCell.Tab.0.bottom" timestamp="1584202875080">
-      <screen x="0" y="23" width="2048" height="1056" />
+    <state width="1477" height="141" key="GridCell.Tab.0.bottom" timestamp="1584320998551">
+      <screen x="0" y="23" width="2048" height="1054" />
     </state>
     <state width="930" height="271" key="GridCell.Tab.0.bottom/0.23.2048.1052@0.23.2048.1052" timestamp="1578344771551" />
-    <state width="1477" height="197" key="GridCell.Tab.0.bottom/0.23.2048.1054@0.23.2048.1054" timestamp="1584059041698" />
-    <state width="1477" height="188" key="GridCell.Tab.0.bottom/0.23.2048.1056@0.23.2048.1056" timestamp="1584202875080" />
+    <state width="1477" height="141" key="GridCell.Tab.0.bottom/0.23.2048.1054@0.23.2048.1054" timestamp="1584320998551" />
+    <state width="1477" height="141" key="GridCell.Tab.0.bottom/0.23.2048.1056@0.23.2048.1056" timestamp="1584320449757" />
     <state width="1477" height="333" key="GridCell.Tab.0.bottom/0.23.2048.1057@0.23.2048.1057" timestamp="1583807671117" />
     <state width="1013" height="271" key="GridCell.Tab.0.bottom/0.23.2048.1059@0.23.2048.1059" timestamp="1583542067501" />
     <state width="1477" height="210" key="GridCell.Tab.0.bottom/0.23.2048.1061@0.23.2048.1061" timestamp="1583544398625" />
     <state width="1358" height="272" key="GridCell.Tab.0.bottom/0.23.2048.1062@0.23.2048.1062" timestamp="1579058571153" />
-    <state width="1477" height="188" key="GridCell.Tab.0.center" timestamp="1584202875079">
-      <screen x="0" y="23" width="2048" height="1056" />
+    <state width="1477" height="141" key="GridCell.Tab.0.center" timestamp="1584320998550">
+      <screen x="0" y="23" width="2048" height="1054" />
     </state>
     <state width="930" height="271" key="GridCell.Tab.0.center/0.23.2048.1052@0.23.2048.1052" timestamp="1578344771549" />
-    <state width="1477" height="197" key="GridCell.Tab.0.center/0.23.2048.1054@0.23.2048.1054" timestamp="1584059041697" />
-    <state width="1477" height="188" key="GridCell.Tab.0.center/0.23.2048.1056@0.23.2048.1056" timestamp="1584202875079" />
+    <state width="1477" height="141" key="GridCell.Tab.0.center/0.23.2048.1054@0.23.2048.1054" timestamp="1584320998550" />
+    <state width="1477" height="141" key="GridCell.Tab.0.center/0.23.2048.1056@0.23.2048.1056" timestamp="1584320449756" />
     <state width="1477" height="333" key="GridCell.Tab.0.center/0.23.2048.1057@0.23.2048.1057" timestamp="1583807671116" />
     <state width="1013" height="271" key="GridCell.Tab.0.center/0.23.2048.1059@0.23.2048.1059" timestamp="1583542067500" />
     <state width="1477" height="210" key="GridCell.Tab.0.center/0.23.2048.1061@0.23.2048.1061" timestamp="1583544398624" />
     <state width="1358" height="272" key="GridCell.Tab.0.center/0.23.2048.1062@0.23.2048.1062" timestamp="1579058571151" />
-    <state width="1477" height="188" key="GridCell.Tab.0.left" timestamp="1584202875078">
-      <screen x="0" y="23" width="2048" height="1056" />
+    <state width="1477" height="141" key="GridCell.Tab.0.left" timestamp="1584320998549">
+      <screen x="0" y="23" width="2048" height="1054" />
     </state>
     <state width="930" height="271" key="GridCell.Tab.0.left/0.23.2048.1052@0.23.2048.1052" timestamp="1578344771548" />
-    <state width="1477" height="197" key="GridCell.Tab.0.left/0.23.2048.1054@0.23.2048.1054" timestamp="1584059041696" />
-    <state width="1477" height="188" key="GridCell.Tab.0.left/0.23.2048.1056@0.23.2048.1056" timestamp="1584202875078" />
+    <state width="1477" height="141" key="GridCell.Tab.0.left/0.23.2048.1054@0.23.2048.1054" timestamp="1584320998549" />
+    <state width="1477" height="141" key="GridCell.Tab.0.left/0.23.2048.1056@0.23.2048.1056" timestamp="1584320449755" />
     <state width="1477" height="333" key="GridCell.Tab.0.left/0.23.2048.1057@0.23.2048.1057" timestamp="1583807671116" />
     <state width="1013" height="271" key="GridCell.Tab.0.left/0.23.2048.1059@0.23.2048.1059" timestamp="1583542067499" />
     <state width="1477" height="210" key="GridCell.Tab.0.left/0.23.2048.1061@0.23.2048.1061" timestamp="1583544398624" />
     <state width="1358" height="272" key="GridCell.Tab.0.left/0.23.2048.1062@0.23.2048.1062" timestamp="1579058571151" />
-    <state width="1477" height="188" key="GridCell.Tab.0.right" timestamp="1584202875079">
-      <screen x="0" y="23" width="2048" height="1056" />
+    <state width="1477" height="141" key="GridCell.Tab.0.right" timestamp="1584320998551">
+      <screen x="0" y="23" width="2048" height="1054" />
     </state>
     <state width="930" height="271" key="GridCell.Tab.0.right/0.23.2048.1052@0.23.2048.1052" timestamp="1578344771550" />
-    <state width="1477" height="197" key="GridCell.Tab.0.right/0.23.2048.1054@0.23.2048.1054" timestamp="1584059041698" />
-    <state width="1477" height="188" key="GridCell.Tab.0.right/0.23.2048.1056@0.23.2048.1056" timestamp="1584202875079" />
+    <state width="1477" height="141" key="GridCell.Tab.0.right/0.23.2048.1054@0.23.2048.1054" timestamp="1584320998551" />
+    <state width="1477" height="141" key="GridCell.Tab.0.right/0.23.2048.1056@0.23.2048.1056" timestamp="1584320449757" />
     <state width="1477" height="333" key="GridCell.Tab.0.right/0.23.2048.1057@0.23.2048.1057" timestamp="1583807671117" />
     <state width="1013" height="271" key="GridCell.Tab.0.right/0.23.2048.1059@0.23.2048.1059" timestamp="1583542067501" />
     <state width="1477" height="210" key="GridCell.Tab.0.right/0.23.2048.1061@0.23.2048.1061" timestamp="1583544398625" />
     <state width="1358" height="272" key="GridCell.Tab.0.right/0.23.2048.1062@0.23.2048.1062" timestamp="1579058571152" />
-    <state width="1477" height="188" key="GridCell.Tab.1.bottom" timestamp="1584202875081">
-      <screen x="0" y="23" width="2048" height="1056" />
+    <state width="1477" height="141" key="GridCell.Tab.1.bottom" timestamp="1584320998552">
+      <screen x="0" y="23" width="2048" height="1054" />
     </state>
     <state width="1358" height="334" key="GridCell.Tab.1.bottom/0.23.2048.1052@0.23.2048.1052" timestamp="1577063580898" />
-    <state width="1477" height="197" key="GridCell.Tab.1.bottom/0.23.2048.1054@0.23.2048.1054" timestamp="1584059041699" />
-    <state width="1477" height="188" key="GridCell.Tab.1.bottom/0.23.2048.1056@0.23.2048.1056" timestamp="1584202875081" />
+    <state width="1477" height="141" key="GridCell.Tab.1.bottom/0.23.2048.1054@0.23.2048.1054" timestamp="1584320998552" />
+    <state width="1477" height="141" key="GridCell.Tab.1.bottom/0.23.2048.1056@0.23.2048.1056" timestamp="1584320449758" />
     <state width="1477" height="333" key="GridCell.Tab.1.bottom/0.23.2048.1057@0.23.2048.1057" timestamp="1583807671119" />
     <state width="1477" height="333" key="GridCell.Tab.1.bottom/0.23.2048.1059@0.23.2048.1059" timestamp="1583535871194" />
     <state width="1477" height="333" key="GridCell.Tab.1.bottom/0.23.2048.1061@0.23.2048.1061" timestamp="1583535491119" />
-    <state width="1477" height="188" key="GridCell.Tab.1.center" timestamp="1584202875080">
-      <screen x="0" y="23" width="2048" height="1056" />
+    <state width="1477" height="141" key="GridCell.Tab.1.center" timestamp="1584320998551">
+      <screen x="0" y="23" width="2048" height="1054" />
     </state>
     <state width="1358" height="334" key="GridCell.Tab.1.center/0.23.2048.1052@0.23.2048.1052" timestamp="1577063580898" />
-    <state width="1477" height="197" key="GridCell.Tab.1.center/0.23.2048.1054@0.23.2048.1054" timestamp="1584059041698" />
-    <state width="1477" height="188" key="GridCell.Tab.1.center/0.23.2048.1056@0.23.2048.1056" timestamp="1584202875080" />
+    <state width="1477" height="141" key="GridCell.Tab.1.center/0.23.2048.1054@0.23.2048.1054" timestamp="1584320998551" />
+    <state width="1477" height="141" key="GridCell.Tab.1.center/0.23.2048.1056@0.23.2048.1056" timestamp="1584320449758" />
     <state width="1477" height="333" key="GridCell.Tab.1.center/0.23.2048.1057@0.23.2048.1057" timestamp="1583807671118" />
     <state width="1477" height="333" key="GridCell.Tab.1.center/0.23.2048.1059@0.23.2048.1059" timestamp="1583535871194" />
     <state width="1477" height="333" key="GridCell.Tab.1.center/0.23.2048.1061@0.23.2048.1061" timestamp="1583535491118" />
-    <state width="1477" height="188" key="GridCell.Tab.1.left" timestamp="1584202875080">
-      <screen x="0" y="23" width="2048" height="1056" />
+    <state width="1477" height="141" key="GridCell.Tab.1.left" timestamp="1584320998551">
+      <screen x="0" y="23" width="2048" height="1054" />
     </state>
     <state width="1358" height="334" key="GridCell.Tab.1.left/0.23.2048.1052@0.23.2048.1052" timestamp="1577063580897" />
-    <state width="1477" height="197" key="GridCell.Tab.1.left/0.23.2048.1054@0.23.2048.1054" timestamp="1584059041698" />
-    <state width="1477" height="188" key="GridCell.Tab.1.left/0.23.2048.1056@0.23.2048.1056" timestamp="1584202875080" />
+    <state width="1477" height="141" key="GridCell.Tab.1.left/0.23.2048.1054@0.23.2048.1054" timestamp="1584320998551" />
+    <state width="1477" height="141" key="GridCell.Tab.1.left/0.23.2048.1056@0.23.2048.1056" timestamp="1584320449758" />
     <state width="1477" height="333" key="GridCell.Tab.1.left/0.23.2048.1057@0.23.2048.1057" timestamp="1583807671118" />
     <state width="1477" height="333" key="GridCell.Tab.1.left/0.23.2048.1059@0.23.2048.1059" timestamp="1583535871193" />
     <state width="1477" height="333" key="GridCell.Tab.1.left/0.23.2048.1061@0.23.2048.1061" timestamp="1583535491118" />
-    <state width="1477" height="188" key="GridCell.Tab.1.right" timestamp="1584202875080">
-      <screen x="0" y="23" width="2048" height="1056" />
+    <state width="1477" height="141" key="GridCell.Tab.1.right" timestamp="1584320998551">
+      <screen x="0" y="23" width="2048" height="1054" />
     </state>
     <state width="1358" height="334" key="GridCell.Tab.1.right/0.23.2048.1052@0.23.2048.1052" timestamp="1577063580898" />
-    <state width="1477" height="197" key="GridCell.Tab.1.right/0.23.2048.1054@0.23.2048.1054" timestamp="1584059041699" />
-    <state width="1477" height="188" key="GridCell.Tab.1.right/0.23.2048.1056@0.23.2048.1056" timestamp="1584202875080" />
+    <state width="1477" height="141" key="GridCell.Tab.1.right/0.23.2048.1054@0.23.2048.1054" timestamp="1584320998551" />
+    <state width="1477" height="141" key="GridCell.Tab.1.right/0.23.2048.1056@0.23.2048.1056" timestamp="1584320449758" />
     <state width="1477" height="333" key="GridCell.Tab.1.right/0.23.2048.1057@0.23.2048.1057" timestamp="1583807671118" />
     <state width="1477" height="333" key="GridCell.Tab.1.right/0.23.2048.1059@0.23.2048.1059" timestamp="1583535871194" />
     <state width="1477" height="333" key="GridCell.Tab.1.right/0.23.2048.1061@0.23.2048.1061" timestamp="1583535491118" />
@@ -472,10 +497,10 @@
       <screen x="0" y="23" width="2048" height="1052" />
     </state>
     <state x="1011" y="306" key="com.intellij.database.view.ui.DbObjectDialog/0.23.2048.1052@0.23.2048.1052" timestamp="1577061917581" />
-    <state x="802" y="370" key="com.intellij.ide.util.TipDialog" timestamp="1583947086927">
-      <screen x="0" y="23" width="2048" height="1056" />
+    <state x="802" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1584289008178">
+      <screen x="0" y="23" width="2048" height="1054" />
     </state>
-    <state x="802" y="369" key="com.intellij.ide.util.TipDialog/0.23.2048.1054@0.23.2048.1054" timestamp="1583871255893" />
+    <state x="802" y="369" key="com.intellij.ide.util.TipDialog/0.23.2048.1054@0.23.2048.1054" timestamp="1584289008178" />
     <state x="802" y="370" key="com.intellij.ide.util.TipDialog/0.23.2048.1056@0.23.2048.1056" timestamp="1583947086927" />
     <state x="802" y="370" key="com.intellij.ide.util.TipDialog/0.23.2048.1057@0.23.2048.1057" timestamp="1583016489271" />
     <state x="907" y="492" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1583535429222">
@@ -503,19 +528,5 @@
       <screen x="0" y="23" width="2048" height="1061" />
     </state>
     <state x="365" y="244" width="670" height="676" key="search.everywhere.popup/0.23.2048.1061@0.23.2048.1061" timestamp="1579208333421" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com.zuk.conference/controller/MainController.java</url>
-          <line>157</line>
-          <properties class="com.zuk.conference.controller.MainController" method="findConferenceById">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

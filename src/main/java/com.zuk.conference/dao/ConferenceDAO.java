@@ -22,18 +22,19 @@ public abstract class  ConferenceDAO {
         con = cm.getConnection();
     }
 
-    public abstract Conference findById(int id);
-    public abstract void updateIdParticipant(String idParticipant, int amountParticipant, int id);
-    public abstract boolean delete(int conferenceId);
-    public abstract ArrayList findAll();
+    protected abstract Conference findById(int id);
+    protected abstract ArrayList findAll();
+    protected abstract boolean save(Conference conference);
+    protected abstract boolean update(Conference conference);
+    protected abstract boolean updateIdParticipant(String idParticipant, int amountParticipant, int id);
+    protected abstract boolean delete(int conferenceId);
 
 
-    public abstract String createConf(Participant participant,Conference conference);
-    public abstract String removeParticipant(Participant admin,Participant participant,Conference conference);
+
     public abstract String changeTime(Participant participant, Conference conference);
 
 
-    public PreparedStatement getPrepareStatement(String sql) {
+    protected PreparedStatement getPrepareStatement(String sql) {
         PreparedStatement ps = null;
         try {
             ps = con.prepareStatement(sql);
