@@ -123,21 +123,26 @@ public class MainController {
 
     @RequestMapping("/changeConfTime")
     String cancelConf(@RequestParam int conference_id , @RequestParam int admin_id , @RequestParam String admin_password, @RequestParam Date datee, @RequestParam Time timee){
-        Participant admin = new Participant();
-        admin.setId(admin_id);admin.setPassword(admin_password);
-        Conference conference = Conference.newBuilder().setId(conference_id).setDatee(datee).setTimee(timee).build();
+        Participant admin = Participant.newBuilder()
+                .setId(admin_id)
+                .setPassword(admin_password)
+                .build();
+        Conference conference = Conference.newBuilder()
+                .setId(conference_id)
+                .setDatee(datee)
+                .setTimee(timee)
+                .build();
 
-
-        ConferenceDAOImpl conferenceDAO = new ConferenceDAOImpl();
-
-        return (conferenceDAO.changeTime(admin,conference));
+        return conferenceService.changeDateAndTime(admin,conference);
     }
 
     @RequestMapping("/login")
     String login(@RequestParam String login ,@RequestParam String password ){
-        Participant participant = new Participant();
+        Participant participant = Participant.newBuilder()
+                .setLogin(login)
+                .setPassword(password)
+                .build();
 
-        participant.setLogin(login);participant.setPassword(password);
 
         ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
 

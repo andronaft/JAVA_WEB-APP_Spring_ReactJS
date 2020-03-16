@@ -11,4 +11,5 @@ public abstract class ParticipantService {
     }
 
     protected abstract boolean removeFromConference(int id, int conferenceId);
+
 }

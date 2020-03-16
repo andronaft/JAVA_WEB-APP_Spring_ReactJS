@@ -21,11 +21,8 @@ public class ParticipantDAOImpl extends ParticipantDAO {
         Participant participant = null;
         if (con != null) {
             try {
-                PreparedStatement pr;
-
-                pr = con.prepareStatement("SELECT  * from PARTICIPANT where ID=?");
+                PreparedStatement pr = getPrepareStatement("SELECT  * from PARTICIPANT where ID=?");
                 pr.setInt(1, id);
-
                 ResultSet resultSet = pr.executeQuery();
 
                 if (resultSet.next()) {
@@ -42,29 +39,29 @@ public class ParticipantDAOImpl extends ParticipantDAO {
 
             } catch (SQLException e) {
                 e.printStackTrace();
-                System.out.println("ex");
-                ;
 
             } catch (Exception e) {
                 e.printStackTrace();
-                System.out.println("ex");
-
             }
         }
-        else {
-            System.out.println("no connection");
-        }
-
         return participant;
     }
 
     @Override
+    public ArrayList findAll() {
+        return null;
+    }
+
+    @Override
+    public boolean update(Participant participant) {
+        return false;
+    }
+
+    @Override
     public boolean updateIdConference(String idConference, int id) {
-        Participant participant = null;
         if (con != null) {
             try {
-                PreparedStatement pr;
-                pr = con.prepareStatement("update PARTICIPANT SET ID_CONFERENCE_PARTICIPANT = ? WHERE id=?");
+                PreparedStatement pr = getPrepareStatement("update PARTICIPANT SET ID_CONFERENCE_PARTICIPANT = ? WHERE id=?");
                 pr.setString(1, idConference);
                 pr.setInt(2,id);
                 pr.executeUpdate();
@@ -78,9 +75,6 @@ public class ParticipantDAOImpl extends ParticipantDAO {
                 System.out.println("ex");
 
             }
-        }
-        else {
-            System.out.println("no connection");
         }
         return false;
     }
@@ -182,8 +176,6 @@ public class ParticipantDAOImpl extends ParticipantDAO {
                     participant.setFirstName(resultSet.getString("FIRSTNAME"));
                     participant.setLastName(resultSet.getString("LASTNAME"));
                     participant.setBirthDay(resultSet.getDate("BIRTHDAY"));
-                    System.out.println(resultSet.getDate("BIRTHDAY"));
-                    System.out.println(participant.getBirthDay());
                     participant.setId_conference_participant(resultSet.getString("ID_CONFERENCE_PARTICIPANT"));
                     participant.setRole(resultSet.getString("ROLE"));
                 }
@@ -329,7 +321,7 @@ public class ParticipantDAOImpl extends ParticipantDAO {
 
 
     @Override
-    public Boolean isAdmin(Participant participant) {
+    public boolean isAdmin(Participant participant) {
         boolean isAdmin = false;
         if (con != null) {
             try {
@@ -355,77 +347,6 @@ public class ParticipantDAOImpl extends ParticipantDAO {
             }
         }
         return isAdmin;
-    }
-
-    @Override
-    public Boolean removeFromConference(Participant participant, int idConference) {
-        boolean response = false;
-        ConnectionManager cm = new ConnectionManager();
-        Connection conn = cm.getConnection();
-        if (conn != null) {
-            try {
-                PreparedStatement pr,pr1;
-
-
-                pr1 = conn.prepareStatement("SELECT  * from PARTICIPANT where ID=?");
-                pr1.setInt(1,participant.getId());
-                System.out.println("participant id= "+participant.getId());
-
-                ResultSet resultSet = pr1.executeQuery();
-
-                String ids_conference="";
-
-                if(resultSet.next()) {
-                    ids_conference = resultSet.getString("ID_CONFERENCE_PARTICIPANT");
-                }
-                System.out.println(resultSet.getString("ID_CONFERENCE_PARTICIPANT")+" participant Start ids_conferences");
-                ArrayList<Integer> id_array = new ArrayList<Integer>();
-                String[] strArray = ids_conference.split(",");
-                System.out.println(ids_conference +"participant conference");
-                int[] intArray = new int[strArray.length];
-
-                for(int i = 0; i < strArray.length; i++) {
-                    intArray[i]=Integer.parseInt(strArray[i]);
-                    System.out.println(strArray[i]);
-                    System.out.println(Integer.parseInt(strArray[i]));
-                    System.out.println(Integer.valueOf(strArray[i]));
-                }
-                for(int i = 0;i<intArray.length;i++) {
-                    System.out.println(" participant split"+ intArray[i]);
-                }
-                String responseIdConference="";
-                for(int i=0;i<intArray.length;i++){
-                    if(intArray[i]!=idConference){
-                        responseIdConference+=(intArray[i]+",");
-                    }
-                    else{
-                       continue;
-                    }
-                }
-
-                System.out.println(responseIdConference);
-                pr = conn.prepareStatement("Update  PARTICIPANT set ID_CONFERENCE_PARTICIPANT = ? where ID=?");
-                pr.setString(1,responseIdConference);
-                pr.setInt(2,participant.getId());
-
-                pr.executeUpdate();
-                response=true;
-
-
-            } catch (SQLException e) {
-                e.printStackTrace();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }finally {
-                try {
-                    conn.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-        return response;
     }
 
 }

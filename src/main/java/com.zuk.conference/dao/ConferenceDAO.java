@@ -27,11 +27,8 @@ public abstract class  ConferenceDAO {
     protected abstract boolean save(Conference conference);
     protected abstract boolean update(Conference conference);
     protected abstract boolean updateIdParticipant(String idParticipant, int amountParticipant, int id);
+    protected abstract boolean updateDateAndTime(Conference conference);
     protected abstract boolean delete(int conferenceId);
-
-
-
-    public abstract String changeTime(Participant participant, Conference conference);
 
 
     protected PreparedStatement getPrepareStatement(String sql) {
@@ -41,7 +38,6 @@ public abstract class  ConferenceDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return ps;
     }
 

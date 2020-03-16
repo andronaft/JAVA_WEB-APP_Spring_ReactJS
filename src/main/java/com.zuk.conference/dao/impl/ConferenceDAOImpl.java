@@ -118,6 +118,29 @@ public class ConferenceDAOImpl extends ConferenceDAO {
     }
 
     @Override
+    public boolean updateDateAndTime(Conference conference) {
+        System.out.println("Conference updateDateAndTime  Start");
+        if (con != null) {
+            try {
+                PreparedStatement pr = getPrepareStatement("UPDATE CONFERENCE SET DATEE = ? , TIMEE= ? WHERE ID = ?;");
+                pr.setDate(1,conference.getDatee());
+                pr.setTime(2,conference.getTimee());
+                pr.setInt(3,conference.getId());
+                pr.executeUpdate();
+                return true;
+            }
+            catch (SQLException e) {
+                System.out.println("SQL ex ");
+                e.printStackTrace();
+            }
+        }
+        else {
+            System.out.println("No connection");
+        }
+        return false;
+    }
+
+    @Override
     public boolean update(Conference conference) {
         System.out.println("Conference update  Start");
         if (con != null) {
@@ -186,73 +209,6 @@ public class ConferenceDAOImpl extends ConferenceDAO {
                 }
         }
         return false;
-    }
-
-
-    @Override
-    public String changeTime(Participant participant, Conference conference) {//TODO used functionality ConferenceDao
-        jsonInString="";
-        String message = "Message:";
-        if (con != null) {
-            ParticipantDAOImpl participantDAO = new ParticipantDAOImpl();
-            System.out.println("gg");
-            if (participantDAO.isAdmin(participant)) {
-
-                try {
-                    PreparedStatement pr1;
-
-                    pr1 = con.prepareStatement("UPDATE CONFERENCE SET DATEE = ? , TIMEE= ? WHERE ID = ?;");
-                    pr1.setDate(1,conference.getDatee());
-                    pr1.setTime(2,conference.getTimee());
-                    pr1.setInt(3,conference.getId());
-                    pr1.executeUpdate();
-                    message+=("Conference time was changed");
-
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                    message += "try later ";
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    message += "try later  ";
-
-                } finally {
-                    try {
-                        con.close();
-                    } catch (SQLException e) {
-                        message += " try later ";
-                        e.printStackTrace();
-                    }
-                }
-            }
-            else {
-                message+=" incorrect password ";
-            }
-        }
-        if(message!="Message:"){
-            System.out.println("erro!=null");
-            ArrayList<String> arrayListe= new <String>ArrayList();
-            arrayListe.add(message);arrayListe.add(message);
-            try {
-                jsonInString = objectMapper.writeValueAsString(arrayListe);
-            } catch (JsonProcessingException e) {
-                System.out.println("error with json");
-                e.printStackTrace();
-            }
-        }else {
-            message+="some trouble ";
-            ArrayList<String> arrayListe= new <String>ArrayList();
-            arrayListe.add(message);arrayListe.add(message);
-            try {
-                jsonInString = objectMapper.writeValueAsString(arrayListe);
-            } catch (JsonProcessingException e) {
-                System.out.println("error with json");
-                e.printStackTrace();
-            }
-        }
-        System.out.println(jsonInString);
-
-        return jsonInString;
     }
 
 

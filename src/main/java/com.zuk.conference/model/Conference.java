@@ -61,6 +61,10 @@ public class Conference {
         this.capacity_room = capacity_room;
     }
 
+    public void setAmount_participant(int amount_participant) {
+        this.amount_participant = amount_participant;
+    }
+
     public void setId_participant(String id_participant) {
         this.id_participant = id_participant;
     }

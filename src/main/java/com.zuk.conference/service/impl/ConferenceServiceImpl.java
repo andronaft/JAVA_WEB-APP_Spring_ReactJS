@@ -100,7 +100,7 @@ public class ConferenceServiceImpl  extends ConferenceService {
                     }
                 }
                 conference.setId_participant(responseIdParticipant);
-                conference.setCapacity_room((conference.getCapacity_room()-1));
+                conference.setAmount_participant((conference.getAmount_participant()-1));
                 if(conferenceDAO.update(conference)){
                     if(participantService.removeFromConference(participantId,conferenceId)){
                         message+="Participant removed";
@@ -123,6 +123,25 @@ public class ConferenceServiceImpl  extends ConferenceService {
         message+="Try later.";
         arrayList.add(message);arrayList.add(message);
         return jsonStringMaker.arrayListToJson(arrayList);
+    }
+
+    @Override
+    public String changeDateAndTime(Participant admin, Conference conference) {
+        ArrayList arrayList = new ArrayList();
+        message = "Message:";
+        if(participantDAO.isAdmin(admin)){
+            if(conferenceDAO.updateDateAndTime(conference)){
+                message+="Conference Time was change";arrayList.add(message);arrayList.add(message);
+                return(jsonStringMaker.objectToJson(arrayList));
+            }
+            else{
+                message+="Try later";arrayList.add(message);arrayList.add(message);
+                return jsonStringMaker.objectToJson(arrayList);
+            }
+        }else {
+            message+="Incorrect admin/manager password";arrayList.add(message);arrayList.add(message);
+            return jsonStringMaker.objectToJson(arrayList);
+        }
     }
 
     @Override
@@ -179,6 +198,5 @@ public class ConferenceServiceImpl  extends ConferenceService {
             return jsonStringMaker.objectToJson(arrayList);
         }
     }
-
 
 }

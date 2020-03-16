@@ -6,6 +6,9 @@ import com.zuk.conference.model.Conference;
 import com.zuk.conference.model.Participant;
 import java.io.FileNotFoundException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 public abstract class  ParticipantDAO {
 
@@ -20,12 +23,24 @@ public abstract class  ParticipantDAO {
     }
 
 
-    public abstract Participant findById(int id);
-    public abstract boolean updateIdConference(String idConference, int id);
+    protected abstract Participant findById(int id);
+    protected abstract ArrayList findAll();
+    protected abstract boolean update(Participant participant);
+    protected abstract boolean updateIdConference(String idConference, int id);
+    public abstract boolean isAdmin(Participant admin);
 
     public abstract String insertParticipant(Participant participant) throws FileNotFoundException;
     public abstract String getParticipant(Participant participant);
     public abstract String login(Participant participant);
-    public abstract Boolean isAdmin(Participant admin);
-    public abstract Boolean removeFromConference(Participant participant,int idConference);
+
+    protected PreparedStatement getPrepareStatement(String sql) {
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ps;
+    }
+
 }

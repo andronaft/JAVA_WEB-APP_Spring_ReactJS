@@ -33,4 +33,5 @@ public abstract class ConferenceService {
     protected abstract String cancel(Participant admin,int conferenceId);
     protected abstract String addNewParticipant(int participantId, int conferenceId);
     protected abstract String removeParticipant(Participant admin,int conferenceId,int participantId);
+    protected abstract String changeDateAndTime(Participant admin,Conference conference);
 }
