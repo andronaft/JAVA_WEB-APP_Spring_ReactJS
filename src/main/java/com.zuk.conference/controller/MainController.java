@@ -1,13 +1,13 @@
 package com.zuk.conference.controller;
-        import com.fasterxml.jackson.core.JsonProcessingException;
+
         import com.zuk.conference.conection.ConnectionManager;
-        import com.zuk.conference.dao.impl.ParticipantDAOImpl;
         import com.zuk.conference.model.Conference;
         import com.zuk.conference.model.Participant;
         import java.sql.*;
 
         import com.zuk.conference.service.impl.ConferenceServiceImpl;
         import com.zuk.conference.service.impl.ParticipantServiceImpl;
+        import org.apache.log4j.Logger;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
         import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,12 +21,20 @@ public class MainController {
     @Autowired
     NamedParameterJdbcTemplate jdbcTemplate;
 
+    private static final Logger logger = Logger.getLogger(MainController.class);
+
     ConferenceServiceImpl conferenceService = new ConferenceServiceImpl();
     ParticipantServiceImpl participantService = new ParticipantServiceImpl();
 
     @RequestMapping("/hello")
     @ResponseBody
     ModelAndView hello() {
+        if(logger.isDebugEnabled()){
+            logger.debug("getWelcome is executed!");
+        }
+
+        //logs exception
+        //logger.error("This is Error message", new Exception("Testing"));
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("index.html");
         return modelAndView;

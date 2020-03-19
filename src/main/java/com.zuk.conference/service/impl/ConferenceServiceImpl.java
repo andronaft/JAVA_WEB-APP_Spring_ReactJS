@@ -5,12 +5,14 @@ import com.zuk.conference.model.Conference;
 import com.zuk.conference.model.Participant;
 import com.zuk.conference.model.Room;
 import com.zuk.conference.service.ConferenceService;
+import org.apache.log4j.Logger;
 
 
 import java.util.ArrayList;
 
 
 public class ConferenceServiceImpl  extends ConferenceService {
+    private static final Logger logger = Logger.getLogger(ConferenceServiceImpl.class);
 
 
     @Override

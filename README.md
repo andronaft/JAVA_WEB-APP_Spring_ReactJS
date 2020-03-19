@@ -7,7 +7,7 @@ This Web-app uses technologies such as:
 * React-DOM (for UI interface)
 
 -----
-# Agenda
+#  Agenda
 
 This app is used to announce the conference. 
 There are three user clusters for this .
