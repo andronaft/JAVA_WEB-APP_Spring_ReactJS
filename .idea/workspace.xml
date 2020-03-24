@@ -2,26 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40ffc072-0e54-45fc-aabd-2aa68c8f10af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/service/impl/ConferenceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/service/impl/ConferenceServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/ConferenceDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/ConferenceDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/ParticipantDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/ParticipantDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/RoomDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/RoomDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/impl/ConferenceDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/impl/ConferenceDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/impl/ParticipantDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/impl/ParticipantDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/impl/RoomDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/dao/impl/RoomDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Participant$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Participant$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Participant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Participant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Room$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Room$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/model/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/service/RoomService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/service/RoomService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/service/impl/ConferenceServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/service/impl/ConferenceServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/service/impl/ParticipantServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zuk/conference/service/impl/ParticipantServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zuk/conference/service/impl/RoomSeriveImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/model/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.zuk.conference/service/impl/ParticipantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/service/impl/ParticipantServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,17 +265,7 @@
       <list>
         <serviceView>
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:d47rhj1fb2te3j@ec2-54-246-90-10.eu-west-1.compute.amazonaws.com" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:d47rhj1fb2te3j@ec2-54-246-90-10.eu-west-1.compute.amazonaws.com" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@7385611" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>
@@ -322,6 +295,8 @@
       <workItem from="1583947055335" duration="37492000" />
       <workItem from="1584280669108" duration="8191000" />
       <workItem from="1584367289352" duration="12017000" />
+      <workItem from="1584649710357" duration="357000" />
+      <workItem from="1584921411449" duration="2135000" />
     </task>
     <servers />
   </component>

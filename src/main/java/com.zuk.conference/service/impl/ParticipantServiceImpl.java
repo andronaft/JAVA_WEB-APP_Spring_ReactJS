@@ -1,6 +1,5 @@
 package com.zuk.conference.service.impl;
 
-import com.zuk.conference.dao.impl.ParticipantDAOImpl;
 import com.zuk.conference.model.Participant;
 import com.zuk.conference.service.ParticipantService;
 import org.springframework.util.DigestUtils;

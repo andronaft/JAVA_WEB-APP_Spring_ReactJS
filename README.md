@@ -1,5 +1,5 @@
 # JAVA_Spring_React_WEB_APP
-This Web-app uses technologies such as:
+<!--This Web-app uses technologies such as:
 * JAVA (language for Rest sserver)
 * Spring-Boot(application framework)
 * MAVEN (project builder)

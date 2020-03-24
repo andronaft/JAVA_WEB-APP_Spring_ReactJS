@@ -7,13 +7,6 @@ public class Room {
     private int firstFloorCapacity;
     private int secondFloorCapacity;
 
-    public Room(int id, String name, int firstFloorCapacity, int secondFloorCapacity) {
-        this.id = id;
-        this.name = name;
-        this.firstFloorCapacity = firstFloorCapacity;
-        this.secondFloorCapacity = secondFloorCapacity;
-    }
-
     public Room() {
 
     }
