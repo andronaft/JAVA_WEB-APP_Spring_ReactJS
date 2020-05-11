@@ -7,8 +7,8 @@ import com.zuk.conference.model.Participant;
 public abstract class ParticipantService {
 
     protected JsonStringMaker jsonStringMaker;
-
-    protected ParticipantDAOImpl participantDAO;
+                                                //@Autowired
+    protected ParticipantDAOImpl participantDAO;//protected ParticipantRepository participantDao
 
     public ParticipantService() {
         this.participantDAO = new ParticipantDAOImpl();

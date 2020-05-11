@@ -13,16 +13,20 @@ public abstract class ConferenceService {
     protected JsonStringMaker jsonStringMaker;
 
     protected ParticipantServiceImpl participantService;
-
-    protected ConferenceDAOImpl conferenceDAO;
-    protected ParticipantDAOImpl participantDAO;
+                                              //@Autowired
+    protected ConferenceDAOImpl conferenceDAO;//protected ConferenceRepository conferenceDao
+    protected ParticipantDAOImpl participantDAO;//protected ParticipantRepository participantDao
     protected RoomDAOImpl roomDAO;
     protected String message;
 
 
     public ConferenceService() {
         participantDAO = new ParticipantDAOImpl();
+
+        //----
         conferenceDAO = new ConferenceDAOImpl();
+
+        //---
         roomDAO = new RoomDAOImpl();
         participantService = new ParticipantServiceImpl();
         jsonStringMaker = new JsonStringMaker();

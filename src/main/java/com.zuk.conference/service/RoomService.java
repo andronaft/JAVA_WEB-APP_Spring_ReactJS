@@ -6,8 +6,8 @@ import com.zuk.conference.dao.impl.RoomDAOImpl;
 public abstract class RoomService {
 
     protected JsonStringMaker jsonStringMaker;
-
-    protected RoomDAOImpl roomDAO;
+                                  //@Autowired
+    protected RoomDAOImpl roomDAO;//protected RoomRepository rommDao;
 
     public RoomService(){
         roomDAO = new RoomDAOImpl();
