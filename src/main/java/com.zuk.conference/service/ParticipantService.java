@@ -10,6 +10,8 @@ public abstract class ParticipantService {
                                                 //@Autowired
     protected ParticipantDAOImpl participantDAO;//protected ParticipantRepository participantDao
 
+    //protected IParticipant iParticipant;
+
     public ParticipantService() {
         this.participantDAO = new ParticipantDAOImpl();
         this.jsonStringMaker = new JsonStringMaker();

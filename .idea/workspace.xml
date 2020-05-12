@@ -7,10 +7,23 @@
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40ffc072-0e54-45fc-aabd-2aa68c8f10af" name="Default Changelist" comment="" />
+    <list default="true" id="40ffc072-0e54-45fc-aabd-2aa68c8f10af" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/IConference.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/IParticipant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/IRoom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/impl/IConferenceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/impl/IParticipantImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.zuk.conference/dao/impl/IRoomImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,13 +73,6 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/static" />
-      <recent name="$PROJECT_DIR$/src/main/resources/img_for_README" />
-      <recent name="$PROJECT_DIR$/src/main/resources/Create_Insert_SQLscript_for_BD" />
-      <recent name="$PROJECT_DIR$/src/main/resources/Start_Insert_BD" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.zuk.conference" />
     </key>
@@ -75,6 +81,13 @@
       <recent name="$PROJECT_DIR$/src/main/resources/src_React_dontPack" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/com.zuk.conference" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/static" />
+      <recent name="$PROJECT_DIR$/src/main/resources/img_for_README" />
+      <recent name="$PROJECT_DIR$/src/main/resources/Create_Insert_SQLscript_for_BD" />
+      <recent name="$PROJECT_DIR$/src/main/resources/Start_Insert_BD" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.App">
@@ -115,7 +128,7 @@
     </recent_temporary>
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>$USER_HOME$/.subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -140,7 +153,7 @@
       <workItem from="1584649710357" duration="357000" />
       <workItem from="1584921411449" duration="2135000" />
       <workItem from="1589228742992" duration="2992000" />
-      <workItem from="1589267610841" duration="270000" />
+      <workItem from="1589267610841" duration="1945000" />
     </task>
     <servers />
   </component>
@@ -181,16 +194,20 @@
       <screen x="0" y="23" width="2048" height="1054" />
     </state>
     <state x="1006" y="472" width="420" height="234" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog/0.23.2048.1054@0.23.2048.1054" timestamp="1589229110433" />
-    <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser" timestamp="1584378042189">
-      <screen x="0" y="23" width="2048" height="1054" />
+    <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser" timestamp="1589274544175">
+      <screen x="0" y="23" width="2048" height="1057" />
     </state>
     <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1054@0.23.2048.1054" timestamp="1584378042189" />
     <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1056@0.23.2048.1056" timestamp="1584202289964" />
-    <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1057@0.23.2048.1057" timestamp="1583806634957" />
+    <state x="959" y="247" key="#com.intellij.ide.util.MemberChooser/0.23.2048.1057@0.23.2048.1057" timestamp="1589274544175" />
     <state x="478" y="512" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1583806344271">
       <screen x="0" y="23" width="2048" height="1057" />
     </state>
     <state x="478" y="512" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.23.2048.1057@0.23.2048.1057" timestamp="1583806344271" />
+    <state x="838" y="431" width="479" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1589273928171">
+      <screen x="0" y="23" width="2048" height="1057" />
+    </state>
+    <state x="838" y="431" width="479" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.2048.1057@0.23.2048.1057" timestamp="1589273928171" />
     <state x="653" y="471" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1583806346315">
       <screen x="0" y="23" width="2048" height="1057" />
     </state>
@@ -271,10 +288,11 @@
       <screen x="0" y="23" width="2048" height="1059" />
     </state>
     <state x="486" y="458" key="NewModule_or_Project.wizard/0.23.2048.1059@0.23.2048.1059" timestamp="1582585715994" />
-    <state x="691" y="171" key="SettingsEditor" timestamp="1589229115252">
-      <screen x="0" y="23" width="2048" height="1054" />
+    <state x="691" y="171" key="SettingsEditor" timestamp="1589268324692">
+      <screen x="0" y="23" width="2048" height="1057" />
     </state>
     <state x="691" y="171" key="SettingsEditor/0.23.2048.1054@0.23.2048.1054" timestamp="1589229115252" />
+    <state x="691" y="171" key="SettingsEditor/0.23.2048.1057@0.23.2048.1057" timestamp="1589268324692" />
     <state x="691" y="172" key="SettingsEditor/0.23.2048.1059@0.23.2048.1059" timestamp="1583535291937" />
     <state x="691" y="172" key="SettingsEditor/0.23.2048.1061@0.23.2048.1061" timestamp="1583535430493" />
     <state x="415" y="247" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1582340095449">

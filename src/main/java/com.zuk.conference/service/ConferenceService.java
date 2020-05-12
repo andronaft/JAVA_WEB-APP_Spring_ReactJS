@@ -16,6 +16,10 @@ public abstract class ConferenceService {
                                               //@Autowired
     protected ConferenceDAOImpl conferenceDAO;//protected ConferenceRepository conferenceDao
     protected ParticipantDAOImpl participantDAO;//protected ParticipantRepository participantDao
+
+    //protected IConference iConference;
+    //protected IParticipant iParticipant;
+
     protected RoomDAOImpl roomDAO;
     protected String message;
 
