@@ -1,4 +1,4 @@
-# JAVA_Spring_React_WEB_APP
+# JAVA_Spring_ReactJS_WEB_APP
 <!--This Web-app uses technologies such as:
 * JAVA (language for Rest sserver)
 * Spring-Boot(application framework)
