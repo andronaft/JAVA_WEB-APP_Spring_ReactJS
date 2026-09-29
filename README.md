@@ -26,22 +26,16 @@ There are three kinds of users.
 
 > ***Guests***
 > > * Can only watch conference information
-> >
-> > ![Guest](docs/images/guest.png)
 
 > ***Authorized users***
 > > * Can join a conference
 > > * Can view their account information
-> >
-> > ![User](docs/images/user.png)
 
 > ***Admin***
 > > * Can remove participants from a conference
 > > * Can change the date and time of a conference
 > > * Can cancel a conference
 > > * Can create a new conference
-> >
-> > ![Admin](docs/images/admin.png)
 
 ---
 
