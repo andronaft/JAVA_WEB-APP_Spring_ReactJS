@@ -91,9 +91,7 @@ npm run build:spring    # rebuild the UI served by Spring Boot (src/main/resourc
 
 ## Database
 
-There are three tables.
-
-![DB diagram](docs/images/db_diagram.png)
+There are three tables: `ROOM`, `PARTICIPANT` and `CONFERENCE`.
 
 The schema is in [`schema.sql`](src/main/resources/schema.sql) (works on H2 and PostgreSQL),
 the demo data in [`data-h2.sql`](src/main/resources/data-h2.sql).
