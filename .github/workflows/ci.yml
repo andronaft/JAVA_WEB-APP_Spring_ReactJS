@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    name: Backend (Java 17, H2 + PostgreSQL)
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: conference
+          POSTGRES_USER: conference
+          POSTGRES_PASSWORD: conference
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U conference"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      # enables PostgresSmokeTest, the other tests use the in-memory H2 database
+      DB_URL: jdbc:postgresql://localhost:5432/conference
+      DB_USERNAME: conference
+      DB_PASSWORD: conference
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: maven
+      - name: Build and test
+        run: mvn -B verify
+      - uses: actions/upload-artifact@v7
+        if: failure()
+        with:
+          name: surefire-reports
+          path: target/surefire-reports
+
+  frontend:
+    name: Frontend (Node 22)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    env:
+      CI: true
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - name: Test
+        run: npm test -- --watchAll=false
+      - name: Build
+        run: npm run build
